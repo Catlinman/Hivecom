@@ -40,19 +40,25 @@ ul {
     margin: 0px;
     font-family: "Aldrich", sans-serif;
 }
-body header {
+div {
+    margin
+}
+header {
     min-height: 40px;
     height: 40px;
     background: #0c0c0c;
     border-bottom: 2px solid #77ca25;
 }
-body #headerinfo {
+#wrapper {
+    min-width:640px;
+}
+#headerinfo {
     color: white;
-    width: 940px;
+    width: 640px;
     margin-left: auto;
     margin-right: auto;
 }
-body #headerinfo a {
+#headerinfo a {
     font-size: 24px;
     padding-top: 6px;
     padding-left: 16px;
@@ -62,11 +68,11 @@ body #headerinfo a {
     -o-transition: all .25s ease;
     transition: all .25s ease;
 }
-body #headerinfo a:hover {
+#headerinfo a:hover {
     color: #95f92b;
     letter-spacing: 2px;
 }
-body #navcontainer {
+#navcontainer {
     margin-top: 1px;
     background: #0c0c0c;
     border-top: 1px solid #92e12b;
@@ -75,26 +81,38 @@ body #navcontainer {
     -moz-box-shadow: inset 0px 0px 48px 0px rgba(0, 0, 0, 1);
     box-shadow: inset 0px 0px 48px 0px rgba(0, 0, 0, 1);
 }
-body #navmenu {
-    text-align: center;
+#navmenu {
     padding: 2px 0;
-    width: 940px;
-    margin-left: auto;
-    margin-right: auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row;
+    -webkit-justify-content: center;
+    -moz-flex-flow: row;
+    -moz-justify-content: center;
+    flex-flow: row;
+    justify-content: center;
 }
-body #navmenu a {
-    min-width: 150px;
-    display: inline-block;
+#navmenu a {
     color: white;
     background-color: #151515;
     border-radius: 4px;
     font-family: "Aldrich", sans-serif;
     text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
     font-size: 16px;
     letter-spacing: 1px;
     margin: 2px 2px;
+    justify-content:center;
     padding: 9px 18px 9px;
-    text-decoration: none;
+    border-top: 1px solid #24271d;
+    -webkit-flex: 0 1 0%;
+    flex: 0 1 20%;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+    transition-property: color, letter-spacing, background-color, text-shadow, border-top;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -102,32 +120,36 @@ body #navmenu a {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
-    border-top: 1px solid #24271d;
 }
-body #navmenu a:hover {
+#navmenu a:hover {
     color: #92e12b;
     letter-spacing: 2px;
     background-color: #282828;
     text-shadow: 0px 0px 8px #000000;
     border-top: 1px solid #404739;
 }
-body #navmenu #tsbutton {
-    display: block;
-    width: 345px;
-    min-width: 345px;
-    margin-left: auto;
-    margin-right: auto;
+#navmenu #tsbutton {
+    min-width:320px;
+    -webkit-order: 1;
+    order: 1;
 }
-body #titlediv {
+#navmenu #serverbutton {
+    min-width:140px;
+    max-width:140px;
+    -webkit-order: 0;
+    order: 0;
+}
+#navmenu #aboutbutton {
+    min-width:140px;
+    max-width:140px;
+    -webkit-order: 2;
+    order: 2;
+}
+#titlediv {
     margin-top: 1px;
     margin-bottom: 1px;
     position: relative;
     width: 100%;
-    min-width: 940px;
     min-height: 310px;
     height: 310px;
     background-color: #b0b0b0;
@@ -138,7 +160,7 @@ body #titlediv {
     box-shadow: inset 0px 32px 72px -32px rgba(0, 0, 0, 0.75);
     overflow: hidden;
 }
-body #titlediv:after {
+#titlediv:after {
     position: absolute;
     background: url(/images/stripe.png);
     background-size: 4px auto;
@@ -150,7 +172,7 @@ body #titlediv:after {
     z-index: -1;
     display: block;
 }
-body #titlediv h2 {
+#titlediv h2 {
     position: absolute;
     margin-top: 105px;
     height: 70px;
@@ -160,7 +182,7 @@ body #titlediv h2 {
     font-style: oblique;
     text-align: center;
 }
-body #titlediv p {
+#titlediv p {
     position: absolute;
     margin-top: 155px;
     line-height: 40px;
@@ -169,7 +191,7 @@ body #titlediv p {
     font-style: oblique;
     text-align: center;
 }
-body #titlediv img {
+#titlediv img {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -182,9 +204,11 @@ body #titlediv img {
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
 }
-body .divider {
+#viewercontainer {
+    width: 360px;
+}
+.divider {
     width: 100%;
-    min-width: 100%;
     min-height: 16px;
     height: 16px;
     background: #0c0c0c;
@@ -193,8 +217,7 @@ body .divider {
     -moz-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .75);
     box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .75);
 }
-body footer {
-    min-width: 940px;
+footer {
     min-height: 22px;
     height: 22px;
     background: #0c0c0c;
@@ -204,7 +227,7 @@ body footer {
     padding: 8px;
     margin: 64px auto;
 }
-body footer a {
+footer a {
     color: #bebebe;
     font-family: "Aldrich", sans-serif;
     font-weight: normal;
@@ -214,7 +237,7 @@ body footer a {
     -o-transition: all .25s ease;
     transition: all .25s ease;
 }
-body footer a:hover {
+footer a:hover {
     color: #95f92b;
 }
 .noselect {
@@ -224,4 +247,24 @@ body footer a:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+@media all and (max-width: 740px) {
+    #navmenu {
+        -webkit-flex-flow: column;
+        flex-flow: column;
+        flex-direction: column;
+        -webkit-justify-content: none;
+        -moz-justify-content: none;
+        justify-content: none;
+    }
+    #navmenu #serverbutton,
+    #navmenu #aboutbutton {
+        max-width:1000px;
+        -webkit-order: 1;
+        order: 1;
+    }
+    #tsbutton {
+        -webkit-order: 0;
+        order: 0;
+    }
 }
