@@ -21,4 +21,5 @@
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Aldrich'>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="/analytics.min.js"></script>
+<script type="text/javascript" src="scripts/analytics.min.js"></script>
+<script type="text/javascript" src="scripts/smooth-scroll.min.js"></script>
