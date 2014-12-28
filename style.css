@@ -8,6 +8,7 @@ p {
     font-family: "Aldrich", sans-serif;
     color: #d0d0d0;
     font-weight: normal;
+    line-height: 135%;
 }
 a {
     font-family: "Aldrich", sans-serif;
@@ -23,7 +24,7 @@ a:hover {
 }
 h1 {
     margin: 0px;
-    font-family: "Aldrich", sans-serif;
+    h font-family: "Aldrich", sans-serif;
     font-size: 64px;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
@@ -147,35 +148,33 @@ footer {
 }
 #navmenu a {
     color: white;
-    background-color: #151515;
+    background: #151515;
     border-radius: 4px;
     font-family: "Aldrich", sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
-    font-size: 16px;
-    letter-spacing: 1px;
     margin: 2px 2px;
     justify-content: center;
     padding: 9px 18px 9px;
     border-top: 1px solid #24271d;
     -webkit-flex: 0 1 0%;
     flex: 0 1 20%;
-    transition-property: color, letter-spacing, background-color, text-shadow, border-top;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
+    transition-property: color, background, text-shadow, border-top;
 }
 #navmenu a:hover {
     color: #92e12b;
-    letter-spacing: 2px;
-    background-color: #282828;
-    text-shadow: 0px 0px 8px #000000;
-    border-top: 1px solid #404739;
+    background: #202616;
+    background: -moz-linear-gradient(top, #202616 1%, #151515 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #202616), color-stop(100%, #151515));
+    background: -webkit-linear-gradient(top, #202616 1%, #151515 100%);
+    background: -o-linear-gradient(top, #202616 1%, #151515 100%);
+    background: -ms-linear-gradient(top, #202616 1%, #151515 100%);
+    background: linear-gradient(to bottom, #202616 1%, #151515 100%);
+    border-top: 1px solid #506739;
+    text-shadow: 0px 0px 48px rgba(190, 255, 150, 1);
 }
 #navmenu #tsbutton {
     min-width: 320px;
@@ -214,17 +213,60 @@ footer {
 #viewercontainer > h3 {
     text-align: left;
     font-size: 18px;
-    margin-bottom:8px;
+    margin-bottom: 8px;
 }
-#twittercontainer {
+#twitterhivecom {
     padding: 16px;
     float: right;
     display: inline-block;
 }
-#twittercontainer > h3 {
+#twitterhivecom > h3 {
     text-align: right;
     font-size: 18px;
-    margin-bottom:8px;
+    margin-bottom: 8px;
+}
+#twitterteam {
+    margin: 16px 16px;
+    padding: 16px;
+    text-align: center;
+}
+#twitterteam > h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+.button {
+    display: inline-block;
+    color: white;
+    background: #151515;
+    border-radius: 4px;
+    font-family: "Aldrich", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 9px 9px 9px;
+    border-top: 1px solid #24271d;
+    margin-left: auto;
+    margin-right: auto;
+    transition-property: color, background, text-shadow, border-top;
+}
+.centered {
+    text-align: center;
+}
+.button:hover {
+    color: #92e12b;
+    background: #202616;
+    background: -moz-linear-gradient(top, #202616 1%, #151515 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #202616), color-stop(100%, #151515));
+    background: -webkit-linear-gradient(top, #202616 1%, #151515 100%);
+    background: -o-linear-gradient(top, #202616 1%, #151515 100%);
+    background: -ms-linear-gradient(top, #202616 1%, #151515 100%);
+    background: linear-gradient(to bottom, #202616 1%, #151515 100%);
+    border-top: 1px solid #506739;
+    text-shadow: 0px 0px 48px rgba(190, 255, 150, 1);
 }
 .widgetcontainer {
     margin-bottom: 24px;
@@ -232,10 +274,10 @@ footer {
     text-align: center;
 }
 .horizontal-line {
-    margin-top:4px;
-    margin-bottom:4px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: auto;
+    margin-right: auto;
     width: 620px;
     height: 1px;
     background: #353535;
@@ -269,8 +311,28 @@ footer {
     background: #0c0c0c;
 }
 .contentzone p {
-    padding: 24px 16px;
+    padding: 20px 16px;
     text-align: justify;
+}
+.namelist {
+    margin: 16px 0px;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+.namelist > h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.namelist > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.namelist > ul li {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 22px;
 }
 .divider {
     width: 100%;
@@ -283,19 +345,20 @@ footer {
     background: url(/images/stripe2.png);
     background-size: 8px auto;
 }
-.gradient{
+.gradient {
     background: #0b0b0b;
     background: -moz-linear-gradient(left, #0b0b0b 10%, #181e13 50%, #0b0b0b 90%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(10%,#0b0b0b), color-stop(50%,#181e13), color-stop(90%,#0b0b0b));
-    background: -webkit-linear-gradient(left, #0b0b0b 10%,#181e13 50%,#0b0b0b 90%);
-    background: -o-linear-gradient(left, #0b0b0b 10%,#181e13 50%,#0b0b0b 90%);
-    background: -ms-linear-gradient(left, #0b0b0b 10%,#181e13 50%,#0b0b0b 90%);
-    background: linear-gradient(to right, #0b0b0b 10%,#181e13 50%,#0b0b0b 90%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(10%, #0b0b0b), color-stop(50%, #181e13), color-stop(90%, #0b0b0b));
+    background: -webkit-linear-gradient(left, #0b0b0b 10%, #181e13 50%, #0b0b0b 90%);
+    background: -o-linear-gradient(left, #0b0b0b 10%, #181e13 50%, #0b0b0b 90%);
+    background: -ms-linear-gradient(left, #0b0b0b 10%, #181e13 50%, #0b0b0b 90%);
+    background: linear-gradient(to right, #0b0b0b 10%, #181e13 50%, #0b0b0b 90%);
 }
-.backtotop{
-    font-size:20px;
-    text-align:center;
-    padding-bottom: 32px;
+.backtotop {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 16px;
+    padding-top: 8px
 }
 #footercontainer {
     min-height: 22px;
@@ -326,6 +389,7 @@ footer {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 .shadowed {
     -webkit-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .75);
@@ -338,9 +402,10 @@ footer {
     box-shadow: inset 0px 0px 48px 0px rgba(0, 0, 0, 1);
 }
 @media all and (max-width: 760px) {
-    #viewercontainer, #twittercontainer{
-        width:271px;
-        text-align:center;
+    #viewercontainer,
+    #twitterhivecom {
+        width: 271px;
+        text-align: center;
     }
     #navmenu {
         -webkit-flex-flow: column;
@@ -359,8 +424,9 @@ footer {
         max-width: 1000px;
         -webkit-order: 1;
         order: 1;
+        margin-top: 4px;
     }
-    #tsbutton {
+    #navmenu #tsbutton {
         max-width: 1000px;
         -webkit-order: 0;
         order: 0;

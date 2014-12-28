@@ -39,7 +39,7 @@
                     We're a constantly growing group open to those willing to join. The community itself is partially made up of a few others
                     that generally enjoy playing games and are looking for a simple place to hang out and chat. The
                     most prominent folks on the server are those of the
-                    <a href="http://webchat.esper.net/?channels=cobalt" alt="Espernet IRC">Cobalt IRC community</a>. Of course those
+                    <i><a href="http://webchat.esper.net/?channels=cobalt" alt="Espernet IRC">Cobalt IRC community</a></i>. Of course those
                     are not all - over the time that the server was initially hosted we've also picked up friends of friends and even
                     complete strangers to some. As mentioned, people from all around the world are known visitors of the server. The
                     range goes from countries like New Zealand, over to all of Europe and across to North America.
@@ -57,25 +57,30 @@
             <div class="divider"></div>
             <div class="contentzone shadowed">
                 <p>
-                    The Hivecom Teamspeak server is hosted over at <a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a>
+                    The Hivecom Teamspeak server is hosted over at <i><a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a></i>
                     and is situated in Amsterdam. At this current point in time the server has a total of 20 slots
                     open to anyone willing to join. Within the server there are a few specified groups of users that
-                    have different options of interaction on the server.
+                    have different levels of interaction on the server.
                     <br>
                     <br>
                     Non-registered users are restricted to the
-                    lobby and the open hub while registered users and up are allowed to move as they see fit. They
+                    lobby and the one open hub while registered users and up are allowed to move as they see fit. They
                     also have the option of creating their own temporary private channels which they can use to moderate
                     on their own. We also have a group of moderators that keep track of what goes about on the server
                     when there are no admins in sight. They generally have the option to register new users as well as to
                     kick and move any registered and non-registered user as they see fit. For more information on how to
                     become registered on Hivecom, see the section further below.
+                    <br>
+                    <br>
+                    There are a few options for connecting to the Teamspeak server. We suggest using the <i>'Connect to Teamspeak'</i>
+                    button at the top of the page and then having you save the server address as a bookmark. You can however
+                    also connect directly using either of the two following addresses: <i>ts.hivecom.net</i> / <i>hivecom.net:10084</i>
                 </p>
                 <div class="horizontal-line"></div>
                 <div class="widgetcontainer">
                     <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/tsviewer.php");?>
                     <div class="vertical-line"></div>
-                    <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitterhivecom.php");?>
+                    <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitter_hivecom.php");?>
                 </div>
                 <div class="horizontal-line"></div>
                 <p>
@@ -90,21 +95,64 @@
                     <br>
                     So, to keep the topic of becoming registered short: Ask politely. That is all you need to do.
                 </p>
+                <div class="horizontal-line"></div>
+                <p>
+                    Hivecom also has a <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">Teamspeak skin</a></i>
+                    you might want to try out. It's generally customized to fit the theme of Hivecom but it also
+                    works well on other Teamspeak servers. You can download the skin <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">here</a></i>.
+                </p>
+                <div class="horizontal-line"></div>
                 <div class="backtotop">
                     <a data-scroll href="#top" alt="Back to top">Back to top</a>
                 </div>
             </div>
         </div>
-        <div class="contentdiv gradient" id="about" style="height:1200px">
+        <div class="contentdiv gradient" id="about">
             <h3 class="shadowed">The people behind Hivecom</h3>
             <div class="divider"></div>
             <div class="contentzone shadowed">
-                <ul>
-                    <li>Admins and information</li>
-                    <li>Moderators</li>
-                    <li>What we do</li>
-                    <li>Donation pool</li>
-                </ul>
+                <p>
+                    The server is mainly managed by the three server administrators:
+                    <i><a href="https://twitter.com/catlinman_" alt="Catlinman">Catlinman</a></i>,
+                    <i><a href="https://twitter.com/jokler13" alt="Jokler">Jokler</a></i> and
+                    <i><a href="https://twitter.com/trif4" alt="Trif">Trif</a></i>.
+                    All three started hosting a server back in 2013 on a local mashine. The demand for a better
+                    connection made them reconsider this small hosting plan. They later on that year went over
+                    to actually aquiring a dedicated Teamspeak server from
+                    <i><a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a></i>.
+                    The server and domain costs are currently being covered by Catlinman while Jokler makes sure
+                    that the Raspberry Pi this website is running on stays online.
+                    <br>
+                    <br>
+                    Hivecom wouldn't be anything without it's members though. The server has a total of about
+                    200 registered members and is constantly growing. We also have moderators which take over some of the client management from
+                    time to time. The full list of the admins and moderators can be seen below.
+                </p>
+                <div class="horizontal-line"></div>
+                <div class="namelist">
+                    <h3 style="">Administrators</h3>
+                    <ul>
+                        <li>Catlinman</li>
+                        <li>Jokler</li>
+                        <li>Trif</li>
+                    </ul>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="namelist">
+                    <h3>Moderators</h3>
+                    <ul>
+                        <li>Aconitin</li>
+                        <li>cYsmix</li>
+                        <li>DolanCZ</li>
+                        <li>Gonarr</li>
+                        <li>Isogash</li>
+                        <li>Raykatz</li>
+                        <li>Yuki</li>
+                    </ul>
+                </div>
+                <div class="horizontal-line"></div>
+                <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitter_team.php");?>
+                <div class="horizontal-line"></div>
                 <div class="backtotop">
                     <a data-scroll href="#top" alt="Back to top">Back to top</a>
                 </div>
@@ -113,4 +161,5 @@
         <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/footer.php");?>
     </div>
 </body>
+
 </html>
