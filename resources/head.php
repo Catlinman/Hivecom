@@ -6,8 +6,8 @@
 
 <meta itemprop="image" content="images/metaicon.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@catlinman_">
-<meta name="twitter:creator" content="@catlinman_">
+<meta name="twitter:site" content="@hivecomts">
+<meta name="twitter:creator" content="@hivecomts">
 <meta name="twitter:title" content="Hivecom">
 <meta name="twitter:description" content="Hivecom is an open gaming community for anyone to feel free to join - we also host a Teamspeak 3 server under the same name.">
 <meta name="twitter:image" content="images/metaicon.png">
