@@ -34,6 +34,12 @@
         <div class="divider"></div>
         <div class="contentdiv striped">
             <div class="contentzone shadowed">
+                <noscript id="jsnotice">
+                    <p>
+                        We have detected that Javascript is disabled - some elements might not function as intended
+                    </p>
+                    <div class="horizontal-line"></div>
+                </noscript>
                 <p>
                     Hivecom is a community based around a Teamspeak server hosted by a few cool people from all around the world.
                     We're a constantly growing group open to those willing to join. The community itself is partially made up of a few others
@@ -77,12 +83,14 @@
                     also connect directly using either of the two following addresses: <i>ts.hivecom.net</i> / <i>hivecom.net:10084</i>
                 </p>
                 <div class="horizontal-line"></div>
-                <div class="widgetcontainer">
-                    <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/tsviewer.php");?>
-                    <div class="vertical-line"></div>
-                    <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitter_hivecom.php");?>
+                <div class="jsenabled">
+                    <div class="widgetcontainer">
+                        <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/tsviewer.php");?>
+                        <div class="vertical-line"></div>
+                        <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitter_hivecom.php");?>
+                    </div>
+                    <div class="horizontal-line"></div>
                 </div>
-                <div class="horizontal-line"></div>
                 <p>
                     Becoming registered can be done quite fast. If you are an outsider and do not know anyone
                     within the Hivecom community, your best bet is to simply start a text chat with one of our
@@ -151,8 +159,10 @@
                     </ul>
                 </div>
                 <div class="horizontal-line"></div>
-                <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitter_team.php");?>
-                <div class="horizontal-line"></div>
+                <div class="jsenabled">
+                    <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitter_team.php");?>
+                    <div class="horizontal-line"></div>
+                </div>
                 <div class="backtotop">
                     <a data-scroll href="#top" alt="Back to top">Back to top</a>
                 </div>

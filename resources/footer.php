@@ -1,6 +1,5 @@
 <footer>
     <div id="footercontainer" class="shadowed">
-        
         <a href="http://catlinman.com/" alt="Catlinman homepage">The Hivecom website was created by Catlinman - &copy Catlinman 2014</a>
     </div>
 </footer>
@@ -14,3 +13,4 @@
         callbackAfter: function(toggle, anchor){}
     });
 </script>
+<script type="text/javascript" src="scripts/pageload.js"></script>

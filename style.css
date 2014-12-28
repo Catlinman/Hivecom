@@ -71,12 +71,12 @@ footer {
 }
 #headerinfo a {
     color: white;
-    line-height:42px;
+    line-height: 42px;
     font-size: 24px;
     padding-left: 10px;
     text-transform: uppercase;
-    display:inline-block;
-    vertical-align:bottom;
+    display: inline-block;
+    vertical-align: bottom;
 }
 #headerinfo a:hover {
     color: #92e12b;
@@ -358,6 +358,9 @@ footer {
     padding-bottom: 16px;
     padding-top: 8px
 }
+.jsenabled {
+    display: none;
+}
 #footercontainer {
     min-height: 22px;
     height: 22px;
@@ -379,6 +382,10 @@ footer {
 }
 #footercontainer a:hover {
     color: #95f92b;
+}
+#jsnotice > p {
+    font-size: 14px;
+    text-align: center;
 }
 .noselect {
     -webkit-touch-callout: none;
@@ -413,10 +420,10 @@ footer {
         -moz-justify-content: none;
         justify-content: none;
     }
-    #navmenu a{
+    #navmenu a {
         padding: 20px 18px 20px;
-        font-size:20px;
-        line-height:0px;
+        font-size: 20px;
+        line-height: 0px;
     }
     #headerinfo {
         margin-left: 0;
@@ -435,12 +442,11 @@ footer {
         order: 0;
     }
 }
-
-@media all and (max-width: 640px){
-    #navmenu a{
+@media all and (max-width: 640px) {
+    #navmenu a {
         padding: 40px 18px 40px;
-        font-size:24px;
-        line-height:0px;
+        font-size: 24px;
+        line-height: 0px;
     }
     #navmenu #serverbutton,
     #navmenu #aboutbutton {
