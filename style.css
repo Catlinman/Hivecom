@@ -157,7 +157,6 @@ footer {
     text-align: center;
     margin: 2px 2px;
     justify-content: center;
-    padding: 9px 18px 9px;
     border-top: 1px solid #24271d;
     -webkit-flex: 0 1 0%;
     flex: 0 1 20%;
@@ -414,7 +413,7 @@ footer {
         -moz-justify-content: none;
         justify-content: none;
     }
-    #navmenu a{padding: 10px 18px 10px;}
+    #navmenu a{padding: 11px 18px 11px;}
     #headerinfo {
         margin-left: 0;
         width: 0;
