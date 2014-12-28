@@ -21,7 +21,7 @@
                 Welcome to Hivecom
             </h2>
             <p>
-                - Official website of the Hivecom Teamspeak server -
+            - Official website of the Hivecom Teamspeak server -
             <p>
         </div>
         <div id="navcontainer">
@@ -39,7 +39,7 @@
                     We're a constantly growing group open to those willing to join. The community itself is partially made up of a few others
                     that generally enjoy playing games and are looking for a simple place to hang out and chat. The
                     most prominent folks on the server are those of the
-                    <i><a href="http://webchat.esper.net/?channels=cobalt" alt="Espernet IRC">Cobalt IRC community</a></i>. Of course those
+                    <i><a href="http://webchat.esper.net/?channels=cobalt" alt="Espernet IRC">Cobalt IRC community</a></i>. Of course they
                     are not all - over the time that the server was initially hosted we've also picked up friends of friends and even
                     complete strangers to some. As mentioned, people from all around the world are known visitors of the server. The
                     range goes from countries like New Zealand, over to all of Europe and across to North America.
@@ -67,7 +67,7 @@
                     lobby and the one open hub while registered users and up are allowed to move as they see fit. They
                     also have the option of creating their own temporary private channels which they can use to moderate
                     on their own. We also have a group of moderators that keep track of what goes about on the server
-                    when there are no admins in sight. They generally have the option to register new users as well as to
+                    when there are no administrators in sight. They generally have the option to register new users as well as to
                     kick and move any registered and non-registered user as they see fit. For more information on how to
                     become registered on Hivecom, see the section further below.
                     <br>
@@ -86,9 +86,9 @@
                 <p>
                     Becoming registered can be done quite fast. If you are an outsider and do not know anyone
                     within the Hivecom community, your best bet is to simply start a text chat with one of our
-                    moderators or admins. Poking is allowed but we suggest not going overboard with it when
+                    moderators or administrators. Poking is allowed but we suggest not going overboard with it when
                     trying to get someone's attention. From there on a quick introduction or hello world is
-                    all you should need if you were to want to become registered. The moderator or admin
+                    all you should need if you were to want to become registered. The moderator or administrator
                     should then ideally assign you to the registered server group allowing you to enter
                     the main area of the Hivecom Teamspeak server.
                     <br>
@@ -116,9 +116,9 @@
                     <i><a href="https://twitter.com/catlinman_" alt="Catlinman">Catlinman</a></i>,
                     <i><a href="https://twitter.com/jokler13" alt="Jokler">Jokler</a></i> and
                     <i><a href="https://twitter.com/trif4" alt="Trif">Trif</a></i>.
-                    All three started hosting a server back in 2013 on a local mashine. The demand for a better
+                    All three started hosting a server back in 2013 on a local machine. The demand for a better
                     connection made them reconsider this small hosting plan. They later on that year went over
-                    to actually aquiring a dedicated Teamspeak server from
+                    to actually acquiring a dedicated Teamspeak server from
                     <i><a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a></i>.
                     The server and domain costs are currently being covered by Catlinman while Jokler makes sure
                     that the Raspberry Pi this website is running on stays online.
@@ -126,7 +126,7 @@
                     <br>
                     Hivecom wouldn't be anything without it's members though. The server has a total of about
                     200 registered members and is constantly growing. We also have moderators which take over some of the client management from
-                    time to time. The full list of the admins and moderators can be seen below.
+                    time to time. The full list of the administrators and moderators can be seen below.
                 </p>
                 <div class="horizontal-line"></div>
                 <div class="namelist">
