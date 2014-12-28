@@ -36,7 +36,7 @@
             <div class="contentzone shadowed">
                 <noscript id="jsnotice">
                     <p>
-                        We have detected that Javascript is disabled - some elements might not function as intended
+                        Javascript have been detected as disabled - some elements might not function as intended
                     </p>
                     <div class="horizontal-line"></div>
                 </noscript>
@@ -80,7 +80,7 @@
                     <br>
                     There are a few options for connecting to the Teamspeak server. We suggest using the <i>'Connect to Teamspeak'</i>
                     button at the top of the page and then having you save the server address as a bookmark. You can however
-                    also connect directly using either of the two following addresses: <i>ts.hivecom.net</i> / <i>hivecom.net:10084</i>
+                    also connect directly using "<i>ts.hivecom.net</i>".
                 </p>
                 <div class="horizontal-line"></div>
                 <div class="jsenabled">
@@ -125,7 +125,7 @@
                     <i><a href="https://twitter.com/jokler13" alt="Jokler">Jokler</a></i> and
                     <i><a href="https://twitter.com/trif4" alt="Trif">Trif</a></i>.
                     All three started hosting a server back in 2013 on a local machine. The demand for a better
-                    connection made them reconsider this small hosting plan. They later on that year went over
+                    connection and a 24/7 uptime made them reconsider this small hosting plan. They later on that year went over
                     to actually acquiring a dedicated Teamspeak server from
                     <i><a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a></i>.
                     The server and domain costs are currently being covered by Catlinman while Jokler makes sure
