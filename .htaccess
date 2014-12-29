@@ -22,3 +22,6 @@ RewriteRule ^(.*)$ $1.html
 
 RewriteCond %{HTTP_HOST} ^ts.hivecom.net
 RewriteRule ^(.*)$ http://hivecom.net/ts [L,NC,QSA]
+
+ErrorDocument 404 /errors/notfound.php
+ErrorDocument 403 /errors/accessdenied.php

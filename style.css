@@ -92,7 +92,6 @@ footer {
     background: url(/images/stripe.png);
     background-size: 4px auto;
     color: white;
-    z-index: -2;
     overflow: hidden;
 }
 #titlediv h2 {
@@ -360,6 +359,9 @@ footer {
 }
 .jsenabled {
     display: none;
+}
+.errorbody {
+    background:#0b0b0b;
 }
 #footercontainer {
     min-height: 22px;
