@@ -4,7 +4,7 @@
 <meta name="author" content="Hivecom Team - Catlinman">
 <meta name="viewport" content="width=640">
 
-<meta itemprop="image" content="images/metaicon.png">
+<meta itemprop="image" content="http://hivecom.net/images/metaicon.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@hivecomts">
 <meta name="twitter:creator" content="@hivecomts">
@@ -15,8 +15,8 @@
 <meta name="twitter:url" content="http://hivecom.net">
 <meta property="og:url" content="http://hivecom.net">
 
-<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
-<link rel="icon" href="images/icon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+<link rel="icon" href="/images/icon.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/style.css">
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Aldrich'>
 
