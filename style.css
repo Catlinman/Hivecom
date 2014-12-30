@@ -66,12 +66,9 @@ form {
     margin:auto auto;
     position:relative;
     width:380px;
-    font-family: Tahoma, Geneva, sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: bold;
-    color: #529d20;
+    font-family: "Aldrich", sans-serif;
     text-decoration: none;
+    color: #77c345;
     text-align: center;
     padding: 10px;
 }
@@ -419,8 +416,9 @@ input {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    cursor: pointer;
+    cursor: default;
 }
+
 .shadowed {
     -webkit-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .75);
     -moz-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .75);
