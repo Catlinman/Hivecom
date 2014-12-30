@@ -6,7 +6,7 @@
     <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");?>
 </head>
 
-<body class="errorbody">
+<body class="darkbody">
     <div id="wrapper">
         <header id="top">
             <div id="headerinfo">

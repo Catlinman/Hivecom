@@ -1,7 +1,7 @@
 body {
     background-color: #181e13;
     margin: 0px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 p {
     font-size: 15px;
@@ -61,6 +61,27 @@ header {
 footer {
     background: #0a0a0a;
     height: 86px;
+}
+form {
+    margin:auto auto;
+    position:relative;
+    width:380px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #529d20;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+}
+input {
+    margin: auto auto;
+    width:375px;
+    display:block;
+    border: 1px solid #999;
+    border-radius:4px;
+    height: 25px;
 }
 #wrapper {
     min-width: 640px;
@@ -205,7 +226,8 @@ footer {
     position: absolute;
     width: 100%;
     height: 95%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding-right: 15px;
 }
 #viewercontainer > h3 {
@@ -361,8 +383,8 @@ footer {
 .jsenabled {
     display: none;
 }
-.errorbody {
-    background:#0b0b0b;
+.darkbody {
+    background:#0c0c0c;
 }
 #footercontainer {
     min-height: 22px;
