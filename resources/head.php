@@ -18,6 +18,24 @@
 <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
 <link rel="icon" href="/images/icon.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/style.css">
+
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");
+
+    require_once($_SERVER['DOCUMENT_ROOT']. "/lib/TeamSpeak3/TeamSpeak3.php");
+    TeamSpeak3::init();
+
+    $online = FALSE;
+
+    try {
+        $ts3 = TeamSpeak3::factory("serverquery://nl-voice.fragnet.net:10011/?server_port=10011");
+        $online = TRUE;
+    }
+    catch (Exception $e) {
+        echo '<link rel="stylesheet" type="text/css" href="/style_red.css">';
+    }
+?>
+
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Aldrich'>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

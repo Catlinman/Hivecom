@@ -3,18 +3,16 @@
 
 <head>
     <title>Hivecom</title>
-    <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");?>
+    <?php
+        include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");
+    ?>
 </head>
 
 <body>
     <div id="wrapper">
-        <header id="top">
-            <div id="headerinfo">
-                <h3>
-                    <a href="index.php">HIVECOM</a>
-                </h3>
-            </div>
-        </header>
+        <?php
+            include_once($_SERVER['DOCUMENT_ROOT']. "/resources/header.php");
+        ?>
         <div id="titlediv" class="noselect">
             <img src="images/metaicon.png" width="512"/>
             <h2>

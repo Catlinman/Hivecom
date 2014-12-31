@@ -1,5 +1,11 @@
 <div id="viewercontainer">
-    <h3>Hivecom Teamspeak Viewer</h3>
+    <?php
+        if($online == TRUE){
+            echo '<h3>Hivecom Teamspeak Viewer</h3>';
+        } else{
+            echo '<h3>Hivecom is currently offline</h3>';
+        }
+    ?>
     <div id="viewercontent">
         <div id="ts3viewer_1028008" style="width:; background-color:;"> </div>
         <script type="text/javascript" src="http://static.tsviewer.com/short_expire/js/ts3viewer_loader.js"></script>

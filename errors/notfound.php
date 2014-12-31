@@ -8,13 +8,9 @@
 
 <body class="darkbody">
     <div id="wrapper">
-        <header id="top">
-            <div id="headerinfo">
-                <h3>
-                    <a href="index.php">HIVECOM</a>
-                </h3>
-            </div>
-        </header>
+        <?php
+            include_once($_SERVER['DOCUMENT_ROOT']. "/resources/header.php");
+        ?>
         <div id="titlediv" class="">
             <h2>
                 Page not found
