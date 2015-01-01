@@ -28,10 +28,11 @@
     $online = FALSE;
 
     try {
-        $ts3 = TeamSpeak3::factory("serverquery://nl-voice.fragnet.net:10011/?server_port=10011");
+        $ts3 = TeamSpeak3::factory("serverquery://nl-voice.fragnet.net:10011/?server_port=10084");
+
         $online = TRUE;
     }
-    catch (Exception $e) {
+    catch (Exception $e){
         echo '<link rel="stylesheet" type="text/css" href="/style_red.css">';
     }
 ?>

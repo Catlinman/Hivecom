@@ -73,13 +73,26 @@ form {
     padding: 10px;
 }
 input {
-    margin: auto auto;
+    padding:4px;
+    margin: 8px auto;
     width:375px;
     display:block;
-    border: 1px solid #999;
+    border: 1px solid #393f2f;
     border-radius:4px;
     height: 25px;
+    background:#0a0a0a;
+    color:#d0d0d0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+} input:focus {
+    outline: 0px;
+    border: 1px solid #507719;
 }
+label {
+    font-size:18px;
+}
+
 #wrapper {
     min-width: 640px;
 }
@@ -211,8 +224,7 @@ input {
     order: 2;
 }
 #viewercontainer {
-    float: left;
-    display: inline-block;
+    margin: 0px auto;
     padding: 16px;
     width: 320px;
     height: 600px;
@@ -228,7 +240,7 @@ input {
     padding-right: 15px;
 }
 #viewercontainer > h3 {
-    text-align: left;
+    text-align: center;
     font-size: 18px;
     margin-bottom: 8px;
 }
@@ -290,12 +302,19 @@ input {
     min-width: 640px;
     text-align: center;
 }
+.widgetcontainer > #viewercontainer {
+    float: left;
+    display: inline-block;
+}
+.widgetcontainer > #viewercontainer > h3 {
+    text-align: left;
+}
 .horizontal-line {
     margin-top: 4px;
     margin-bottom: 4px;
     margin-left: auto;
     margin-right: auto;
-    width: 620px;
+    width: 640px;
     height: 1px;
     background: #353535;
 }
@@ -328,18 +347,21 @@ input {
     background: #0c0c0c;
 }
 .contentzone p {
-    padding: 20px 16px;
+    padding: 16px 16px;
     text-align: justify;
+}
+.contentzone h3 {
+    padding: 16px 16px;
 }
 .namelist {
     margin: 16px 0px;
-    padding: 0;
     list-style-type: none;
     text-align: center;
 }
 .namelist > h3 {
     font-size: 24px;
     margin-bottom: 8px;
+    text-align: center;
 }
 .namelist > ul {
     margin: 0;
@@ -371,11 +393,20 @@ input {
     background: -ms-linear-gradient(left, #0b0b0b 10%, #181e13 50%, #0b0b0b 90%);
     background: linear-gradient(to right, #0b0b0b 10%, #181e13 50%, #0b0b0b 90%);
 }
+.centerinfo {
+    font-size: 19px;
+    text-align: center;
+    padding-bottom: 16px;
+    padding-top: 8px;
+    clear: right;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 .backtotop {
     font-size: 20px;
     text-align: center;
     padding-bottom: 16px;
-    padding-top: 8px
+    padding-top: 16px
 }
 .jsenabled {
     display: none;

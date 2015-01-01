@@ -19,7 +19,7 @@
                 Welcome to Hivecom
             </h2>
             <p>
-            - Official website of the Hivecom Teamspeak server -
+                - Official website of the Hivecom Teamspeak server -
             <p>
         </div>
         <div id="navcontainer">
@@ -89,6 +89,11 @@
                     </div>
                     <div class="horizontal-line"></div>
                 </div>
+                <?php
+                    if($online == TRUE){
+                        echo '<div class="centerinfo"><a href="lookup" >Click here to lookup a user</a></div><div class="horizontal-line"></div>';
+                    }
+                ?>
                 <p>
                     Becoming registered can be done quite fast. If you are an outsider and do not know anyone
                     within the Hivecom community, your best bet is to simply start a text chat with one of our
