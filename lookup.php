@@ -30,17 +30,30 @@
                                 <label>Lookup name</label>
                                 <input type="text" name="name" maxlength="30">
                                 <input type="submit">
-                            </form>';
+                            </form>
+                            <div class="horizontal-line"></div>
+                            <p style="text-align:center;">
+                            - Users currently available for lookup -<br><br>';
+
+                        $clients = $ts3->clientList();
+                        $lastClient = end($clients);
+
+                        foreach($clients as $c){
+                            if($c != $lastClient){
+                                echo $c .' | ';
+                            } else{
+                                echo $c;
+                            }
+                        }
+
+                        // echo '<br><br>Executed '. $ts3->getAdapter()->getQueryCount(). ' queries in '. number_format((float)$ts3->getAdapter()->getQueryRuntime(), 2, '.', ''). ' seconds';
+
+                        echo '</p>';
+
                     } else{
                         echo '<p style="text-align:center"> The Teamspeak server is currently offline and can not process your lookup request</p>';
                     }
                 ?>
-                <div class="horizontal-line"></div>
-                <p style="text-align:center;">Make sure to select a user from the users currently online on the server</p>
-                <div class="horizontal-line"></div>
-                <div>
-                    <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/tsviewer.php");?>
-                </div>
             </div>
         </div>
         <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/footer.php");?>

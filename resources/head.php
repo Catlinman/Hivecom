@@ -28,7 +28,7 @@
     $online = FALSE;
 
     try {
-        $ts3 = TeamSpeak3::factory("serverquery://nl-voice.fragnet.net:10011/?server_port=10084");
+        $ts3 = TeamSpeak3::factory("serverquery://nl-voice.fragnet.net:10011/?server_port=10084&use_offline_as_virtual=1&no_query_clients=1");
 
         $online = TRUE;
     }

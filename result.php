@@ -38,23 +38,38 @@
                                 $client = $ts3->clientGetByName($name);
                                 $info = $client->getInfo();
 
-                                echo '<h3 style="padding-bottom:0px;">'. $name .'</h3>';
+                                echo '<h3 style="padding-bottom:0px;">'. $name. '</h3>';
 
                                 echo '<p>';
 
                                 echo 'Server groups:<br>';
-                                foreach($client->memberOf() as $group) echo '&emsp;<i>' .$group .'</i><br>';
+                                foreach($client->memberOf() as $group) echo '&emsp;<i>'. $group. '</i><br>';
 
-                                echo '<br>Client information:<br>';
-                                echo '&emsp;Nickname: <i>'. $info["client_nickname"] .'</i><br>';
-                                if(!empty($info["client_description"])) echo '&emsp;Description: <i>'. $info["client_description"] .'</i><br>';
-                                echo '&emsp;Country: <i>'. $info["client_country"] .'</i><br>';
-                                echo '&emsp;Total Connections: <i>'. $info["client_totalconnections"] .'</i><br>';
-                                echo '&emsp;Connection Time: <i>'. secondsToTime($info["connection_connected_time"]%86400) .'</i><br>';
-                                echo '&emsp;Version: <i>'. $info["client_version"] .'</i><br>';
-                                echo '&emsp;Platform: <i>'. $info["client_platform"] .'</i><br>';
+                                echo    '<br>Client information:<br>'.
+                                        '&emsp;Nickname: <i>'. $info["client_nickname"]. '</i><br>';
 
+                                if(!empty($info["client_description"])) echo '&emsp;Description: <i>'. $info["client_description"]. '</i><br>';
+                                if(!empty($info["client_flag_avatar"])) echo '&emsp;Avatar: <i>Yes</i><br>';
+                                if(!empty($info["client_is_channel_commander"])) echo '&emsp;Channel commander: <i>'. $info["client_is_channel_commander"]. '</i><br>';
+
+                                echo '&emsp;Is talking: ';
+                                if($info["client_flag_talking"] == 0){
+                                    echo '<i>No</i><br>';
+                                } else{
+                                    echo '<i>Yes</i><br>';
+                                }
+
+                                echo    '&emsp;Country: <i>'. $info["client_country"]. '</i><br>'.
+                                        '&emsp;Total Connections: <i>'. $info["client_totalconnections"]. '</i><br>'.
+                                        '&emsp;Connection Time: <i>'. secondsToTime(substr($info["connection_connected_time"], 0, -3)) .'</i><br>'.
+                                        '&emsp;Version: <i>'. $info["client_version"]. '</i><br>'.
+                                        '&emsp;Platform: <i>'. $info["client_platform"]. '</i><br>';
+
+                                // echo    '<br>Client information keys:<br>';
                                 // foreach(array_keys($info) as $value) echo '&emsp;<i>' .$value .'</i><br>';
+
+                                echo '<br><br>Executed '. $ts3->getAdapter()->getQueryCount(). ' queries in '. number_format((float)$ts3->getAdapter()->getQueryRuntime(), 2, '.', ''). ' seconds';
+
                                 echo '</p>';
 
                             } catch (Exception $e){
