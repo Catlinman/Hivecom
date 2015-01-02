@@ -29,8 +29,12 @@
                             $name = htmlspecialchars($_GET["name"]);
 
                             function secondsToTime($seconds) {
-                                $dtF = new DateTime("@0");
-                                $dtT = new DateTime("@$seconds");
+                                try{
+                                    $dtF = new DateTime("@0");
+                                    $dtT = new DateTime("@$seconds");
+                                } catch(Exception $e) {
+                                    echo '<br>'. $e;
+                                }
 
                                 $valuestring = $dtF->diff($dtT)->format('%a,%h,%i,%s');
                                 $valuearray = explode(",", $valuestring);
@@ -39,7 +43,7 @@
                                 if(!empty($valuearray[0])) $formatted = $formatted. $valuearray[0]. " Days ";
                                 if(!empty($valuearray[1])) $formatted = $formatted. $valuearray[1]. " Hours ";
                                 if(!empty($valuearray[2])) $formatted = $formatted. $valuearray[2]. " Minutes ";
-                                if(!empty($valuearray[3])) $formatted = $formatted. $valuearray[3]. " Seconds";
+                                $formatted = $formatted. $valuearray[3]. " Seconds";
 
                                 return $formatted;
                             }
@@ -47,6 +51,10 @@
                             try {
                                 $client = $ts3->clientGetByName($name);
                                 $info = $client->getInfo();
+
+                                if(!empty($info["client_flag_avatar"])){
+                                    echo '<img style="width:192px;float:right;margin-right:16px;margin-top:16px;outline: #555555 solid 2px;" src="avatar?name='. $name. '" alt="'. $name. '">';
+                                }
 
                                 echo '<h3 style="padding-bottom:0px;">'. $name. '</h3>';
 
@@ -65,8 +73,8 @@
                                 echo    '&emsp;Country: <i>'. $info["client_country"]. '</i><br>'.
                                         '&emsp;Channel: <i>'. $ts3->channelGetById($info["client_channel_group_inherited_channel_id"]). '</i><br>'.
                                         '&emsp;Total Connections: <i>'. $info["client_totalconnections"]. '</i><br>'.
-                                        '&emsp;Connection Time: <i>'. secondsToTime(substr($info["connection_connected_time"], 0, -3)) .'</i><br>'.
-                                        '&emsp;Idle time: <i>'. secondsToTime(substr($info["client_idle_time"], 0, -3)). '</i><br>'.
+                                        '&emsp;Connection Time: <i>'. secondsToTime(floor($info["connection_connected_time"] / 1000)) .'</i><br>'.
+                                        '&emsp;Idle time: <i>'. secondsToTime(floor($info["client_idle_time"] / 1000)). '</i><br>'.
                                         '&emsp;Version: <i>'. $info["client_version"]. '</i><br>'.
                                         '&emsp;Platform: <i>'. $info["client_platform"]. '</i><br>';
 
