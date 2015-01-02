@@ -31,7 +31,17 @@
                             function secondsToTime($seconds) {
                                 $dtF = new DateTime("@0");
                                 $dtT = new DateTime("@$seconds");
-                                return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+
+                                $valuestring = $dtF->diff($dtT)->format('%a,%h,%i,%s');
+                                $valuearray = explode(",", $valuestring);
+                                $formatted = "";
+
+                                if(!empty($valuearray[0])) $formatted = $formatted. $valuearray[0]. " Days ";
+                                if(!empty($valuearray[1])) $formatted = $formatted. $valuearray[1]. " Hours ";
+                                if(!empty($valuearray[2])) $formatted = $formatted. $valuearray[2]. " Minutes ";
+                                if(!empty($valuearray[3])) $formatted = $formatted. $valuearray[3]. " Seconds";
+
+                                return $formatted;
                             }
 
                             try {
@@ -52,23 +62,19 @@
                                 if(!empty($info["client_flag_avatar"])) echo '&emsp;Avatar: <i>Yes</i><br>';
                                 if(!empty($info["client_is_channel_commander"])) echo '&emsp;Channel commander: <i>'. $info["client_is_channel_commander"]. '</i><br>';
 
-                                echo '&emsp;Is talking: ';
-                                if($info["client_flag_talking"] == 0){
-                                    echo '<i>No</i><br>';
-                                } else{
-                                    echo '<i>Yes</i><br>';
-                                }
-
                                 echo    '&emsp;Country: <i>'. $info["client_country"]. '</i><br>'.
+                                        '&emsp;Channel: <i>'. $ts3->channelGetById($info["client_channel_group_inherited_channel_id"]). '</i><br>'.
                                         '&emsp;Total Connections: <i>'. $info["client_totalconnections"]. '</i><br>'.
                                         '&emsp;Connection Time: <i>'. secondsToTime(substr($info["connection_connected_time"], 0, -3)) .'</i><br>'.
+                                        '&emsp;Idle time: <i>'. secondsToTime(substr($info["client_idle_time"], 0, -3)). '</i><br>'.
                                         '&emsp;Version: <i>'. $info["client_version"]. '</i><br>'.
                                         '&emsp;Platform: <i>'. $info["client_platform"]. '</i><br>';
 
-                                // echo    '<br>Client information keys:<br>';
-                                // foreach(array_keys($info) as $value) echo '&emsp;<i>' .$value .'</i><br>';
-
-                                echo '<br><br>Executed '. $ts3->getAdapter()->getQueryCount(). ' queries in '. number_format((float)$ts3->getAdapter()->getQueryRuntime(), 2, '.', ''). ' seconds';
+                                // echo '<br>Client information values:<br>';
+                                // foreach($info as $key => $value){
+                                //    echo '&emsp;<i>'. $key. ' = '. $value. '</i><br>';
+                                // }
+                                // echo '<br><br>Executed '. $ts3->getAdapter()->getQueryCount(). ' queries in '. number_format((float)$ts3->getAdapter()->getQueryRuntime(), 2, '.', ''). ' seconds';
 
                                 echo '</p>';
 

@@ -113,7 +113,7 @@
                     works well on other Teamspeak servers. You can download the skin <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">here</a></i>.
                 </p>
                 <div class="horizontal-line"></div>
-                <div class="backtotop">
+                <div class="centerinfo">
                     <a data-scroll href="#top" alt="Back to top">Back to top</a>
                 </div>
             </div>
@@ -166,7 +166,7 @@
                     <?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/twitter_team.php");?>
                     <div class="horizontal-line"></div>
                 </div>
-                <div class="backtotop">
+                <div class="centerinfo">
                     <a data-scroll href="#top" alt="Back to top">Back to top</a>
                 </div>
             </div>
