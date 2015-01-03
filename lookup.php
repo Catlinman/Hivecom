@@ -25,24 +25,26 @@
             <div class="contentzone shadowed">
                 <?php
                     if($online == TRUE){
+
                         echo
                             '<form action="result" method="get">
                                 <label>Lookup name</label>
                                 <input type="text" name="name" maxlength="30">
                                 <input type="submit">
                             </form>
-                            <div class="horizontal-line"></div>
-                            <p style="text-align:center;">
-                            - Users currently available for lookup -<br><br>';
+                            <div class="horizontal-line"></div>';
+
+                        echo '<p style="text-align:center;">';
+                        echo '- Users currently available for lookup -<br><br>';
 
                         $clients = $ts3->clientList();
                         $lastClient = end($clients);
 
                         foreach($clients as $c){
                             if($c != $lastClient){
-                                echo $c .' | ';
+                                echo '<a href="result?name='. $c. '">'. $c .'</a> | ';
                             } else{
-                                echo $c;
+                                echo '<a href="result?name='. $c. '">'. $c .'</a>';
                             }
                         }
 

@@ -443,6 +443,55 @@ label {
     -moz-box-shadow: inset 0px 0px 48px 0px rgba(0, 0, 0, 1);
     box-shadow: inset 0px 0px 48px 0px rgba(0, 0, 0, 1);
 }
+.avatar {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+
+    opacity:0;
+    max-width:216px;
+
+    -webkit-animation: avatarin 1s;
+    -moz-animation: avatarin 1s;
+    -ms-animation: avatarin 1s;
+    -o-animation: avatarin 1s;
+
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+    -o-animation-delay: 3s;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+}
+
+@keyframes avatarin {
+    from { opacity: 0.0; }
+    to   { opacity: 1.0; }
+}
+
+@-moz-keyframes avatarin {
+    from { opacity: 0.0; }
+    to   { opacity: 1.0; }
+}
+
+@-webkit-keyframes avatarin {
+    from { opacity: 0.0; }
+    to   { opacity: 1.0; }
+}
+
+@-ms-keyframes avatarin {
+    from { opacity: 0.0; }
+    to   { opacity: 1.0; }
+}
+
+@-o-keyframes avatarin {
+    from { opacity: 0.0; }
+    to   { opacity: 1.0; }
+}
+
 @media all and (max-width: 760px) {
     #viewercontainer,
     #twitterhivecom {

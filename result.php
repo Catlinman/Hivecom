@@ -53,21 +53,29 @@
                                 $info = $client->getInfo();
 
                                 if(!empty($info["client_flag_avatar"])){
-                                    echo '<img style="width:192px;float:right;margin-right:16px;margin-top:16px;outline: #555555 solid 2px;" src="avatar?name='. $name. '" alt="'. $name. '">';
+                                    echo '<a href="avatar?name='. $name. '"><img class="avatar shadowed" style="float:right;margin-right:16px;margin-top:16px;outline: #555555 solid 1px;" src="avatar?name='. $name. '" alt="'. $name. '"></a>';
                                 }
 
                                 echo '<h3 style="padding-bottom:0px;">'. $name. '</h3>';
 
                                 echo '<p>';
 
-                                echo 'Server groups:<br>';
-                                foreach($client->memberOf() as $group) echo '&emsp;<i>'. $group. '</i><br>';
+                                $grouplink = $client->memberOf();
+                                $lastgroup = end($grouplink);
+
+                                echo 'Server and channel groups:<br>';
+                                foreach($grouplink as $group){
+                                    if($group != "Guest"){
+                                        echo '&emsp;<i>'. $group. '</i><br>';
+                                    } elseif($group == $lastgroup){
+                                        echo '&emsp;<i>None</i><br>';
+                                    }
+                                }
 
                                 echo    '<br>Client information:<br>'.
                                         '&emsp;Nickname: <i>'. $info["client_nickname"]. '</i><br>';
 
                                 if(!empty($info["client_description"])) echo '&emsp;Description: <i>'. $info["client_description"]. '</i><br>';
-                                if(!empty($info["client_flag_avatar"])) echo '&emsp;Avatar: <i>Yes</i><br>';
                                 if(!empty($info["client_is_channel_commander"])) echo '&emsp;Channel commander: <i>'. $info["client_is_channel_commander"]. '</i><br>';
 
                                 echo    '&emsp;Country: <i>'. $info["client_country"]. '</i><br>'.
