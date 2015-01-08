@@ -17,7 +17,7 @@
             </h2>
             <p style="margin:155px 0">
                 <a href="/index.php">Click here to return to the main page</a>
-            <p>
+            </p>
         </div>
     </div>
 </body>

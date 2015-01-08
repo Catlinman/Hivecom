@@ -141,12 +141,19 @@
                 </p>
                 <div class="horizontal-line"></div>
                 <div class="namelist">
-                    <h3 style="">Administrators</h3>
-                    <ul>
-                        <li>Catlinman</li>
-                        <li>Jokler</li>
-                        <li>Trif</li>
-                    </ul>
+                    <h3 style="padding:2px;">Administrators</h3>
+                    <div class="profilecontainer">
+                        <h3>Catlinman</h3>
+                        <a href="https://twitter.com/catlinman_"><img class="profileimage" src="images/profile_catlinman.png"/></a>
+                    </div>
+                    <div class="profilecontainer">
+                        <h3>Trif</h3>
+                        <a href="https://twitter.com/trif4"><img class="profileimage" src="images/profile_trif.jpg"/></a>
+                    </div>
+                    <div class="profilecontainer">
+                        <h3>Jokler</h3>
+                        <a href="https://twitter.com/jokler13"><img class="profileimage" src="images/profile_jokler.png"/></a>
+                    </div>
                 </div>
                 <div class="horizontal-line"></div>
                 <div class="namelist">
