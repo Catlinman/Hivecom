@@ -194,7 +194,7 @@ label {
     border-top: 1px solid #24271d;
     -webkit-flex: 0 1 0%;
     flex: 0 1 20%;
-    transition-property: color, background, text-shadow, border-top;
+    transition-property: color, background, text-shadow, border-top, min-width, min-height, max-width, max-height, padding;
 }
 #navmenu a:hover {
     color: #92e12b;
@@ -312,6 +312,7 @@ label {
 }
 .widgetcontainer > #viewercontainer > h3 {
     text-align: left;
+    white-space: nowrap;
 }
 .horizontal-line {
     margin-top: 4px;
