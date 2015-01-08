@@ -53,7 +53,7 @@
                                 $info = $client->getInfo();
 
                                 if(!empty($info["client_flag_avatar"])){
-                                    echo '<a href="avatar?name='. $name. '"><img class="avatar shadowed" style="float:right;margin-right:16px;margin-top:16px;outline: #555555 solid 1px;" src="avatar?name='. $name. '" alt="'. $name. '"></a>';
+                                    echo '<a href="avatar?name='. $name. '"><img class="avatar shadowed" src="avatar?name='. $name. '" alt="'. $name. '"></a>';
                                 }
 
                                 echo '<h3 style="padding-bottom:0px;">'. $name. '</h3>';

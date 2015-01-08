@@ -159,13 +159,13 @@
                 <div class="namelist">
                     <h3>Moderators</h3>
                     <ul>
-                        <li>Aconitin</li>
-                        <li>cYsmix</li>
-                        <li>DolanCZ</li>
-                        <li>Gonarr</li>
-                        <li>Isogash</li>
-                        <li>Raykatz</li>
-                        <li>Yuki</li>
+                        <a href="https://twitter.com/Aconitin_"><li>Aconitin</li></a> |
+                        <a href="https://twitter.com/cYsmix"><li>cYsmix</li></a> |
+                        <a href="https://twitter.com/DolanCZ"><li>DolanCZ</li></a> |
+                        <a href="https://twitter.com/narrgo"><li>Gonarr</li></a> |
+                        <a href="https://twitter.com/Isogash"><li>Isogash</li></a> |
+                        <a href="https://twitter.com/Neko_no_kemono"><li>Raykatz</li></a> |
+                        <a href="https://twitter.com/otonashiyuki"><li>Yuki</li></a>
                     </ul>
                 </div>
                 <div class="horizontal-line"></div>
