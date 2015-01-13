@@ -16,7 +16,7 @@
             <h2>
                 Lookup Request
             </h2>
-            <p style="margin:170px 0">
+            <p style="margin:170px 0px">
                 <a href="/index.php">Click here to return to the main page</a>
             <p>
         </div>

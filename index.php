@@ -62,8 +62,15 @@
             <div class="contentzone shadowed">
                 <p>
                     The Hivecom Teamspeak server is hosted over at <i><a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a></i>
-                    and is situated in Amsterdam. At this current point in time the server has a total of 20 slots
-                    open to anyone willing to join. Within the server there are a few specified groups of users that
+                    and is situated in Amsterdam. At this current point in time the server has a total of
+                    <?php
+                        if($online == TRUE){
+                            echo $ts3["virtualserver_maxclients"];
+                        } else{
+                            echo 20;
+                        }
+                    ?>
+                    slots open to anyone willing to join. Within the server there are a few specified groups of users that
                     have different levels of interaction on the server.
                     <br>
                     <br>
@@ -91,7 +98,13 @@
                 </div>
                 <?php
                     if($online == TRUE){
-                        echo '<div class="centerinfo"><a href="lookup" >Click here to lookup a user</a></div><div class="horizontal-line"></div>';
+                        echo
+                            '
+                            <p style="text-align:center;">Current connections: '. $ts3->clientCount(). ' / '. $ts3["virtualserver_maxclients"]. '</p>
+                            <div class="centerinfo">
+                            <a href="lookup" >Click here to lookup a user</a>
+                            </div><div class="horizontal-line"></div>
+                            ';
                     }
                 ?>
                 <p>
@@ -148,7 +161,7 @@
                     </div>
                     <div class="profilecontainer">
                         <h3>Trif</h3>
-                        <a href="https://twitter.com/trif4"><img class="profileimage" src="images/profile_trif.jpg"/></a>
+                        <a href="https://twitter.com/trif4"><img class="profileimage" src="images/profile_trif.png"/></a>
                     </div>
                     <div class="profilecontainer">
                         <h3>Jokler</h3>
