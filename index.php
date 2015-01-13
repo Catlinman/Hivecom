@@ -161,7 +161,7 @@
                     </div>
                     <div class="profilecontainer">
                         <h3>Trif</h3>
-                        <a href="https://twitter.com/trif4"><img class="profileimage" src="images/profile_trif.png"/></a>
+                        <a><img class="profileimage" src="images/profile_trif.png"/></a>
                     </div>
                     <div class="profilecontainer">
                         <h3>Jokler</h3>
