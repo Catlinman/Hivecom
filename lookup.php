@@ -25,7 +25,6 @@
             <div class="contentzone shadowed">
                 <?php
                     if($online == TRUE){
-
                         echo
                             '<form action="result" method="get">
                                 <label>Lookup name</label>

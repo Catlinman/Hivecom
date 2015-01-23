@@ -1,7 +1,7 @@
 body {
     background-color: #181e13;
     margin: 0px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 p {
     font-size: 15px;
@@ -47,10 +47,31 @@ h3 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-ul {
-    font-size: 16px;
+h4 {
     margin: 0px;
     font-family: "Aldrich", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h5 {
+    margin: 0px;
+    font-family: "Aldrich", sans-serif;
+    font-size: 18px;
+    font-family: "Aldrich", sans-serif;
+    font-weight: normal;
+    line-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+ul {
+    font-size: 15px;
+    margin: 0px;
+    font-family: "Aldrich", sans-serif;
+    color: #d0d0d0;
+    font-weight: normal;
+    line-height: 135%;
 }
 header {
     min-height: 40px;
@@ -287,7 +308,7 @@ label {
     transition-property: color, background, text-shadow, border-top;
 }
 .centered {
-    text-align: center;
+    text-align: center !important;
 }
 .button:hover {
     color: #a9fe30;
@@ -377,7 +398,7 @@ label {
     font-size: 16px;
     font-weight: normal;
     line-height: 32px;
-    display:inline;
+    display: inline;
 }
 .divider {
     width: 100%;
@@ -412,7 +433,7 @@ label {
     display: none;
 }
 .darkbody {
-    background: #0c0c0c;
+    background: #0a0a0a;
 }
 #footercontainer {
     height: 38px;
@@ -451,9 +472,9 @@ label {
     text-align: center;
     opacity: 0;
     max-width: 216px;
-    float:right;
-    margin-right:16px;
-    margin-top:16px;
+    float: right;
+    margin-right: 16px;
+    margin-top: 16px;
     outline: #555555 solid 1px;
     -webkit-animation: avatarin 1s;
     -moz-animation: avatarin 1s;
@@ -468,7 +489,7 @@ label {
     -ms-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
 }
-.profilecontainer{
+.profilecontainer {
     width: 210px;
     height: 260px;
     max-width: 210px;
@@ -476,9 +497,9 @@ label {
     display: inline-block;
     overflow: hidden;
     vertical-align: middle;
-    text-align:center;
+    text-align: center;
 }
-.profilecontainer h3{
+.profilecontainer h3 {
     font-size: 20px;
 }
 .profileimage {
@@ -500,7 +521,64 @@ label {
     -moz-box-shadow: 0px 0px 4px 0px rgba(190, 255, 150, 1);
     box-shadow: 0px 0px 4px 0px rgba(190, 255, 150, 1);
 }
-
+.columnlist {
+    list-style: none;
+}
+.listhead li {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    text-decoration: underline;
+}
+.columnlist li {
+    display: block;
+    width: 22%;
+    margin-right: 3%;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.listclear {
+    clear: both;
+    padding: 8px;
+}
+.meter {
+    height: 16px;
+    margin: 16px 16px;
+    position: relative;
+    background: #0a0a0a;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    padding: 4px;
+    border: 1px solid #182306;
+    -webkit-box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+.meter > span {
+    display: block;
+    height: 100%;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    background-color: #77c345;
+    -webkit-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+.meter > span:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0, 0, 0, .3) 8px, rgba(0, 0, 0, .3) 16px);
+    z-index: 1;
+    overflow: hidden;
+}
 @keyframes avatarin {
     from {
         opacity: 0.0;
@@ -542,8 +620,7 @@ label {
     }
 }
 @media all and (max-width: 760px) {
-    #viewercontainer,
-    #twitterhivecom {
+    #viewercontainer, #twitterhivecom {
         width: 271px;
         text-align: center;
     }
@@ -564,8 +641,7 @@ label {
         margin-left: 0;
         width: 0;
     }
-    #navmenu #serverbutton,
-    #navmenu #aboutbutton {
+    #navmenu #serverbutton, #navmenu #aboutbutton {
         max-width: 1000px;
         -webkit-order: 1;
         order: 1;
@@ -591,8 +667,7 @@ label {
         font-size: 24px;
         line-height: 0px;
     }
-    #navmenu #serverbutton,
-    #navmenu #aboutbutton {
+    #navmenu #serverbutton, #navmenu #aboutbutton {
         max-width: 1000px;
         -webkit-order: 1;
         order: 1;

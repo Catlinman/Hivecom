@@ -15,4 +15,4 @@
         callbackAfter: function(toggle, anchor){}
     });
 </script>
-<script type="text/javascript" src="scripts/pageload.js"></script>
+<script type="text/javascript" src="/scripts/pageload.js"></script>

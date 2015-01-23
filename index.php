@@ -36,7 +36,6 @@
                     <p>
                         Javascript have been detected as disabled - some elements might not function as intended
                     </p>
-                    <div class="horizontal-line"></div>
                 </noscript>
                 <p>
                     Hivecom is a community based around a Teamspeak server hosted by a few cool people from all around the world.
@@ -100,11 +99,9 @@
                     if($online == TRUE){
                         echo
                             '
-                            <p style="text-align:center;">Current connections: '. $ts3->clientCount(). ' / '. $ts3["virtualserver_maxclients"]. '</p>
-                            <div class="centerinfo">
-                            <a href="lookup" >Click here to lookup a user</a>
-                            </div><div class="horizontal-line"></div>
-                            ';
+                            <p class="centered">Current connections: '. $ts3->clientCount(). ' / '. $ts3["virtualserver_maxclients"]. '</p>
+                            <a href="lookup" class="centered"><h5>Click here to lookup a user</h5></a><br>
+                            <div class="horizontal-line"></div>';
                     }
                 ?>
                 <p>
@@ -125,6 +122,36 @@
                     you might want to try out. It's generally customized to fit the theme of Hivecom but it also
                     works well on other Teamspeak servers. You can download the skin <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">here</a></i>.
                 </p>
+                <div class="horizontal-line"></div>
+                <h4 class="centered" style="margin-top:16px;">Keeping the server alive</h4>
+                <p>
+                    Due to the fact that this server and website is funded without any sponsoring or ads and is open to
+                    anyone to join and use, we encourage people to possibly donate a bit towards our yearly server costs.
+                    Catlinman is currently in charge of the entire server's costs meaning that any extra funds he receives
+                    will go towards maintaining and renewing the website and server.
+                </p>
+                <?php
+                    require_once($_SERVER['DOCUMENT_ROOT']. "/scripts/private/sqlauth.php");
+					
+                    if($db_success == TRUE){
+                        $table = 'donation_progress';
+
+                        $result = mysql_query("SELECT * FROM {$table}");
+                        $values = mysql_fetch_row($result);
+                        $amount = round((float)$values[0], 2);
+                        $goal = round((float)$values[1], 2);
+                        $progress =  max(min($amount, $goal) / $goal, 0.0225);
+                    } else{
+                        $amount = 0;
+                        $goal = 50;
+                        $progress =  max(min($amount, $goal) / $goal, 0.0225);
+                    }
+                ?>
+                <h5 class="centered">We've received <?php echo $amount;?>€ towards our yearly goal of <?php echo $goal;?>€</h5>
+                <div class="meter">
+                    <span style="width:<?php echo $progress * 100;?>%"></span>
+                </div>
+                <a href="donations" class="centered"><h5>Click here to donate and see who has already donated</h5></a><br>
                 <div class="horizontal-line"></div>
                 <div class="centerinfo">
                     <a data-scroll href="#top" alt="Back to top">Back to top</a>
@@ -161,7 +188,7 @@
                     </div>
                     <div class="profilecontainer">
                         <h3>Trif</h3>
-                        <a><img class="profileimage" src="images/profile_trif.png"/></a>
+                        <a href="https://twitter.com/trif4"><img class="profileimage" src="images/profile_trif.png"/></a>
                     </div>
                     <div class="profilecontainer">
                         <h3>Jokler</h3>
