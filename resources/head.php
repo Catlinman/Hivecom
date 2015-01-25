@@ -2,7 +2,7 @@
 <meta name="description" content="Hivecom is an open gaming community for anyone to feel free to join - we also host a Teamspeak 3 server under the same name">
 <meta name="keywords" content="hivecom,teamspeak,catlinman,jokler,trif,cobalt community,game server,voice server">
 <meta name="author" content="Hivecom Team - Catlinman">
-<meta name="viewport" content="width=640">
+<meta name="viewport" content="width=640, initial-scale=0.5">
 
 <meta itemprop="image" content="http://hivecom.net/images/metaicon.png">
 <meta name="twitter:card" content="summary">
