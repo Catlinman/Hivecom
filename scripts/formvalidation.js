@@ -1,41 +1,69 @@
 function validateDonation() {
-	var name = document.forms["paypalform"]["name"].value;
-	var twitter = document.forms["paypalform"]["twitter"].value;
-	var amount = document.forms["paypalform"]["amount"].value;
+	var name = document.forms["paypalform"]["name"];
+	var twitter = document.forms["paypalform"]["twitter"];
+	var amount = document.forms["paypalform"]["amount"];
+	var custom = document.forms["paypalform"]["custom"];
 
-	if(amount == ""){
-		document.forms["paypalform"]["amount"].style.border = "1px #FF0000 solid";
+	if(twitter.value != ""){
+		twitter.value = twitter.value.substr(1, twitter.value.length);
+	}
+	
+	if(amount.value == ""){
 		return false;
-	} else{
-		document.forms["paypalform"]["amount"].style.border = "";
 	}
-
-	if(twitter != "") {
-		twitter = twitter.substr(1, twitter.length);
-	}
-
+	
 	if(name != "") {
-		document.forms["paypalform"]["custom"].value = name + "," + twitter + "," + amount;
+		custom.value = name.value + "," + twitter.value;
 	}
 
-	return true;
+	return false;
 }
 
 
 function onkeyTwitter(){
-	if(document.forms["paypalform"]["twitter"].value.charAt(0) != "@"){
-		document.forms["paypalform"]["twitter"].value = "@" + document.forms["paypalform"]["twitter"].value;
+	var name = document.forms["paypalform"]["name"];
+	var twitter = document.forms["paypalform"]["twitter"];
+		
+	if(twitter.value != "" && twitter.value.charAt(0) != "@"){
+		twitter.value = "@" + twitter.value;
+	}
+	
+	if(name.value == "" && twitter.value != ""){
+		name.setAttribute("required", true);
+	}
+	else {
+		name.removeAttribute("required");
 	}
 }
 
 function onfocusTwitter(){
-	if (document.forms["paypalform"]["twitter"].value == ""){
-		document.forms["paypalform"]["twitter"].value = "@";
+	var name = document.forms["paypalform"]["name"];
+	var twitter = document.forms["paypalform"]["twitter"];
+	
+	if (twitter.value == ""){
+		twitter.value = "@";
+	}
+	
+	if(name.value == "" && twitter.value != ""){
+		name.setAttribute("required", true);
+	}
+	else {
+		name.removeAttribute("required");
 	}
 }
 
 function onfocusoutTwitter(){
-	if (document.forms["paypalform"]["twitter"].value == "@"){
-		document.forms["paypalform"]["twitter"].value = "";
+	var name = document.forms["paypalform"]["name"];
+	var twitter = document.forms["paypalform"]["twitter"];
+	
+	if (twitter.value == "@"){
+		twitter.value = "";
+	}
+	
+	if(name.value == "" && twitter.value != ""){
+		name.setAttribute("required", true);
+	}
+	else {
+		name.removeAttribute("required");
 	}
 }
