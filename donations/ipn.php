@@ -35,7 +35,7 @@
         curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 
-        if(!($res = curl_exec($ch)) ) {
+        if(!($res = curl_exec($ch))){
             curl_close($ch);
             exit;
         }

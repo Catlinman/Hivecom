@@ -1,8 +1,3 @@
-function roundNumber(number, decimals) {
-	var newnumber = new Number(number + '').toFixed(parseInt(decimals));
-	document.roundform.roundedfield.value =  parseFloat(newnumber);
-}
-
 function validateDonation() {
 	var name = document.forms["paypalform"]["name"].value;
 	var twitter = document.forms["paypalform"]["twitter"].value;
@@ -16,7 +11,7 @@ function validateDonation() {
 	}
 
 	if(twitter != "") {
-		twitter = twitter.replace(/[|&;$%@"<>()+,]/g, "");
+		twitter = twitter.substr(1, twitter.length);
 	}
 
 	if(name != "") {
@@ -24,4 +19,23 @@ function validateDonation() {
 	}
 
 	return true;
+}
+
+
+function onkeyTwitter(){
+	if(document.forms["paypalform"]["twitter"].value.charAt(0) != "@"){
+		document.forms["paypalform"]["twitter"].value = "@" + document.forms["paypalform"]["twitter"].value;
+	}
+}
+
+function onfocusTwitter(){
+	if (document.forms["paypalform"]["twitter"].value == ""){
+		document.forms["paypalform"]["twitter"].value = "@";
+	}
+}
+
+function onfocusoutTwitter(){
+	if (document.forms["paypalform"]["twitter"].value == "@"){
+		document.forms["paypalform"]["twitter"].value = "";
+	}
 }

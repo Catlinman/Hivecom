@@ -25,8 +25,6 @@
             <div class="contentzone shadowed">
                 <br>
                 <h4 class="centered">Make a donation</h4>
-                <h4 class="centered">- This area is currently in still in development -</h4>
-                <h4 class="centered">Please don't be silly and enter your info kthxbai</h4>
                 <noscript id="jsnotice">
                     <p>
                         Javascript have been detected as disabled - some elements might not function as intended
@@ -40,11 +38,11 @@
                         Leave the personal information fields empty if you wish to make an anonymous donation.
                     </p>
                 </div>
-                <form name="paypalform" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return validateDonation()">
+                <form name="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return validateDonation()">
                     <div class="jsenabled">
                         <label for="amount">Personal information:</label>
-                        <input type="text" name="name" maxlength="255" placeholder="Display name">
-                        <input type="text" name="twitter" maxlength="15" placeholder="Optional Twitter handle">
+                        <input type="text" name="name" maxlength="50" placeholder="Display name">
+                        <input type="text" name="twitter" maxlength="15" placeholder="Optional Twitter handle" onkeydown="onkeyTwitter()" onfocus="onfocusTwitter()" onfocusout="onfocusoutTwitter()" pattern="^@?(\w){1,15}$" title="May not contain spaces or special characters">
                         <br>
                     </div>
                     <label for="amount">Enter the amount you wish to donate:</label>
@@ -84,7 +82,7 @@
                         while($row = mysql_fetch_row($result)){
                             echo '<li title="'. $row[1]. '">'. $row[1]. '</li><li>'. date_format(date_create($row[4]), 'd.m.Y'). '</li><li>'. $row[3]. '€</li>';
                             if($row[5] != NULL){
-                                echo '<li><a href="https://twitter.com/'. ltrim($row[5], "@"). '">'. $row[5]. '</a></li>';
+                                echo '<li><a href="https://twitter.com/'. $row[5]. '">@'. $row[5]. '</a></li>';
                             } else {
                                 echo '<li><br></li>';
                             }
