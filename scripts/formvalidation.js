@@ -16,7 +16,7 @@ function validateDonation() {
 		custom.value = name.value + "," + twitter.value;
 	}
 
-	return false;
+	return true;
 }
 
 

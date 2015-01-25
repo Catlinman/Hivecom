@@ -1,9 +1,9 @@
 <?php
 	ini_set("log_errors", 1);
 	ini_set("error_log", $_SERVER['DOCUMENT_ROOT']. "/logs/ipn-error.log");
-	
+
 	$sandboxed = false;
-	
+
 	// Start IPN validation
 	$raw_post_data = file_get_contents('php://input');
 	$raw_post_array = explode('&', $raw_post_data);
@@ -50,14 +50,14 @@
 	curl_close($ch);
 	// End IPN validation
 
-    if (strcmp($res, "VERIFIED") == 0){
+	if (strcmp($res, "VERIFIED") == 0){
 		try {
 			if(!empty($_POST['payer_email'])){
 				$email = $_POST['payer_email'];
 			} else {
 				$email = "placeholder@email.com";
 			}
-	
+
 			if(!empty($_POST['mc_gross'])){
 				$payment_amount = $_POST['mc_gross'];
 			} else {
@@ -86,7 +86,7 @@
 					// error_log("COUNT: ". count($dataarray). " || POST: ". $_POST['custom']);
 				}
 			}
-	
+
 			$table = 'donation_progress';
 			$query = mysql_query("UPDATE {$table} SET amount = amount + {$payment_amount}");
 		}
@@ -94,7 +94,7 @@
 			error_log($e);
 		}
 
-    } else if (strcmp ($res, "INVALID") == 0) {
-        error_log("Received an invalid response");
-    }
+	} else if (strcmp ($res, "INVALID") == 0) {
+		error_log("Received an invalid response");
+	}
 ?>
