@@ -13,6 +13,7 @@
             include_once($_SERVER['DOCUMENT_ROOT']. "/resources/header.php");
         ?>
         <div id="titlediv">
+	        <img src="/images/metaicon.png" width="512"/>
             <h2>
                 Donation Center
             </h2>
@@ -41,7 +42,7 @@
                 <form name="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return validateDonation()">
                     <div class="jsenabled">
                         <label for="amount">Personal information:</label>
-                        <input type="text" name="name" maxlength="50" placeholder="Display name">
+                        <input type="text" name="name" maxlength="50" placeholder="Display name" pattern="^([a-zA-Z]+\s?)*$" title="May only contain characters without multiple spaces inbetween.">
                         <input type="text" name="twitter" maxlength="15" placeholder="Optional Twitter handle" onkeydown="onkeyTwitter()" onfocus="onfocusTwitter()" onfocusout="onfocusoutTwitter()" pattern="^@?(\w){1,15}$" title="May not contain spaces or special characters">
                         <br>
                     </div>
@@ -62,7 +63,7 @@
                     require_once($_SERVER['DOCUMENT_ROOT']. "/scripts/private/sqlauth.php");
                     $table = 'donations';
 
-                    $result = mysql_query("SELECT * FROM {$table}");
+                    $result = mysql_query("SELECT * FROM {$table} ORDER BY amount DESC;");
                     $fields_num = mysql_num_fields($result);
 
                     if(mysql_num_rows($result) != 0){

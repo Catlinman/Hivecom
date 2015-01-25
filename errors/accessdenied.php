@@ -11,7 +11,8 @@
         <?php
             include_once($_SERVER['DOCUMENT_ROOT']. "/resources/header.php");
         ?>
-        <div id="titlediv" class="">
+        <div id="titlediv">
+	        <img src="/images/metaicon.png" width="512"/>
             <h2>
                 Access denied
             </h2>

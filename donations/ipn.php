@@ -58,7 +58,7 @@
             $payment_amount = 1;
         }
 
-        if(!empty($_POST["custom"])){
+        if(!empty($_POST['custom'])){
             $dataarray = explode(",", $_POST["custom"]);
 
             require_once($_SERVER['DOCUMENT_ROOT']. "/scripts/private/sqlauth.php");
