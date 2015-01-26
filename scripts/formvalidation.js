@@ -4,33 +4,43 @@ function validateDonation() {
 	var amount = document.forms["paypalform"]["amount"];
 	var custom = document.forms["paypalform"]["custom"];
 	
-	if(twitter != "" && name.value == ""){
+	if(twitter.value != "" && name.value == ""){
 		alert("Please specify a name before proceeding to PayPal");
 		name.focus();
 		return false;
 	}
 	
-	if(name != "") {
+	if(name.value != ""){
 		if(!name.value.match("^([a-zA-Z]+ ?)*$")){
 			alert("Please enter a name without multiple spaces and special characters");
 			name.focus();
 			return false;
-		}
-		if(twitter != ""){
-			if(!/^@?(\w){1,15}$/.test(twitter.value)){
-				alert("Please enter a valid Twitter handle");
-				twitter.focus();
+		} else {
+			if(name.value.length > 35){
+				alert("Please enter a name containing less than 35 characters");
+				name.focus();
 				return false;
 			}
 		}
-		custom.value = name.value + "," + twitter.value.replace("@", "");
+	
+		if(twitter.value != ""){
+			if(!/^@(\w){1,15}$/.test(twitter.value)){
+				alert("Please enter a valid Twitter handle starting with an @ symbol, containing less than 15 characters and no special characters");
+				twitter.focus();
+				return false;
+			}
+			
+			custom.value = name.value + "," + twitter.value.replace("@", "");
+		} else {
+			custom.value = name.value + ",";	
+		}
 	}
 	
 	if(amount.value == ""){
 		alert("Please enter an amount before proceeding to PayPal");
 		amount.focus();
 		return false;
-	} else{
+	} else {
 		if(parseFloat(amount.value ) < 1){
 			alert("The amount should not be less than " + 1 + "€");
 			amount.focus();

@@ -67,24 +67,39 @@
 			require_once($_SERVER['DOCUMENT_ROOT']. "/scripts/private/sqlauth.php");
 			
 			if(!empty($_POST['custom'])){
-				$dataarray = explode(",", $_POST["custom"]);
-				if(count($dataarray) == 2){
-					if($dataarray[0] != ""){
-						$table = 'donations';
-			
-						$querystring =
-							"INSERT INTO {$table} (name, email, amount, date, twitter) VALUES (\"".
-							$dataarray[0]. '","'.
-							$email. '",'.
-							$payment_amount. ',"'.
-							date('Y-m-d'). '","'.
-							$dataarray[1]. '");';
-			
-						$query = mysql_query((string)$querystring);
+				if(strlen($_POST['custom']) < 50){
+					$datastring = explode(",", $_POST["custom"]);
+		
+					if(count($datastring) == 2){
+						if($datastring[0] != ""){
+							$table = 'donations';
+							
+							$querystring =
+								"INSERT INTO {$table} (name, email, amount, date, twitter) VALUES (\"".
+								$datastring[0]. '","'.
+								$email. '",'.
+								$payment_amount. ',"'.
+								date('Y-m-d'). '","'.
+								$datastring[1]. '");';
+				
+							$query = mysql_query((string)$querystring);
+						}
+					} else {
+						// error_log("COUNT: ". count($dataarray). " || POST: ". $_POST['custom']);
 					}
-				} else {
-					// error_log("COUNT: ". count($dataarray). " || POST: ". $_POST['custom']);
 				}
+			} else{
+				$table = 'donations';
+				
+				$querystring =
+					"INSERT INTO {$table} (name, email, amount, date, twitter) VALUES (\"".
+					"Anonymous". '","'.
+					$email. '",'.
+					$payment_amount. ',"'.
+					date('Y-m-d'). '","'.
+					"". '");';
+	
+				$query = mysql_query((string)$querystring);
 			}
 	
 			$table = 'donation_progress';

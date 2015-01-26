@@ -40,8 +40,8 @@
                     </p>
                     <form name="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return validateDonation()">
                         <label for="amount">Personal information:</label>
-                        <input type="text" name="name" maxlength="50" placeholder="Display name" pattern="^([a-zA-Z]+\s?)*$" title="May only contain characters without multiple spaces inbetween">
-                        <input type="text" name="twitter" maxlength="15" placeholder="Optional Twitter handle" onkeydown="onkeyTwitter()" onfocus="onfocusTwitter()" onfocusout="onfocusoutTwitter()" pattern="^@?(\w){1,15}$" title="May not contain spaces or special characters">
+                        <input type="text" name="name" maxlength="35" placeholder="Display name" pattern="^([a-zA-Z]+\s?)*$" title="May only contain characters without multiple spaces inbetween">
+                        <input type="text" name="twitter" maxlength="15" placeholder="Optional Twitter handle" onkeydown="onkeyTwitter()" onfocus="onfocusTwitter()" onfocusout="onfocusoutTwitter()" pattern="^@(\w){1,15}$" title="Must start with an @ symbol, be below 15 characters and not contain spaces or special characters">
                         <br>
                         <label for="amount">Enter the amount you wish to donate:</label>
                         <input type="number" name="amount" min="1.00" step="0.01" max="250" placeholder="Donation amount in Euros" required>
