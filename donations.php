@@ -26,10 +26,11 @@
             <div class="contentzone shadowed">
                 <br>
                 <h4 class="centered">Make a donation</h4>
-                <noscript id="jsnotice">
+                <noscript class="notice">
                     <p>
                         Javascript have been detected as disabled - some elements might not function as intended
                     </p>
+                    <div class="horizontal-line"></div>
                 </noscript>
                 <div class="jsenabled">
                     <p class="centered">
@@ -50,7 +51,7 @@
                         <input type="hidden" name="cmd" value="_xclick">
                         <input type="hidden" name="business" value="dev.catlinman@gmail.com">
                         <input type="hidden" name="custom" value="">
-                        <input type="hidden" name="notify_url" value="http://hivecom.net/donations/ipn/">
+                        <input type="hidden" name="notify_url" value="http://hivecom.net/donations/ipn/"> 
                         <input type="hidden" name="return" value="http://hivecom.net/donations/success/">
                         <input type="hidden" name="cancel_return" value="http://hivecom.net/donations/">
                         <input type="submit" value="Proceed to PayPal">

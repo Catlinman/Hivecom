@@ -32,11 +32,24 @@
         <div class="divider"></div>
         <div class="contentdiv striped">
             <div class="contentzone shadowed">
-                <noscript id="jsnotice">
+                <noscript class="notice">
                     <p>
                         Javascript have been detected as disabled - some elements might not function as intended
                     </p>
+                    <div class="horizontal-line"></div>
                 </noscript>
+                <?php
+					if($online == FALSE){
+						echo '<div class="notice">
+								<p>
+									The Hivecom server appears to be offline at the moment. For more information take a look at the
+									<a href="https://twitter.com/hivecomts">Hivecom Twitter feed</a> or check
+									<a href="https://clients.fragnet.net/serverstatus.php?view=open">Fragnet\'s network status center</a>.
+								</p>
+								<div class="horizontal-line"></div>
+							</div>';
+					}
+				?>
                 <p>
                     Hivecom is a community based around a Teamspeak server hosted by a few cool people from all around the world.
                     We're a constantly growing group open to those willing to join. The community itself is partially made up of a few others
