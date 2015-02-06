@@ -50,7 +50,7 @@
                         <input type="hidden" name="cmd" value="_xclick">
                         <input type="hidden" name="business" value="dev.catlinman@gmail.com">
                         <input type="hidden" name="custom" value="">
-                        <input type="hidden" name="notify_url" value="http://hivecom.net/donations/ipn/"> 
+                        <input type="hidden" name="notify_url" value="http://hivecom.net/donations/ipn/">
                         <input type="hidden" name="return" value="http://hivecom.net/donations/success/">
                         <input type="hidden" name="cancel_return" value="http://hivecom.net/donations/">
                         <input type="submit" value="Proceed to PayPal">

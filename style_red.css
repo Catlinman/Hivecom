@@ -34,7 +34,7 @@ header {
     border-top: 1px solid #271d1d;
 }
 #navmenu a:hover {
-    color: #b82f2f;
+    color: #ff3333;
     background: #251515;
     background: -moz-linear-gradient(top, #251515 1%, #151515 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #251515), color-stop(100%, #151515));
@@ -63,7 +63,7 @@ header {
     border-top: 1px solid #6d1212;
 }
 .striped {
-    background: url();
+	background: url(/images/stripe3.png);
 }
 .gradient {
     background: -moz-linear-gradient(left, #0b0b0b 10%, #1e1313 50%, #0b0b0b 90%);
@@ -75,5 +75,29 @@ header {
 }
 #footercontainer {
     border-top: 1px solid #530f0f;
-    border-bottom: 1px solid #393f2f;
+}
+.profileimage:hover {
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(255, 50, 20, 1);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(255, 50, 20, 1);
+    box-shadow: 0px 0px 4px 0px rgba(255, 50, 20, 1);
+}
+.meter {
+    border: 1px solid #440606;
+}
+.meter > span {
+    background-color: #ff3333;
+}
+::-webkit-scrollbar-thumb {
+    background: #550505;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ff3333;
+}
+input {
+    border: 1px solid #441616;
+}
+input:focus {
+    border: 1px solid #ff3333;
 }
