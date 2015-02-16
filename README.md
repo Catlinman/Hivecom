@@ -4,4 +4,4 @@ This is the main repository containing the files that make up the [Hivecom websi
 
 ## License ##
 
-This repository is released under the MIT license. For more information please refer to [LICENSE](https://github.com/Catlinman/Hivecom/blob/master/LICENSE)
+This repository is released under the MIT license. For more information please refer to [LICENSE](https://github.com/Catlinman/hivecom.net/blob/master/LICENSE)
