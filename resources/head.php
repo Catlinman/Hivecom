@@ -1,4 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="Hivecom is an open gaming community for anyone to feel free to join - we also host a Teamspeak 3 server under the same name">
 <meta name="keywords" content="hivecom,teamspeak,catlinman,jokler,trif,cobalt community,game server,voice server">
 <meta name="author" content="Hivecom Team - Catlinman">
