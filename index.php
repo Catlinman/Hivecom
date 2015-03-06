@@ -40,13 +40,14 @@
                 </noscript>
                 <?php
 					if($online == FALSE){
-						echo '<div class="notice">
-								<p>
-									The Hivecom server appears to be offline at the moment. For more information take a look at the
-									<a href="https://twitter.com/hivecomts">Hivecom Twitter feed</a> or check
-									<a href="https://clients.fragnet.net/serverstatus.php?view=open">Fragnet\'s network status center</a>.
-								</p>
-								<div class="horizontal-line"></div>
+						echo 
+							'<div class="notice">
+							<p>
+							The Hivecom server appears to be offline at the moment. For more information take a look at the
+							<a href="https://twitter.com/hivecomts">Hivecom Twitter feed</a> or check
+							<a href="https://clients.fragnet.net/serverstatus.php?view=open">Fragnet\'s network status center</a>.
+							</p>
+							<div class="horizontal-line"></div>
 							</div>';
 					}
 				?>
