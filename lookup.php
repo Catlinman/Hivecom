@@ -26,7 +26,7 @@
                 <?php
                     if($online == TRUE){
                         echo
-                            '<form action="result" method="get">
+                            '<form action="finduser" method="get">
                                 <label>Lookup name</label>
                                 <input type="text" name="name" maxlength="30">
                                 <input type="submit">
@@ -41,9 +41,9 @@
 
                         foreach($clients as $c){
                             if($c != $lastClient){
-                                echo '<a href="result?name='. $c. '">'. $c .'</a> | ';
+                                echo '<a href="finduser?name='. $c. '">'. $c .'</a> | ';
                             } else{
-                                echo '<a href="result?name='. $c. '">'. $c .'</a>';
+                                echo '<a href="finduser?name='. $c. '">'. $c .'</a>';
                             }
                         }
 
