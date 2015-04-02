@@ -177,10 +177,9 @@
             <div class="divider"></div>
             <div class="contentzone shadowed">
                 <p>
-                    The server is mainly managed by the three server administrators:
-                    <i><a href="https://twitter.com/catlinman_" alt="Catlinman">Catlinman</a></i>,
-                    <i><a href="https://twitter.com/jokler13" alt="Jokler">Jokler</a></i> and
-                    <i><a href="https://twitter.com/trif4" alt="Trif">Trif</a></i>.
+                    The server is mainly managed by the two server administrators:
+                    <i><a href="https://twitter.com/catlinman_" alt="Catlinman">Catlinman</a></i> and
+                    <i><a href="https://twitter.com/jokler13" alt="Jokler">Jokler</a></i>.
                     All three started hosting a server back in 2013 on a local machine. The demand for a better
                     connection and a 24/7 uptime made them reconsider this small hosting plan. They later on that year went over
                     to actually acquiring a dedicated Teamspeak server from
@@ -201,10 +200,6 @@
                         <a href="https://twitter.com/catlinman_"><img class="profileimage" src="images/profile_catlinman.png"/></a>
                     </div>
                     <div class="profilecontainer">
-                        <h3>Trif</h3>
-                        <a href="https://twitter.com/trif4"><img class="profileimage" src="images/profile_trif.png"/></a>
-                    </div>
-                    <div class="profilecontainer">
                         <h3>Jokler</h3>
                         <a href="https://twitter.com/jokler13"><img class="profileimage" src="images/profile_jokler.png"/></a>
                     </div>
@@ -217,6 +212,7 @@
                         <a href="https://twitter.com/DolanCZ"><li>DolanCZ</li></a> |
                         <a href="https://twitter.com/narrgo"><li>Gonarr</li></a> |
                         <a href="https://twitter.com/Isogash"><li>Isogash</li></a> |
+                        <a href="https://twitter.com/SimonWodrich"><li>Locke</li></a> |
                         <a href="https://twitter.com/Neko_no_kemono"><li>Raykatz</li></a>
                     </ul>
                 </div>
