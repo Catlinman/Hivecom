@@ -50,7 +50,7 @@
 	curl_close($ch);
 	// End IPN validation
 
-    if (strcmp($res, "VERIFIED") == 0){
+	if (strcmp($res, "VERIFIED") == 0){
 		try {
 			if(!empty($_POST['payer_email'])){
 				$email = $_POST['payer_email'];
@@ -109,7 +109,7 @@
 			error_log($e);
 		}
 
-    } else if (strcmp ($res, "INVALID") == 0) {
-        error_log("Received an invalid response");
-    }
+	} else if (strcmp ($res, "INVALID") == 0) {
+		error_log("Received an invalid response");
+	}
 ?>

@@ -21,21 +21,21 @@
 <link rel="stylesheet" type="text/css" href="/style.css">
 
 <?php
-    include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");
+	include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");
+	require_once($_SERVER['DOCUMENT_ROOT']. "/lib/TeamSpeak3/TeamSpeak3.php");
+	
+	TeamSpeak3::init();
 
-    require_once($_SERVER['DOCUMENT_ROOT']. "/lib/TeamSpeak3/TeamSpeak3.php");
-    TeamSpeak3::init();
+	$online = FALSE;
 
-    $online = FALSE;
+	try {
+		$ts3 = TeamSpeak3::factory("serverquery://nl-voice.fragnet.net:10011/?server_port=10084&use_offline_as_virtual=1&no_query_clients=1");
 
-    try {
-        $ts3 = TeamSpeak3::factory("serverquery://nl-voice.fragnet.net:10011/?server_port=10084&use_offline_as_virtual=1&no_query_clients=1");
+		$online = TRUE;
 
-        $online = TRUE;
-    }
-    catch (Exception $e){
-        echo '<link rel="stylesheet" type="text/css" href="/style_red.css">';
-    }
+	} catch (Exception $e){
+		echo '<link rel="stylesheet" type="text/css" href="/style_red.css">';
+	}
 ?>
 
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Aldrich'>
