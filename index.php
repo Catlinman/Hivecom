@@ -179,8 +179,8 @@
 			<div class="contentzone shadowed">
 				<p>
 					The server is mainly managed by the two server administrators:
-					<i><a href="https://twitter.com/catlinman_" alt="Catlinman">Catlinman</a></i> and
-					<i><a href="https://twitter.com/jokler13" alt="Jokler">Jokler</a></i>.
+					<i><a href="https://twitter.com/Catlinman_" alt="Catlinman">Catlinman</a></i> and
+					<i><a href="https://twitter.com/Jokler" alt="Jokler">Jokler</a></i>.
 					All three started hosting a server back in 2013 on a local machine. The demand for a better
 					connection and a 24/7 uptime made them reconsider this small hosting plan. They later on that year went over
 					to actually acquiring a dedicated Teamspeak server from
@@ -198,11 +198,11 @@
 					<h3 style="padding:2px;">Administrators</h3>
 					<div class="profilecontainer">
 						<h3>Catlinman</h3>
-						<a href="https://twitter.com/catlinman_"><img class="profileimage" src="images/profile_catlinman.png"/></a>
+						<a href="https://twitter.com/Catlinman_"><img class="profileimage" src="images/profile_catlinman.png"/></a>
 					</div>
 					<div class="profilecontainer">
 						<h3>Jokler</h3>
-						<a href="https://twitter.com/jokler13"><img class="profileimage" src="images/profile_jokler.png"/></a>
+						<a href="https://twitter.com/Jokler"><img class="profileimage" src="images/profile_jokler.png"/></a>
 					</div>
 				</div>
 				<div class="horizontal-line"></div>
