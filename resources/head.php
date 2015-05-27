@@ -18,6 +18,7 @@
 
 <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
 <link rel="icon" href="/images/icon.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple-icon.png">
 <link rel="stylesheet" type="text/css" href="/style.css">
 
 <?php
