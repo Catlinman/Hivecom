@@ -24,9 +24,8 @@
 <?php
 	include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");
 	require_once($_SERVER['DOCUMENT_ROOT']. "/lib/TeamSpeak3/TeamSpeak3.php");
-	
-	TeamSpeak3::init();
 
+	TeamSpeak3::init();
 	$online = FALSE;
 
 	try {
@@ -34,7 +33,7 @@
 
 		$online = TRUE;
 
-	} catch (Exception $e){
+	} catch (Exception $e) {
 		echo '<link rel="stylesheet" type="text/css" href="/style_red.css">';
 	}
 ?>

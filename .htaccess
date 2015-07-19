@@ -1,7 +1,8 @@
-Options -Indexes
 
-Options +FollowSymlinks -MultiViews
+Options +FollowSymlinks -MultiViews -Indexes
+
 RewriteEngine on
+RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-d
 
@@ -22,6 +23,9 @@ RewriteRule ^(.*)$ $1.html
 
 RewriteCond %{HTTP_HOST} ^ts.hivecom.net
 RewriteRule ^(.*)$ http://hivecom.net/ts [L,NC,QSA]
+
+RewriteCond %{HTTP_HOST} ^znc.hivecom.net
+RewriteRule ^(.*)$ http://hivecom.net:9001 [L,NC,QSA]
 
 ErrorDocument 404 /errors/notfound.php
 ErrorDocument 403 /errors/accessdenied.php

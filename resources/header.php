@@ -2,7 +2,7 @@
 	<div id="headerinfo">
 		<h3>
 			<?php
-				if($online == TRUE){
+				if($online == TRUE) {
 					echo '<a href="/index.php">HIVECOM</a>';
 				} else {
 					echo '<a href="/index.php">HIVECOM | OFFLINE</a>';

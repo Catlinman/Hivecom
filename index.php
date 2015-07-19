@@ -32,6 +32,18 @@
 		<div class="divider"></div>
 		<div class="contentdiv striped">
 			<div class="contentzone shadowed">
+				<div>
+					<?php
+						$messagefile = fopen($_SERVER['DOCUMENT_ROOT']. "/resources/broadcast.txt", "r");
+						$message = fgets($messagefile);
+						if($message != "") {
+							echo '<br><h4 class="centered">Announcement</h4>';
+							echo '<p class="centered">'. $message. '</p>';
+							echo '<div class="horizontal-line"></div>';
+						}
+						fclose($messagefile);
+					?>
+				</div>
 				<noscript class="notice">
 					<p>
 						Javascript have been detected as disabled - some elements might not function as intended
