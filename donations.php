@@ -46,9 +46,7 @@
 				<h4 class="centered">List of donations</h4>
 				<?php
 					if($db_success) {
-						$table = 'donations';
-
-						$result = mysql_query("SELECT * FROM {$table} ORDER BY amount DESC;");
+						$result = mysql_query("SELECT * FROM donations ORDER BY amount DESC;");
 						$fields_num = mysql_num_fields($result);
 
 						if(mysql_num_rows($result) != 0){
