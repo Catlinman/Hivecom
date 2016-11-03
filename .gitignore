@@ -1,6 +1,4 @@
-_notes/
-/files
-/scripts/private
-/logs
-/lib
-/data
+private/data
+private/log
+private/sqlauth.php
+public/img/users
