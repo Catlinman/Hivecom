@@ -1,4 +1,7 @@
 private/data
 private/log
-private/sqlauth.php
+private/library
+private/authentication
 public/img/users
+public/img/flags
+public/img/icons

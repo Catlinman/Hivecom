@@ -1,5 +1,6 @@
 body {
 	background-color: #181e13;
+	color: #d0d0d0;
 	margin: 0px;
 	overflow-y: auto;
 }
@@ -91,6 +92,7 @@ header {
 }
 
 footer {
+
 	background: #0a0a0a;
 	height: 86px;
 }
@@ -304,12 +306,11 @@ label {
 
 #twitterhivecom {
 	padding: 16px;
-	float: right;
 	display: inline-block;
 }
 
 #twitterhivecom > h3 {
-	text-align: right;
+	text-align: center;
 	font-size: 18px;
 	margin-bottom: 8px;
 }
@@ -501,6 +502,8 @@ label {
 	border-top: 1px solid #385510;
 	border-bottom: 1px solid #252525;
 	text-align: center;
+	font-size: 14px;
+	line-height: 20px;
 	padding: 8px;
 }
 

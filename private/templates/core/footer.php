@@ -1,8 +1,9 @@
 <footer>
 	<div id="footercontainer" class="shadowed">
-		<a href="http://catlinman.com/" alt="Catlinman homepage">&copy Catlinman 2013 - <?php echo date("Y"); ?></a>
+		<a href="https://catlinman.com/" alt="Catlinman website">&copy Catlinman 2013 - <?php echo date("Y"); ?></a>
         <br>
-        <a href="https://github.com/Catlinman/hivecom.net" style="font-size:12px" alt="GitHub">Source code on GitHub</a>
+        <a href="/pages/terms-and-conditions" alt="GitHub">Terms &amp; Conditions</a> |
+        <a href="https://github.com/catlinman/hivecom.net" alt="GitHub">Site source code</a>
     </div>
 </footer>
 <script>

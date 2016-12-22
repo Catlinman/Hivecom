@@ -1,18 +1,24 @@
 <?php
 
-	// TODO: Define global variables that handle activity of server and current query connection.
+// Define constants for the paths used in the project.
+defined("LOG_PATH")
+    or define("LOG_PATH", realpath(dirname(__FILE__) . "/log"));
 
-    defined("LOG_PATH")
-        or define("LOG_PATH", realpath(dirname(__FILE__) . '/log'));
+defined("SOURCE_PATH")
+    or define("HELPERS_PATH", realpath(dirname(__FILE__) . "/helpers"));
 
-    defined("LIBRARY_PATH")
-        or define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));
+defined("AUTH_PATH")
+    or define("AUTH_PATH", realpath(dirname(__FILE__) . "/authentication"));
 
-    defined("TEMPLATES_PATH")
-        or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+defined("LIBRARY_PATH")
+    or define("LIBRARY_PATH", realpath(dirname(__FILE__) . "/library"));
 
-    ini_set("error_reporting", "true");
-    ini_set("log_errors", 1);
-    ini_set("error_log", "/log/php-error.log");
-    error_reporting(E_ALL|E_STRCT);
-?>
+defined("TEMPLATES_PATH")
+    or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . "/templates"));
+
+// Set error log levels and default output.
+ini_set("log_errors", 1);
+ini_set("error_log", LOG_PATH . "/log/php-error.log");
+
+// Set which errors should be reported.
+error_reporting(E_ALL);
