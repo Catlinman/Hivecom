@@ -19,21 +19,13 @@
 <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
 <link rel="icon" href="/img/icon.png" type="image/x-icon">
 <link rel="apple-touch-icon" href="/img/apple-icon.png">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-
-<?php
-require_once(HELPERS_PATH . "/Teamspeak.php");
-
-HivecomTeamspeak::connect();
-
-if (!HivecomTeamspeak::$query) {
-    echo '<link rel="stylesheet" type="text/css" href="/css/style-red.css">';
-}
-?>
-
-<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Aldrich'>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/analytics.min.js"></script>
 <script type="text/javascript" src="/js/smooth-scroll.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Aldrich'>
+
+<?php include_once(TEMPLATES_PATH . "/core/connections.php");?>

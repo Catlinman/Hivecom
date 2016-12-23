@@ -1,3 +1,4 @@
+
 <?php require_once(realpath(dirname(__FILE__) . "/../private/config.php"));?>
 <!DOCTYPE html>
 <html>
@@ -9,160 +10,172 @@
 
 <body>
     <div id="wrapper">
-		<!-- HEADER & TOP BAR -->
+		<!-- Page bar with home navigation and login option -->
         <?php include_once(TEMPLATES_PATH . "/core/header.php");?>
 
-		<!-- MAIN LANDING AND CURRENT PAGE TITLE/INFORMATION -->
-        <div id="titlediv" class="noselect">
-            <img src="img/metaicon.png" width="512"/>
+		<!-- Main headline with page information and title -->
+        <div id="headline" class="noselect">
+            <img src="/img/metaicon.png" width="512"/>
             <h2>
                 Welcome to Hivecom
             </h2>
             <p>
-                - Official website of the Hivecom Teamspeak server -
+                - Official website of the Hivecom community -
             <p>
         </div>
 
-		<!-- INDEX PAGE NAVIGATION -->
-        <div id="navcontainer">
-            <nav id="navmenu"  class="shadowed">
-                <a href="/ts.php" id="tsbutton" alt="Connect to the Hivecom Teamspeak server">CONNECT USING TEAMSPEAK</a>
-                <a data-scroll href="#server" id="serverbutton" alt="Server information">THE SERVER</a>
-                <a data-scroll href="#about" id="aboutbutton" alt="The people behind Hivecom">ABOUT US</a>
+		<!-- Page navigation bar with buttons -->
+        <div id="navcontainer" class="shadowed">
+            <nav id="navmenu">
+                <a href="/ts.php" class="navlarge" alt="Connect to the Hivecom Teamspeak server">CONNECT TO TEAMSPEAK</a>
+				<a href="/dc.php" class="navlarge" alt="Connect to the Hivecom Discord server">CONNECT TO DISCORD</a>
+				<a data-scroll href="#news" class="navsmall" alt="Hivecom news and announcements">NEWS</a>
+                <a data-scroll href="#voice" class="navsmall" alt="Voice servers run by Hivecom">VOICE SERVERS</a>
+                <a data-scroll href="#game" class="navsmall" alt="Game servers run by Hivecom">GAME SERVERS</a>
+				<a data-scroll href="#community" class="navsmall" alt="The people behind Hivecom">COMMUNITY</a>
             </nav>
         </div>
 
         <div class="divider"></div>
 
-		<!-- CONTENT DIVIDER WITH SUMMARY & BANNERS -->
+		<!-- Site summary with possible information banners -->
         <div class="contentdiv striped">
-            <div class="contentzone shadowed">
-				<!-- BANNERS FOR WARNINGS AND ANNOUNCEMENTS -->
+            <div class="content shadowed">
+				<!-- Banners for warnings and important announcements -->
 				<?php include_once(TEMPLATES_PATH . "/banner/warnings.php");?>
 				<?php include_once(TEMPLATES_PATH . "/banner/news.php");?>
-                <p>
-                    Hivecom is a community based around a Teamspeak server hosted by a few cool people from all around the world.
-                    We're a constantly growing group open to those willing to join. The community itself is partially made up of a few others
-                    that generally enjoy playing games and are looking for a simple place to hang out and chat. The
-                    most prominent folks on the server are those of the
-                    <i><a href="http://webchat.esper.net/?channels=cobalt" alt="Espernet IRC">Cobalt IRC community</a></i>. Of course they
-                    are not all - over the time that the server was initially hosted we've also picked up friends of friends and even
-                    complete strangers to some. As mentioned, people from all around the world are known visitors of the server. The
-                    range goes from countries like New Zealand, over to all of Europe and across to North America.
-                    <br>
-                    <br>
-                    Interested? Check out the server section for more information on how to become registered. We hope to see you amidst us!
-                    <br>
-                    <br>
-                    <i>The Hivecom Team</i>
+                <p class="centered">
+                    Main site information and short summary.
                 </p>
             </div>
         </div>
 
-		<!-- MAIN SERVER INFORMATION & CONTENT (TS+DC) -->
-        <div class="contentdiv gradient" id="server">
-            <h3 class="shadowed">The Teamspeak server</h3>
+		<!-- Main server news & announcements -->
+        <div class="contentdiv gradient" id="news">
+            <div class="contentheader shadowed">NEWS &amp; ANNOUNCEMENTS</div>
             <div class="divider"></div>
-            <div class="contentzone shadowed">
-                <p>
-                    The Hivecom Teamspeak server is hosted over at <i><a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a></i>
-                    and is situated in Amsterdam. At this current point in time the server has a total of
+            <div class="content shadowed">
+                <?php include_once(TEMPLATES_PATH . "/module/announcements.php");?>
+				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
+            </div>
+        </div>
 
-                    slots open to anyone willing to join. Within the server there are a few specified groups of users that
-                    have different levels of interaction on the server.
-                    <br>
-                    <br>
-                    Non-registered users are restricted to the
-                    lobby and the one open hub while registered users and up are allowed to move as they see fit. They
-                    also have the option of creating their own temporary private channels which they can use to moderate
-                    on their own. We also have a group of moderators that keep track of what goes about on the server
-                    when there are no administrators in sight. They generally have the option to register new users as well as to
-                    kick and move any registered and non-registered user as they see fit. For more information on how to
-                    become registered on Hivecom, see the section further below.
-                    <br>
-                    <br>
-                    There are a few options for connecting to the Teamspeak server. We suggest using the <i>'Connect to Teamspeak'</i>
-                    button at the top of the page and then having you save the server address as a bookmark. You can however
-                    also connect directly using "<i>ts.hivecom.net</i>".
-                </p>
-                <div class="horizontal-line"></div>
-                <?php include_once(TEMPLATES_PATH. "/module/twitter.php");?>
+		<!-- Voice server information and current connection data (TS+DC) -->
+		<div class="contentdiv gradient" id="voice">
+			<div class="contentheader shadowed">VOICE SERVERS</div>
+			<div class="divider"></div>
+			<div class="content shadowed">
+				<p>
+					Short summary about the hosting information for both main voice servers.
+					<br>
+					<br>
+					There are a few options for connecting to our voice servers. We suggest using one of the connection
+					buttons at the top of the page and then having you save the server address as a bookmark. You can however
+					also connect directly using the login information for our servers listed further below.
+				<div class="split">
+					<div class="left"><h3>Teamspeak</h3><?php // TODO: Echo Teamspeak connection information. ?></div>
+					<div class="right"><h3>Discord</h3><?php // TODO: Echo Discord connection information. ?></div>
+				</div>
 				<div class="horizontal-line"></div>
-                <?php
-                if (HivecomTeamspeak::$query) {
-                    echo
-                    '
-					<p class="centered">Current connections: '. HivecomTeamspeak::$query->clientCount(). ' / '. HivecomTeamspeak::$query["virtualserver_maxclients"]. '</p>
-					<a href="lookup" class="centered"><h5>Click here to lookup a user</h5></a><br>
-					<div class="horizontal-line"></div>';
-                }
-                ?>
 
-                <p>
-                    Becoming registered can be done quite fast. If you are an outsider and do not know anyone
-                    within the Hivecom community, your best bet is to simply start a text chat with one of our
-                    moderators or administrators. Poking is allowed but we suggest not going overboard with it when
-                    trying to get someone's attention. From there on a quick introduction or hello world is
-                    all you should need if you were to want to become registered. The moderator or administrator
-                    should then ideally assign you to the registered server group allowing you to enter
-                    the main area of the Hivecom Teamspeak server.
-                    <br>
-                    <br>
-                    So, to keep the topic of becoming registered short: Ask politely. That is all you need to do.
-                </p>
-                <div class="horizontal-line"></div>
-                <p>
-                    Hivecom also has a <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">Teamspeak skin</a></i>
-                    you might want to try out. It's generally customized to fit the theme of Hivecom but it also
-                    works well on other Teamspeak servers. You can download the skin <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">here</a></i>.
-                </p>
-                <div class="horizontal-line"></div>
-                <h4 class="centered" style="margin-top:16px;">Keeping the server alive</h4>
-                <p>
-                    Due to the fact that this server and website is funded without any sponsoring or ads and is open to
-                    anyone to join and use, we encourage people to possibly donate a bit towards our yearly server costs.
-                    Catlinman is currently in charge of the entire server's costs meaning that any extra funds he receives
-                    will go towards maintaining and renewing the website and server.
-                </p>
+				<h4 class="centered">Member registration &amp; voice server management</h4>
+				<p>
+					Due to the fact that the server is open for anyone to join but we have limited slots and resources you will
+					require an invite in a way to become a voice server member. You can either receive your registered status by
+					creating and authenticating with an account on this page. You will then receive the basic registered status on all
+					our	voice servers. However, you will not be able to register any other members unless you are approved by our staff.
+					Non-registered users are restricted to the lobby while registered users and up are allowed to move as they see fit
+					and	create their own temporary private channels.
+					<br>
+					<br>
+					If you run a your own community and are looking for a free voice server	solution then we would gladly work out a
+					higher server ranking with you. Moderators can create permanent channels and are able to manage basic users making
+					it an ideal fit for easy sub community management. Although there are administrators present most of the time, our
+					setup relies a lot on our moderators to register new users and manage the server.
+					<br>
+					<br>
+					In case you do not intend to make an account here on our main website - we do encourage it though since it comes with
+					some perks such as cross server authentication - you can always connect to one of our voice servers and write a
+					moderator or administrator a message. Although approved users can register you as well they are most likely to
+					push the matter off onto a higher ranking member. In that sense, if you are worried just chill, write us and we
+					will see what we can do for you!
+				</p>
+				<div class="horizontal-line"></div>
 
-                <div class="horizontal-line"></div>
-                <div class="centerinfo">
-                    <a data-scroll href="#top" alt="Back to top">Back to top</a>
-                </div>
-            </div>
-        </div>
+				<h4 class="centered">Teamspeak skin</h4>
+				<p>
+					Hivecom also has a <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">Teamspeak skin</a></i>
+					you might want to try out. It's generally customized to fit the theme of Hivecom but it also
+					works well on other Teamspeak servers. You can download the skin <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">here</a></i>.
+				</p>
+				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
+			</div>
+		</div>
 
-		<!-- MAIN COMMUNITY BACKGROUND & MANAGEMENT -->
-        <div class="contentdiv gradient" id="about">
-            <h3 class="shadowed">The people behind Hivecom</h3>
+		<!-- Game server list and content links -->
+		<div class="contentdiv gradient" id="game">
+			<div class="contentheader shadowed">GAME SERVERS</div>
+			<div class="divider"></div>
+			<div class="content shadowed">
+				<p>
+					Write amazing information about the game servers Hivecom hosts here.
+				</p>
+				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
+			</div>
+		</div>
+
+		<!-- Main community background information, management & donations -->
+        <div class="contentdiv gradient" id="community">
+			<div class="contentheader shadowed">ABOUT THE HIVECOM COMMUNITY</div>
+            <h3 class="shadowed"></h3>
             <div class="divider"></div>
-            <div class="contentzone shadowed">
-                <p>
-                    The server is mainly managed by the two server administrators:
-                    <i><a href="https://twitter.com/Catlinman_" alt="Catlinman">Catlinman</a></i> and
-                    <i><a href="https://twitter.com/Jokler" alt="Jokler">Jokler</a></i>.
-                    All three started hosting a server back in 2013 on a local machine. The demand for a better
-                    connection and a 24/7 uptime made them reconsider this small hosting plan. They later on that year went over
-                    to actually acquiring a dedicated Teamspeak server from
-                    <i><a href="http://www.fragnet.net/" alt="Fragnet">Fragnet</a></i>.
-                    The server and domain costs are currently being covered by Catlinman while Jokler makes sure
-                    that the Raspberry Pi this website is running on stays online.
-                    <br>
-                    <br>
-                    Hivecom wouldn't be anything without it's members though. The server has a total of about
-                    200 registered members and is constantly growing. We also have moderators which take over some of the client management from
-                    time to time. The full list of the administrators and moderators can be seen below.
+            <div class="content shadowed">
+				<p>
+					Write about background.
+				</p>
+                <div class="horizontal-line"></div>
+
+				<h4 class="centered">The administrators</h4>
+				<?php include_once(TEMPLATES_PATH . "/module/admins.php");?>
+				<p>
+					Talk about admins and background here.
                 </p>
-                <div class="horizontal-line"></div>
-				<?php include_once(TEMPLATES_PATH. "/module/admins.php");?>
-                <div class="horizontal-line"></div>
-                <?php include_once(TEMPLATES_PATH. "/module/moderators.php");?>
-                <div class="centerinfo">
-                    <a data-scroll href="#top" alt="Back to top">Back to top</a>
-                </div>
+				<div class="horizontal-line"></div>
+
+				<h4 class="centered">Site managers and server moderators</h4>
+				<p>
+					Talk about moderators and staff here.
+				</p>
+				<?php include_once(TEMPLATES_PATH . "/module/moderators.php");?>
+				<div class="horizontal-line"></div>
+
+				<h4 class="centered">Keeping things running</h4>
+				<p>
+					Due to the fact that this server and website is funded without any sponsoring or ads and is open to
+					anyone to join and use, we encourage people to possibly donate a bit towards our yearly server and
+					maintenance costs. <a href="/users/profile?handle=catlinman">Catlinman</a> is currently in charge of
+					the entire server's costs meaning that any extra funds he receives will go towards maintaining and
+					renewing the website and server. Anything extra is left as a tip which will most likely be reinvested
+					in one of our joined development projects or simply saved for later.
+					<br>
+					<br>
+					Even though the server costs will be paid for either way and things will continue running we still
+					appreciate any help and extra encouragement we receive. We're already extremely thankful for the
+					amazing community either way. Thanks for being a part of this journey!
+				</p>
+				<?php include(TEMPLATES_PATH . "/module/donationmeter.php");?>
+				<div class="horizontal-line"></div>
+
+				<h4 class="centered">In retrospect</h4>
+				<p>
+					Hivecom wouldn't be anything without its members though. The server has a total of about 400
+					registered members and is constantly growing. We're overly thankful for	what we have now
+					considering this all started from three friends getting together to chat and hang out.
+				</p>
+				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
             </div>
         </div>
-        <?php include_once(TEMPLATES_PATH. "/core/footer.php");?>
+        <?php include_once(TEMPLATES_PATH . "/core/footer.php");?>
     </div>
 </body>
 

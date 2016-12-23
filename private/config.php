@@ -18,7 +18,7 @@ defined("TEMPLATES_PATH")
 
 // Set error log levels and default output.
 ini_set("log_errors", 1);
-ini_set("error_log", LOG_PATH . "/log/php-error.log");
+ini_set("error_log", LOG_PATH . "/php-error.log");
 
 // Set which errors should be reported.
 error_reporting(E_ALL);

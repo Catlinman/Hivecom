@@ -1,12 +1,15 @@
-<!-- MAIN ADMINISTRATOR CARDS -->
+<!-- Main administrator cards -->
 <div class="namelist">
-	<h3 style="padding:2px;">Administrators</h3>
-	<div class="profilecontainer">
+	<div class="cardcontainer">
 		<h3>Catlinman</h3>
-		<a href="https://twitter.com/Catlinman_"><img class="profileimage" src="img/profile_catlinman.png"/></a>
+		<a href="https://twitter.com/catplease"><img class="cardimage" src="/img/cards/catlinman.png"/></a>
 	</div>
-	<div class="profilecontainer">
+	<div class="cardcontainer">
 		<h3>Jokler</h3>
-		<a href="https://twitter.com/Jokler"><img class="profileimage" src="img/profile_jokler.png"/></a>
+		<a href="https://twitter.com/jokler"><img class="cardimage" src="/img/cards/jokler.png"/></a>
+	</div>
+	<div class="cardcontainer">
+		<h3>Trif</h3>
+		<a href="https://twitter.com/trifpls"><img class="cardimage" src="/img/cards/trif.png"/></a>
 	</div>
 </div>

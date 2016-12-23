@@ -19,8 +19,9 @@ if($db_success == TRUE) {
 	$progress =  max(min($amount, $goal) / $goal, 0.0225);
 }*/
 ?>
+
 <h5 class="centered">We've received <?php echo 0//$amount;?>€ towards our yearly goal of <?php echo 50//$goal;?>€</h5>
 <div class="meter">
 	<span style="width:<?php echo 0 // $progress * 100;?>%"></span>
 </div>
-<a href="donations" class="centered"><h5>Click here to donate and see who has already donated</h5></a><br>
+<a href="/donations" class="centered"><h5>Click here to donate and see who has already donated</h5></a><br>
