@@ -1,4 +1,5 @@
 <!-- TODO: Should be moved to new member system. -->
+<!-- New donation dialog -->
 <p class="centered">
 	All donations are done through PayPal and require a minimum amount of 1€.
 </p>

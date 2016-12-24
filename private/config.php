@@ -22,3 +22,8 @@ ini_set("error_log", LOG_PATH . "/php-error.log");
 
 // Set which errors should be reported.
 error_reporting(E_ALL);
+
+session_start();
+if (!isset($_SESSION['user'])) {
+    $_SESSION['user'] = "Catlinman";
+}

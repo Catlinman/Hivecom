@@ -18,6 +18,9 @@
             <h2>
                 Member Login
             </h2>
+			<p>
+				- Gain access to user account control panels -
+			<p>
         </div>
 
 		<!-- Content section with summary and information banners -->

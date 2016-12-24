@@ -5,7 +5,7 @@ require_once(realpath(dirname(__FILE__) . "/../config.php"));
 
 // Set the Discrod API error log filename.
 defined("DISCORD_LOG")
-	or define("DISCORD_LOG", "discord-error.log");
+	or define("DISCORD_LOG", LOG_PATH . "/discord-error.log");
 
 class HivecomDiscord {
 

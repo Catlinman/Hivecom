@@ -21,19 +21,7 @@ CREATE TABLE `gameservers` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Table for Hivecom announcements.
-CREATE TABLE `announcements` (
-`id` INT(11) NOT NULL AUTO_INCREMENT,
-`uniqueid` CHAR(32) NOT NULL,
-`title` VARCHAR(55) NOT NULL,
-`summary` TEXT NOT NULL,
-`link` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
-`createdate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-`sticky` BIT NOT NULL DEFAULT 0,
-PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Table for Hivecom page content and settings.
+-- Table for Hivecom page content and announcement binding.
 CREATE TABLE `pages` (
 `id` INT(11) NOT NULL AUTO_INCREMENT,
 `uniqueid` CHAR(32) NOT NULL,
@@ -42,6 +30,8 @@ CREATE TABLE `pages` (
 `content` TEXT NOT NULL,
 `createdate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `editdate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+`news` BIT NOT NULL DEFAULT 0,
+`sticky` BIT NOT NULL DEFAULT 0,
 `disqusid` INT NOT NULL,
 PRIMARY KEY (`id`),
 UNIQUE KEY uniqueid (`uniqueid`)
@@ -86,6 +76,7 @@ CREATE TABLE `users` (
 `tsonline` BIT,
 `tsseen` DATETIME,
 `tsidentity` TEXT,
+`tsconnections` INT(11),
 
 -- Discord API user verification, variables and records.
 `dckey` CHAR(32),
@@ -100,10 +91,11 @@ UNIQUE KEY username (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Table for Hivecom donation pools. Used to store the current pool as well as past ones.
-CREATE TABLE donationpools (
+CREATE TABLE donations (
 `id` INT(11) NOT NULL AUTO_INCREMENT,
 `startdate` DATETIME NOT NULL,
 `enddate` DATETIME NOT NULL,
 `amount` INT(11) NOT NULL DEFAULT 0,
+`goal` INT(11) NOT NULL DEFAULT 50,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

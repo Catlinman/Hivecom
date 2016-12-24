@@ -78,10 +78,10 @@ h5 {
 }
 
 ul {
-    font-size: 15px;
+    font-size: 14px;
     margin: 0px;
     color: #d0d0d0;
-    line-height: 135%;
+    line-height: 160%;
 }
 
 
@@ -99,6 +99,23 @@ ul {
 
 .centered {
     text-align: center !important;
+}
+
+.split {
+    display: flex;
+    padding: 16px;
+}
+
+.splitcontent {
+    display: inline-block;
+}
+
+.splittwo {
+    width: 360px;
+}
+
+.split h1, .split h2, .split h3, .split h4, .split h5 {
+    text-align: center;
 }
 
 
@@ -154,6 +171,23 @@ ul {
 }
 
 
+/* Applies a glow to elements. */
+
+.glow {
+    background: #77c345 !important;
+    -webkit-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
+    -moz-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
+    box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
+}
+
+.glow-red {
+    background: #ff3333 !important;
+    -webkit-box-shadow: 0px 0px 32px 0px rgba(255, 50, 20, 1.0);
+    -moz-box-shadow: 0px 0px 32px 0px rgba(255, 50, 20, 1.0);
+    box-shadow: 0px 0px 32px 0px rgba(255, 50, 20, 1.0);
+}
+
+
 /* Main page bar. */
 
 #mainbar {
@@ -162,10 +196,10 @@ ul {
     margin: auto auto;
 }
 
-#mainbar a {
+#mainbar a, #mainbar p {
     color: white;
     line-height: 42px;
-    font-size: 24px;
+    font-size: 20px;
     padding-left: 10px;
     text-transform: uppercase;
     display: inline-block;
@@ -206,11 +240,10 @@ header {
 #headline h2 {
     position: absolute;
     margin-top: 105px;
-    height: 70px;
+    height: 90px;
     line-height: 70px;
     width: 100%;
     background: #0c0c0c;
-    font-style: oblique;
     text-align: center;
 }
 
@@ -219,7 +252,6 @@ header {
     margin-top: 155px;
     line-height: 40px;
     width: 100%;
-    background: #0c0c0c;
     font-style: oblique;
     text-align: center;
 }
@@ -267,7 +299,7 @@ form {
     text-decoration: none;
     color: #77c345;
     text-align: center;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
 }
 
 input {
@@ -444,7 +476,7 @@ label {
     margin-bottom: 4px;
     margin-left: auto;
     margin-right: auto;
-    width: 640px;
+    width: 90%;
     height: 1px;
     background: #353535;
 }
@@ -453,9 +485,10 @@ label {
 /* Vertical divider within content sections. */
 
 .vertical-line {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     display: inline-block;
-    margin: 16px;
-    height: 620px;
     width: 1px;
     background: #353535;
 }
@@ -475,7 +508,7 @@ label {
     height: 70px;
     line-height: 70px;
     background: #121212;
-    font-style: oblique;
+    font-style: italic;
     font-size: 32px;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
@@ -540,9 +573,9 @@ label {
 
 /* Warning container for JS errors as well as server related information. */
 
-.notice>p {
-    font-size: 14px;
-    text-align: center;
+.notice {
+    font-size: 14px !important;
+    text-align: center !important;
 }
 
 
@@ -579,9 +612,9 @@ label {
 
 .cardimage:hover {
     width: 216px;
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(150, 255, 85, 0.5);
-    -moz-box-shadow: 0px 0px 4px 0px rgba(150, 255, 85, 0.5);
-    box-shadow: 0px 0px 4px 0px rgba(150, 255, 85, 0.5);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
+    box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
 }
 
 

@@ -44,8 +44,16 @@
 				<!-- Banners for warnings and important announcements -->
 				<?php include_once(TEMPLATES_PATH . "/banner/warnings.php");?>
 				<?php include_once(TEMPLATES_PATH . "/banner/news.php");?>
-                <p class="centered">
-                    Main site information and short summary.
+                <p>
+					Hivecom is a gaming community run by folks from all around the world. We're a constantly growing
+					group open to those willing to join. Our servers were initially hosted locally, but as sub communities
+					and friends of friends joined we started building more advanced systems. As mentioned, people from
+					all around the world are known visitors of our servers. The range goes from countries like New Zealand,
+					over to all of Europe and across to North America.
+					<br><br>
+					Interested? Check out the voice and game server section for more information! We hope to see you amidst us!
+					<br><br>
+					<i>The Hivecom Team</i>
                 </p>
             </div>
         </div>
@@ -55,7 +63,7 @@
             <div class="contentheader shadowed">NEWS &amp; ANNOUNCEMENTS</div>
             <div class="divider"></div>
             <div class="content shadowed">
-                <?php include_once(TEMPLATES_PATH . "/module/announcements.php");?>
+                <?php include_once(TEMPLATES_PATH . "/module/newsinfo.php");?>
 				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
             </div>
         </div>
@@ -67,14 +75,20 @@
 			<div class="content shadowed">
 				<p>
 					Short summary about the hosting information for both main voice servers.
-					<br>
-					<br>
+					<br><br>
 					There are a few options for connecting to our voice servers. We suggest using one of the connection
 					buttons at the top of the page and then having you save the server address as a bookmark. You can however
-					also connect directly using the login information for our servers listed further below.
+					also connect directly using the connection information listed below.
 				<div class="split">
-					<div class="left"><h3>Teamspeak</h3><?php // TODO: Echo Teamspeak connection information. ?></div>
-					<div class="right"><h3>Discord</h3><?php // TODO: Echo Discord connection information. ?></div>
+					<div class="splitcontent splittwo">
+						<?php include(TEMPLATES_PATH . "/module/tsinfo.php");?>
+					</div>
+					<div class="vertical-line"></div>
+					<div class="splitcontent splittwo">
+						<?php include(TEMPLATES_PATH . "/module/dcinfo.php");?>
+					</div>
+					<br>
+					<br>
 				</div>
 				<div class="horizontal-line"></div>
 
@@ -86,14 +100,12 @@
 					our	voice servers. However, you will not be able to register any other members unless you are approved by our staff.
 					Non-registered users are restricted to the lobby while registered users and up are allowed to move as they see fit
 					and	create their own temporary private channels.
-					<br>
-					<br>
+					<br><br>
 					If you run a your own community and are looking for a free voice server	solution then we would gladly work out a
 					higher server ranking with you. Moderators can create permanent channels and are able to manage basic users making
 					it an ideal fit for easy sub community management. Although there are administrators present most of the time, our
 					setup relies a lot on our moderators to register new users and manage the server.
-					<br>
-					<br>
+					<br><br>
 					In case you do not intend to make an account here on our main website - we do encourage it though since it comes with
 					some perks such as cross server authentication - you can always connect to one of our voice servers and write a
 					moderator or administrator a message. Although approved users can register you as well they are most likely to
@@ -136,7 +148,7 @@
                 <div class="horizontal-line"></div>
 
 				<h4 class="centered">The administrators</h4>
-				<?php include_once(TEMPLATES_PATH . "/module/admins.php");?>
+				<?php include_once(TEMPLATES_PATH . "/module/admincards.php");?>
 				<p>
 					Talk about admins and background here.
                 </p>
@@ -146,7 +158,7 @@
 				<p>
 					Talk about moderators and staff here.
 				</p>
-				<?php include_once(TEMPLATES_PATH . "/module/moderators.php");?>
+				<?php include_once(TEMPLATES_PATH . "/module/staffinfo.php");?>
 				<div class="horizontal-line"></div>
 
 				<h4 class="centered">Keeping things running</h4>
@@ -157,8 +169,7 @@
 					the entire server's costs meaning that any extra funds he receives will go towards maintaining and
 					renewing the website and server. Anything extra is left as a tip which will most likely be reinvested
 					in one of our joined development projects or simply saved for later.
-					<br>
-					<br>
+					<br><br>
 					Even though the server costs will be paid for either way and things will continue running we still
 					appreciate any help and extra encouragement we receive. We're already extremely thankful for the
 					amazing community either way. Thanks for being a part of this journey!

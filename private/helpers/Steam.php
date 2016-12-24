@@ -5,7 +5,7 @@ require_once(realpath(dirname(__FILE__) . "/../config.php"));
 
 // Set the error log filename.
 defined("STEAM_LOG")
-	or define("STEAM_LOG", "steam-error.log");
+	or define("STEAM_LOG", LOG_PATH . "/steam-error.log");
 
 // Get the Steam API authentication information.
 // -> STEAM_USER, STEAM_TOKEN

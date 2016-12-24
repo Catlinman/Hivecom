@@ -1,2 +1,2 @@
 <?php
-    header("Location:ts3server://dc.hivecom.net");
+    header("Location:https://discord.gg/z4QnY6J");

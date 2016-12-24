@@ -28,4 +28,12 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Aldrich'>
 
-<?php include_once(TEMPLATES_PATH . "/core/connections.php");?>
+<?php
+
+include_once(TEMPLATES_PATH . "/core/connections.php");
+
+if (!isset(HivecomTeamspeak::$query) && !isset(HivecomTeamspeak::$query)) {
+	echo '<link rel="stylesheet" type="text/css" href="/css/style-red.css">';
+}
+
+?>

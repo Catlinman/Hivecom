@@ -1,4 +1,4 @@
-<!-- WIDGET FOR THE OFFICIAL HIVECOM TWITTER -->
+<!-- Hivecom Twitter widget -->
 <div class="jsenabled">
 	<div id="twitterhivecom">
 		<h3>Twitter announcements</h3>

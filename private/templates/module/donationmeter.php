@@ -1,27 +1,26 @@
+
 <?php
-/*
 
-// TODO: Fixed donation system with new user and storage system.
+require_once(HELPERS_PATH . "/Donation.php");
 
-require_once($_SERVER['DOCUMENT_ROOT']. "/scripts/private/sqlauth.php");
+$latest = HivecomDonation::retrieveLatest();
 
-if($db_success == TRUE) {
-	$table = 'donation_progress';
-	$result = mysql_query("SELECT * FROM {$table}");
-	$values = mysql_fetch_row($result);
-	$amount = round((float)$values[0], 2);
-	$goal = round((float)$values[1], 2);
-	$progress =  max(min($amount, $goal) / $goal, 0.0225);
+if (isset($latest)) {
+	$start = date_format(date_create($latest["startdate"]), "l jS \of F Y");
+	$end = date_format(date_create($latest["enddate"]), "l jS \of F Y");
+	$amount = round((float)$latest["amount"], 2);
+	$goal = round((float)$latest["goal"], 2);
+	$progress = max(min($amount, $goal) / $goal, 0.0225);
 
 } else {
-	$amount = 0;
-	$goal = 50;
-	$progress =  max(min($amount, $goal) / $goal, 0.0225);
-}*/
+	return;
+}
+
 ?>
 
-<h5 class="centered">We've received <?php echo 0//$amount;?>€ towards our yearly goal of <?php echo 50//$goal;?>€</h5>
+<h5 class="centered">We've received <?php echo $amount;?>€ towards our yearly goal of <?php echo $goal;?>&euro;</h5>
 <div class="meter">
-	<span style="width:<?php echo 0 // $progress * 100;?>%"></span>
+	<span style="width:<?php echo $progress * 100;?>%"></span>
 </div>
+<p class="centered notice">This donation pool will be reset on <?php echo $end;?></p>
 <a href="/donations" class="centered"><h5>Click here to donate and see who has already donated</h5></a><br>

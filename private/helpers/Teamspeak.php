@@ -8,7 +8,7 @@ require_once(LIBRARY_PATH . "/TeamSpeak3/TeamSpeak3.php");
 
 // Set the error log filename.
 defined("TS3_QUERY_LOG")
-	or define("TS3_QUERY_LOG", "ts3-error.log");
+	or define("TS3_QUERY_LOG", LOG_PATH . "/ts3-error.log");
 
 // Set the query server address.
 defined("TS3_QUERY_ADDRESS")
@@ -46,7 +46,7 @@ class HivecomTeamspeak {
 	        HivecomTeamspeak::$query = TeamSpeak3::factory($querystring);
 
 	    } catch (Exception $e) {
-			error_log($e, 1, LOG_PATH . TS3_QUERY_LOG);
+			error_log($e, 3, TS3_QUERY_LOG);
 	    }
 
 		// Return the query directly to make code easier to maintain.

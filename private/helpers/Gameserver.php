@@ -5,7 +5,7 @@ require_once(realpath(dirname(__FILE__) . "/../config.php"));
 
 // Set the site backend error log filename.
 defined("SITE_LOG")
-	or define("SITE_LOG", "site-error.log");
+	or define("SITE_LOG", LOG_PATH . "/site-error.log");
 
 class HivecomGameserver {
 
