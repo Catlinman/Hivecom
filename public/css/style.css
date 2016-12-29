@@ -3,6 +3,12 @@
 	- This file's contents are sorted by their appearance on the main page.
 	- Helper classes are placed after the core definitions.
 	- Any other clases defined in sub pages are defined towards the end.
+
+	Page sizes:
+	- Main layout 	900px
+	- Fold size		760px
+	- Two split		420px
+	- Four split	180px
  */
 
 
@@ -15,21 +21,28 @@ body {
     overflow-y: auto;
     font-family: "Aldrich", sans-serif;
     font-weight: normal;
+    -webkit-text-size-adjust: 120%;
 }
 
 p {
     font-size: 15px;
+    font-weight: normal;
     margin: 0px;
     line-height: 135%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
+    font-weight: normal;
     text-decoration: none;
-    color: #77c345;
+    color: #8ec767;
     -webkit-transition: all .25s ease-in-out;
     -moz-transition: all .25s ease-in-out;
     -o-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a:hover {
@@ -101,6 +114,9 @@ ul {
     text-align: center !important;
 }
 
+
+/* Splitters for the main content section. */
+
 .split {
     display: flex;
     padding: 16px;
@@ -111,7 +127,7 @@ ul {
 }
 
 .splittwo {
-    width: 360px;
+    width: 420px;
 }
 
 .split h1, .split h2, .split h3, .split h4, .split h5 {
@@ -174,7 +190,7 @@ ul {
 /* Applies a glow to elements. */
 
 .glow {
-    background: #77c345 !important;
+    background: #8ec767 !important;
     -webkit-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
     -moz-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
     box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
@@ -192,15 +208,14 @@ ul {
 
 #mainbar {
     color: white;
-    width: 760px;
+    max-width: 900px;
     margin: auto auto;
 }
 
-#mainbar a, #mainbar p {
+#mainbar a, #mainbar p, #mainbar span {
     color: white;
     line-height: 42px;
-    font-size: 20px;
-    padding-left: 10px;
+    font-size: 22px;
     text-transform: uppercase;
     display: inline-block;
     vertical-align: bottom;
@@ -209,6 +224,13 @@ ul {
 #mainbar a:hover {
     color: #a9fe30;
     letter-spacing: 2px;
+}
+
+#mainbar div, #mainbar span {
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 18px;
+    margin: auto auto;
 }
 
 
@@ -252,7 +274,6 @@ header {
     margin-top: 155px;
     line-height: 40px;
     width: 100%;
-    font-style: oblique;
     text-align: center;
 }
 
@@ -388,7 +409,7 @@ label {
 /* Navigation menu with CSS Flex usage. */
 
 #navmenu {
-    width: 750px;
+    max-width: 900px;
     margin: auto auto;
     padding: 2px 0;
     display: -webkit-flex;
@@ -535,7 +556,7 @@ label {
 }
 
 .content {
-    max-width: 760px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     background: #0c0c0c;
@@ -557,7 +578,7 @@ label {
     font-size: 19px;
     text-align: center;
     padding-bottom: 16px;
-    padding-top: 8px;
+    padding-top: 16px;
     clear: right;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -581,11 +602,15 @@ label {
 
 /* Main page administrator card container. */
 
+.cardrow {
+    margin: 0px 0px;
+    list-style-type: none;
+    text-align: center;
+}
+
 .cardcontainer {
     width: 240px;
-    height: 300px;
-    max-width: 240px;
-    max-height: 300px;
+    height: 280px;
     display: inline-block;
     overflow: hidden;
     vertical-align: middle;
@@ -594,12 +619,13 @@ label {
 
 .cardcontainer h3 {
     font-size: 20px;
+    margin-bottom: 16px;
 }
 
 .cardimage {
     vertical-align: middle;
     border-radius: 16px;
-    width: 210px;
+    width: 190px;
     border: rgba(255, 255, 255, 0) solid 4px;
     -webkit-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
@@ -611,7 +637,7 @@ label {
 }
 
 .cardimage:hover {
-    width: 216px;
+    width: 200px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
     -moz-box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
     box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
@@ -692,6 +718,36 @@ label {
     -o-animation-fill-mode: forwards;
 }
 
+
+/* Formatting for page generated content */
+
+.page h1 {
+    font-size: 24px;
+}
+
+.page h2 {
+    font-size: 22px;
+}
+
+.page h3 {
+    font-size: 20px;
+}
+
+.page h4 {
+    font-size: 18px;
+}
+
+.page h5 {
+    font-size: 16px;
+}
+
+
+/* Extra formatting class for the summary sections. Hides headers. */
+
+.introduction h1, .introduction h2, .introduction h3, .introduction h4, .introduction h5 {
+    display: none;
+}
+
 @keyframes profilein {
     from {
         opacity: 0.0;
@@ -737,14 +793,16 @@ label {
     }
 }
 
+.twitter {
+    text-align: center;
+}
+
+.timeline-Tweet-text {}
+
 
 /* Page adaption to smaller viewport sizes. */
 
 @media all and (max-width: 760px) {
-    #viewercontainer, #twitterhivecom {
-        width: 271px;
-        text-align: center;
-    }
     #navmenu {
         width: auto;
         -webkit-flex-flow: column;
@@ -757,6 +815,9 @@ label {
     #navmenu a {
         font-size: 20px;
         line-height: 0px;
+    }
+    #mainbar {
+        width: auto;
     }
     #headerinfo {
         margin-left: 0;
@@ -775,9 +836,18 @@ label {
     label {
         font-size: 20px;
     }
+    .cardcontainer {
+        width: 200px;
+    }
+    .cardimage {
+        width: 180px;
+    }
 }
 
 @media all and (max-width: 640px) {
+    p, h3, h4, h5 {
+        margin: 0px 24px;
+    }
     #navmenu a {
         font-size: 24px;
         line-height: 0px;
@@ -831,34 +901,6 @@ label {
 }
 
 
-/* HACK: I forgot what these were for but I am scared to delete them. */
-
-.namelist {
-    margin: 16px 0px;
-    list-style-type: none;
-    text-align: center;
-}
-
-.namelist>h3 {
-    font-size: 24px;
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-.namelist>ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.namelist>ul li {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 32px;
-    display: inline;
-}
-
-
 /* HACK: Okay at this point I give up. No idea where this was used. */
 
 .columnlist {
@@ -884,4 +926,8 @@ label {
 .listclear {
     clear: both;
     padding: 8px;
+}
+
+ing: 8px;
+
 }

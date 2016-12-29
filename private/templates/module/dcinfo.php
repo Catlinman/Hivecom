@@ -1,3 +1,6 @@
+
+<?php require_once(realpath(dirname(__FILE__) . "/../../config.php"));?>
+
 <!-- Discord server information and viewer -->
 <h3>Discord</h3>
 <br>

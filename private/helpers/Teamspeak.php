@@ -26,7 +26,11 @@ defined("TS3_QUERY_SERVERPORT")
 // -> TS3_QUERY_USER, TS3_QUERY_PASS
 require_once(AUTH_PATH . "/tsquery.php");
 
-// Global wrapper class for the Teamspeak3 PHP framework in relation to the Hivecom website.
+/**
+* HivecomPage
+*
+* Wrapper class for the Teamspeak3 PHP framework in relation to use on the Hivecom website.
+*/
 class HivecomTeamspeak {
 
 	public static $query ;// Latest query connection.

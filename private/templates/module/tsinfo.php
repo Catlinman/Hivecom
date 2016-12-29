@@ -1,3 +1,6 @@
+
+<?php require_once(realpath(dirname(__FILE__) . "/../../config.php"));?>
+
 <!-- Teamspeak server information and viewer -->
 <h3>Teamspeak</h3>
 <br>

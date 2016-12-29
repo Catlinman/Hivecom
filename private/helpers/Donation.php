@@ -10,17 +10,18 @@ defined("SITE_LOG")
 class HivecomDonation {
 	public static function dbconnect() {
 		// Connect to MySQL. Connection stored in $dbconnection.
-		require_once(AUTH_PATH . "/mysql.php");
+		require(AUTH_PATH . "/mysql.php");
 
-		if (!isset($dbconnection)) {
-            error_log("MySQL connection failed.\n", 3, SITE_LOG);
+		if (mysqli_connect_errno()) {
+            error_log(date("Y-m-d H:i:s ") . "HivecomDonation/dbconnect:" . mysqli_connect_error() . ".\n", 3, SITE_LOG);
 
         } else {
-			// Hivecom database should be selected.
-			mysqli_select_db($dbconnection, "hivecom") or error_log(mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
+            // Hivecom database should be selected.
+            mysqli_select_db($dbconnection, "hivecom")
+				or error_log(date("Y-m-d H:i:s ") . "HivecomDonation/dbconnect:" . mysqli_error($dbconnection) . ".\n", 3, SITE_LOG);
 
-			return $dbconnection;
-		}
+            return $dbconnection;
+        }
 	}
 
 	public static function create($data) {}
@@ -33,18 +34,16 @@ class HivecomDonation {
 		$dbconnection = HivecomDonation::dbconnect(); // Make the database connection in not already present.
 
 		// Make the main query.
-		if (isset($dbconnection)) {
-			$result = mysqli_query($dbconnection, "SELECT * FROM donations ORDER BY id DESC LIMIT 1;") or error_log(mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
+		if ($dbconnection) {
+			$result = mysqli_query($dbconnection, "SELECT * FROM donations ORDER BY `date_start` DESC LIMIT 1;")
+				or error_log(date("Y-m-d H:i:s ") . "HivecomDonation/retrieveLatest: " . mysqli_error($dbconnection) . ".\n", 3, SITE_LOG);
 
-		} else {
-			return;
+			// If a result was returned: create an array from the data.
+			if ($result) {
+				$row = mysqli_fetch_array($result);
+				return $row;
+			}
 		}
-
-		// If a result was returned: create an array from the data.
-		if (isset($result)) {
-			$row = mysqli_fetch_array($result);
-			return $row;
-        }
     }
 
     public static function retrieveAll() {}

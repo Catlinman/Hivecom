@@ -16,7 +16,7 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			The Hivecom Teamspeak server appears to be offline at the moment.
 			<br><br>
 			For more information take a look at the
-			<a href="https://twitter.com/hivecomnetwork">Hivecom Twitter feed</a>.
+			<a href="https://twitter.com/' . TWITTER . '">Hivecom Twitter feed</a>.
 		</p>
 		<div class="horizontal-line"></div>
 		';
@@ -29,7 +29,7 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			The Hivecom Discord server appears to be offline at the moment.
 			<br><br>
 			Take a look at the
-			<a href="https://twitter.com/hivecomnetwork">Hivecom Twitter feed</a> and the
+			<a href="https://twitter.com/' . TWITTER . '">Hivecom Twitter feed</a> and the
 			<a href="https://twitter.com/discordapp">Discord Twitter account</a> for more information.
 		</p>
 		<div class="horizontal-line"></div>
@@ -42,7 +42,7 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			The Hivecom Teamspeak & Discord server appear to be offline at the moment.
 			<br><br>
 			Take a look at the
-			<a href="https://twitter.com/hivecomnetwork">Hivecom Twitter feed</a> and the
+			<a href="https://twitter.com/' . TWITTER . '">Hivecom Twitter feed</a> and the
 			<a href="https://twitter.com/discordapp">Discord Twitter account</a> for more information.
 		</p>
 		<div class="horizontal-line"></div>

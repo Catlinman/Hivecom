@@ -16,6 +16,22 @@ defined("LIBRARY_PATH")
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . "/templates"));
 
+
+// Time in seconds between API and data queries.
+defined("QUERYINTERVAL")
+	or define("QUERYINTERVAL", 300);
+
+// Maximum number of news entries on the main page.
+defined("MAXNEWS")
+    or define("MAXNEWS", 3);
+
+// Main twitter handle of the site.
+defined("TWITTER")
+	or define("TWITTER", "hivecomnetwork");
+
+// Set the default timezone to keep uid gen consistent.
+date_default_timezone_set("Europe/Berlin");
+
 // Set error log levels and default output.
 ini_set("log_errors", 1);
 ini_set("error_log", LOG_PATH . "/php-error.log");
@@ -24,6 +40,3 @@ ini_set("error_log", LOG_PATH . "/php-error.log");
 error_reporting(E_ALL);
 
 session_start();
-if (!isset($_SESSION['user'])) {
-    $_SESSION['user'] = "Catlinman";
-}

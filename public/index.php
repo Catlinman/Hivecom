@@ -11,7 +11,7 @@
 <body>
     <div id="wrapper">
 		<!-- Page bar with home navigation and login option -->
-        <?php include_once(TEMPLATES_PATH . "/core/header.php");?>
+        <?php include_once(TEMPLATES_PATH . "/module/header.php");?>
 
 		<!-- Main headline with page information and title -->
         <div id="headline" class="noselect">
@@ -43,7 +43,7 @@
             <div class="content shadowed">
 				<!-- Banners for warnings and important announcements -->
 				<?php include_once(TEMPLATES_PATH . "/banner/warnings.php");?>
-				<?php include_once(TEMPLATES_PATH . "/banner/news.php");?>
+				<?php include_once(TEMPLATES_PATH . "/banner/sticky.php");?>
                 <p>
 					Hivecom is a gaming community run by folks from all around the world. We're a constantly growing
 					group open to those willing to join. Our servers were initially hosted locally, but as sub communities
@@ -64,6 +64,18 @@
             <div class="divider"></div>
             <div class="content shadowed">
                 <?php include_once(TEMPLATES_PATH . "/module/newsinfo.php");?>
+				<div class="jsenabled">
+					<div class="horizontal-line"></div>
+					<div class="split">
+						<div class="splitcontent splittwo">
+							<?php include(TEMPLATES_PATH . "/module/twitterteam.php");?>
+						</div>
+						<div class="vertical-line"></div>
+						<div class="splitcontent splittwo">
+							<?php include(TEMPLATES_PATH . "/module/twitterstaff.php");?>
+						</div>
+					</div>
+				</div>
 				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
             </div>
         </div>
@@ -143,14 +155,23 @@
             <div class="divider"></div>
             <div class="content shadowed">
 				<p>
-					Write about background.
+					The community and server was originally created by the three server administrators:
+					<a href="/users/profile?user=catlinman">Catlinman</a>,
+					<a href="/users/profile?user=jokler">Jokler</a> and
+					<a href="/users/profile?user=trif">Trif</a>.
+					All three started hosting a server back in 2013 on a local machine but the growing demand for a better connection
+					and 24/7 uptime made them reconsider this small hosting plan. They later on that year went over to actually
+					acquiring a dedicated Teamspeak server from Fragnet but later on switched to what is now a server entirely
+					run and managed for Hivecom in itself.
 				</p>
                 <div class="horizontal-line"></div>
 
 				<h4 class="centered">The administrators</h4>
 				<?php include_once(TEMPLATES_PATH . "/module/admincards.php");?>
-				<p>
-					Talk about admins and background here.
+				<p class="centered">
+					If you would like to get in direct contact with the Hivecom management team, you can write an email at
+					<br><br>
+					<a href="mailto:contact@hivecom.net">contact@hivecom.net</a>
                 </p>
 				<div class="horizontal-line"></div>
 
@@ -165,7 +186,7 @@
 				<p>
 					Due to the fact that this server and website is funded without any sponsoring or ads and is open to
 					anyone to join and use, we encourage people to possibly donate a bit towards our yearly server and
-					maintenance costs. <a href="/users/profile?handle=catlinman">Catlinman</a> is currently in charge of
+					maintenance costs. <a href="/users/profile?user=catlinman">Catlinman</a> is currently in charge of
 					the entire server's costs meaning that any extra funds he receives will go towards maintaining and
 					renewing the website and server. Anything extra is left as a tip which will most likely be reinvested
 					in one of our joined development projects or simply saved for later.
@@ -174,7 +195,7 @@
 					appreciate any help and extra encouragement we receive. We're already extremely thankful for the
 					amazing community either way. Thanks for being a part of this journey!
 				</p>
-				<?php include(TEMPLATES_PATH . "/module/donationmeter.php");?>
+				<?php include(TEMPLATES_PATH . "/module/donationinfo.php");?>
 				<div class="horizontal-line"></div>
 
 				<h4 class="centered">In retrospect</h4>
@@ -186,7 +207,7 @@
 				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
             </div>
         </div>
-        <?php include_once(TEMPLATES_PATH . "/core/footer.php");?>
+        <?php include_once(TEMPLATES_PATH . "/module/footer.php");?>
     </div>
 </body>
 
