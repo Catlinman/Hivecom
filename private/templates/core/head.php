@@ -7,8 +7,8 @@
 
 <meta itemprop="image" content="https://hivecom.net/img/metaicon.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@hivecomnetwork">
-<meta name="twitter:creator" content="@hivecomnetwork">
+<meta name="twitter:site" content="@<?php echo TWITTER;?>">
+<meta name="twitter:creator" content="@<?php echo TWITTER;?>">
 <meta name="twitter:title" content="Hivecom">
 <meta name="twitter:description" content="Hivecom is an open gaming community for anyone to feel free to join!">
 <meta name="twitter:image" content="https://hivecom.net/img/metaicon.png">

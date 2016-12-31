@@ -16,7 +16,6 @@ defined("LIBRARY_PATH")
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . "/templates"));
 
-
 // Time in seconds between API and data queries.
 defined("QUERYINTERVAL")
 	or define("QUERYINTERVAL", 300);

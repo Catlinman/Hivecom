@@ -18,7 +18,7 @@ $stickypost = HivecomPage::retrieveSticky();
 
 // Display the title of the post and link the page with additional information.
 echo sprintf(
-	'<h5 class="centered">Community Announcement</h5><h3 class="centered"><a href="/page?title=%s">- %s -</a></h3>',
+	'<h5 class="centered">Community Announcement</h5><h3 class="centered"><a href="/page?uid=%s">%s</a></h3>',
 	$stickypost[HivecomPage::SQL_UNIQUE_ID_INDEX],
 	$stickypost[HivecomPage::SQL_TITLE_INDEX]
 );
@@ -41,15 +41,12 @@ echo sprintf('%s</p>', date_format(date_create($stickypost[HivecomPage::SQL_DATE
 echo '<div class="horizontal-line glow"></div><br>';
 
 // Display the main post introduction.
-echo sprintf('<div class="page introduction">%s</div>', stripcslashes($stickypost[HivecomPage::SQL_INTRO_HTML_INDEX]));
+echo sprintf('<div class="page introduction">%s</div>', stripcslashes($stickypost[HivecomPage::SQL_OPENING_HTML_INDEX]));
 
-// Display a read more section after the post introduction if there is content.
-if ($stickypost[HivecomPage::SQL_CONTENT_MD_INDEX]) {
-	echo sprintf(
-		'<p class="centered"><a href="/page?title=%s">Click here to read more</a></p>',
-		$stickypost[HivecomPage::SQL_UNIQUE_ID_INDEX]
-	);
-
-}
+// Read more and comment link.
+echo sprintf(
+	'<p class="centered"><a href="/page?uid=%s">Click here to read more and comment</a></p>',
+	$stickypost[HivecomPage::SQL_UNIQUE_ID_INDEX]
+);
 
 echo '<div class="horizontal-line"></div><div class="horizontal-line"></div>';

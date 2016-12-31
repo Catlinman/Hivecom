@@ -28,13 +28,17 @@ foreach ($news as $post) {
 		if ($post[HivecomPage::SQL_UNIQUE_ID_INDEX] == $stickypost[HivecomPage::SQL_UNIQUE_ID_INDEX]) {
 			$i++;
 
+			if ($i == $len) {
+				echo '<h5 class="centered">For the newest community announcement navigate to the top of the page</h5><br>';
+			}
+
             continue;
         }
 	}
 
 	// Display the title of the post and link the page with additional information.
 	echo sprintf(
-        '<h3 class="centered"><a href="/page?title=%s">- %s -</a></h3>',
+        '<h3 class="centered"><a href="/page?uid=%s">%s</a></h3>',
         $post[HivecomPage::SQL_UNIQUE_ID_INDEX],
         $post[HivecomPage::SQL_TITLE_INDEX]
     );
@@ -57,15 +61,13 @@ foreach ($news as $post) {
 	echo '<div class="horizontal-line glow"></div><br>';
 
 	// Display the main post introduction.
-	echo sprintf('<div class="page introduction">%s</div>', stripcslashes($post[HivecomPage::SQL_INTRO_HTML_INDEX]));
+	echo sprintf('<div class="page introduction">%s</div>', stripcslashes($post[HivecomPage::SQL_OPENING_HTML_INDEX]));
 
 	// Display a read more section after the post introduction if there is content.
-	if ($post[HivecomPage::SQL_CONTENT_MD_INDEX]) {
-		echo sprintf(
-			'<p class="centered"><a href="/page?title=%s">Click here to read more</a></p>',
-			$post[HivecomPage::SQL_UNIQUE_ID_INDEX]
-		);
-	}
+	echo sprintf(
+		'<p class="centered"><a href="/page?uid=%s">Click here to read more and comment</a></p>',
+		$post[HivecomPage::SQL_UNIQUE_ID_INDEX]
+	);
 
 	// Insert a divider if this is not the last post.
 	if ($i < $len - 1) {

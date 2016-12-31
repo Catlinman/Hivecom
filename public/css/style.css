@@ -59,7 +59,7 @@ h1 {
 
 h2 {
     margin: 0px;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -272,6 +272,8 @@ header {
 #headline p {
     position: absolute;
     margin-top: 155px;
+    margin-left: auto;
+    margin-right: auto;
     line-height: 40px;
     width: 100%;
     text-align: center;
@@ -352,39 +354,41 @@ label {
     font-size: 18px;
 }
 
-
-/* Button class input helper. */
-
-.button {
-    display: inline-block;
-    color: white;
-    background: #151515;
-    border-radius: 4px;
+button {
     font-family: "Aldrich", sans-serif;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
-    text-align: center;
-    margin-bottom: 16px;
-    padding: 9px 9px 9px;
-    border-top: 1px solid #24271d;
-    margin-left: auto;
-    margin-right: auto;
-    transition-property: color, background, text-shadow, border-top;
+    padding: 10px;
+    margin: 16px auto;
+    display: block;
+    border: 1px solid #393f2f;
+    border-radius: 4px;
+    background: #0a0a0a;
+    color: #d0d0d0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
 }
 
-.button:hover {
-    color: #a9fe30;
-    background: #202616;
-    background: -moz-linear-gradient(top, #202616 1%, #151515 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #202616), color-stop(100%, #151515));
-    background: -webkit-linear-gradient(top, #202616 1%, #151515 100%);
-    background: -o-linear-gradient(top, #202616 1%, #151515 100%);
-    background: -ms-linear-gradient(top, #202616 1%, #151515 100%);
-    background: linear-gradient(to bottom, #202616 1%, #151515 100%);
-    border-top: 1px solid #506739;
-    text-shadow: 0px 0px 48px rgba(190, 255, 150, 1);
+button:focus {
+    outline: 0px;
+    color: #77c345;
+    border: 1px solid #507719;
+    -webkit-transition: all .0s ease-out;
+    -moz-transition: all .0s ease-out;
+    -o-transition: all .0s ease-out;
+    transition: all .0s ease-out;
+    -webkit-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
+    -moz-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
+    box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
 }
 
 
@@ -748,6 +752,13 @@ label {
     display: none;
 }
 
+
+/* Disqus threads */
+
+#disqus_thread {
+    margin: 16px;
+}
+
 @keyframes profilein {
     from {
         opacity: 0.0;
@@ -803,6 +814,9 @@ label {
 /* Page adaption to smaller viewport sizes. */
 
 @media all and (max-width: 760px) {
+    h2 {
+        font-size: 38px;
+    }
     #navmenu {
         width: auto;
         -webkit-flex-flow: column;
@@ -845,6 +859,9 @@ label {
 }
 
 @media all and (max-width: 640px) {
+    h2 {
+        font-size: 34px;
+    }
     p, h3, h4, h5 {
         margin: 0px 24px;
     }
@@ -929,5 +946,8 @@ label {
 }
 
 ing: 8px;
+
+}
+ng: 8px;
 
 }

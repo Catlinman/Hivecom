@@ -16,13 +16,15 @@ CREATE TABLE `site` (
 -- Table for Hivecom gameserver information.
 CREATE TABLE `gameservers` (
 `gameserver_id` INT(11) NOT NULL AUTO_INCREMENT,
-`unique_id` VARCHAR(65) NOT NULL,
-`title` VARCHAR(55) NOT NULL,
+`unique_id` CHAR(13) NOT NULL,
+`game` VARCHAR(255) NOT NULL,
+`address` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+`address_easy` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+`address_info` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+`title` VARCHAR(24) NOT NULL,
 `summary` VARCHAR(255) NOT NULL,
 `admins` VARCHAR(255) NOT NULL,
-`game` VARCHAR(255) NOT NULL,
-`address` VARCHAR(255) NOT NULL,
-`link` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+`hidden` BOOLEAN NOT NULL DEFAULT FALSE,
 PRIMARY KEY (`gameserver_id`),
 UNIQUE KEY uniqueid (`unique_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -30,20 +32,21 @@ UNIQUE KEY uniqueid (`unique_id`)
 -- Table for Hivecom page content and announcement binding.
 CREATE TABLE `pages` (
 `page_id` INT(11) NOT NULL AUTO_INCREMENT,
-`unique_id` CHAR(32) NOT NULL,
-`title` VARCHAR(55) NOT NULL,
+`unique_id` CHAR(13) NOT NULL,
+`access_id` VARCHAR(255) NOT NULL,
+`title` VARCHAR(24) NOT NULL,
+`subtitle` VARCHAR(46) NOT NULL,
 `author` VARCHAR(15),
-`intro_md` TEXT NOT NULL,
-`intro_html` TEXT NOT NULL,
+`opening_md` TEXT NOT NULL,
+`opening_html` TEXT NOT NULL,
 `content_md` TEXT NOT NULL,
 `content_html` TEXT NOT NULL,
 `date_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `date_edit` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 `is_news` BOOLEAN NOT NULL DEFAULT FALSE,
 `is_sticky` BOOLEAN NOT NULL DEFAULT FALSE,
-`disqus_id` INT(11),
 PRIMARY KEY (`page_id`),
-UNIQUE KEY uniqueid (`unique_id`)
+UNIQUE KEY uniqueid (`unique_id`, `access_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Table for Hivecom users. Stores all information and logging.

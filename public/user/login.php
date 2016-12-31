@@ -10,7 +10,7 @@
 <body>
     <div id="wrapper">
 		<!-- Header & top bar -->
-        <?php include_once(TEMPLATES_PATH . "/core/header.php");?>
+        <?php include_once(TEMPLATES_PATH . "/core/menu.php");?>
 
 		<!-- Main page headline -->
         <div id="headline" class="noselect">

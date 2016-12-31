@@ -11,7 +11,7 @@
 <body>
     <div id="wrapper">
 		<!-- Page bar with home navigation and login option -->
-        <?php include_once(TEMPLATES_PATH . "/module/header.php");?>
+        <?php include_once(TEMPLATES_PATH . "/core/menu.php");?>
 
 		<!-- Main headline with page information and title -->
         <div id="headline" class="noselect">
@@ -21,7 +21,7 @@
             </h2>
             <p>
                 - Official website of the Hivecom community -
-            <p>
+            </p>
         </div>
 
 		<!-- Page navigation bar with buttons -->
@@ -63,7 +63,7 @@
             <div class="contentheader shadowed">NEWS &amp; ANNOUNCEMENTS</div>
             <div class="divider"></div>
             <div class="content shadowed">
-                <?php include_once(TEMPLATES_PATH . "/module/newsinfo.php");?>
+                <?php include_once(TEMPLATES_PATH . "/module/announcements.php");?>
 				<div class="jsenabled">
 					<div class="horizontal-line"></div>
 					<div class="split">
@@ -76,7 +76,7 @@
 						</div>
 					</div>
 				</div>
-				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
+				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
             </div>
         </div>
 
@@ -93,11 +93,11 @@
 					also connect directly using the connection information listed below.
 				<div class="split">
 					<div class="splitcontent splittwo">
-						<?php include(TEMPLATES_PATH . "/module/tsinfo.php");?>
+						<?php include(TEMPLATES_PATH . "/module/teamspeak.php");?>
 					</div>
 					<div class="vertical-line"></div>
 					<div class="splitcontent splittwo">
-						<?php include(TEMPLATES_PATH . "/module/dcinfo.php");?>
+						<?php include(TEMPLATES_PATH . "/module/discord.php");?>
 					</div>
 					<br>
 					<br>
@@ -132,7 +132,7 @@
 					you might want to try out. It's generally customized to fit the theme of Hivecom but it also
 					works well on other Teamspeak servers. You can download the skin <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">here</a></i>.
 				</p>
-				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
+				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
 			</div>
 		</div>
 
@@ -144,7 +144,7 @@
 				<p>
 					Write amazing information about the game servers Hivecom hosts here.
 				</p>
-				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
+				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
 			</div>
 		</div>
 
@@ -167,7 +167,7 @@
                 <div class="horizontal-line"></div>
 
 				<h4 class="centered">The administrators</h4>
-				<?php include_once(TEMPLATES_PATH . "/module/admincards.php");?>
+				<?php include_once(TEMPLATES_PATH . "/module/administrators.php");?>
 				<p class="centered">
 					If you would like to get in direct contact with the Hivecom management team, you can write an email at
 					<br><br>
@@ -179,7 +179,7 @@
 				<p>
 					Talk about moderators and staff here.
 				</p>
-				<?php include_once(TEMPLATES_PATH . "/module/staffinfo.php");?>
+				<?php include_once(TEMPLATES_PATH . "/module/staff.php");?>
 				<div class="horizontal-line"></div>
 
 				<h4 class="centered">Keeping things running</h4>
@@ -195,7 +195,7 @@
 					appreciate any help and extra encouragement we receive. We're already extremely thankful for the
 					amazing community either way. Thanks for being a part of this journey!
 				</p>
-				<?php include(TEMPLATES_PATH . "/module/donationinfo.php");?>
+				<?php include(TEMPLATES_PATH . "/module/donationmeter.php");?>
 				<div class="horizontal-line"></div>
 
 				<h4 class="centered">In retrospect</h4>
@@ -204,10 +204,10 @@
 					registered members and is constantly growing. We're overly thankful for	what we have now
 					considering this all started from three friends getting together to chat and hang out.
 				</p>
-				<?php include(TEMPLATES_PATH . "/module/totop.php");?>
+				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
             </div>
         </div>
-        <?php include_once(TEMPLATES_PATH . "/module/footer.php");?>
+        <?php include_once(TEMPLATES_PATH . "/core/footer.php");?>
     </div>
 </body>
 
