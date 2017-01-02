@@ -52,7 +52,7 @@ UNIQUE KEY uniqueid (`unique_id`)
 -- Table for Hivecom users. Stores all information and logging.
 CREATE TABLE `users` (
 `user_id` INT(11) NOT NULL AUTO_INCREMENT,
-`unique_id` CHAR(32) NOT NULL,
+`unique_id` CHAR(13) NOT NULL,
 `username` VARCHAR(15) NOT NULL,
 `password` BINARY(60) NOT NULL,
 `email` VARCHAR(254) NOT NULL,

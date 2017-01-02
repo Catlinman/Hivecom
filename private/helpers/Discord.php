@@ -7,7 +7,7 @@ require_once(realpath(dirname(__FILE__) . "/../config.php"));
 defined("DISCORD_LOG")
 	or define("DISCORD_LOG", LOG_PATH . "/discord-error.log");
 
-class HivecomDiscord {
+class Discord {
 
 	// Latest query connection data.
     public static $query;

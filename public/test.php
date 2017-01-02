@@ -17,20 +17,19 @@ const SQL_SUMMARY_INDEX         = 7;
 const SQL_ADMINS_INDEX          = 8;
  */
 
-/*
-echo HivecomGameserver::create(
-    HivecomGameserver::prepare(
-		"rust",
-		"rust.hivecom.net",
-		"steam://connect/",
-		"/page?access=rust-information",
-		"The Leaky Faucet",
-		"Freeplay Vanilla Rust server that is updated on a regular basis. Has slots for up to 60 players and is open to anyone willing to join.",
-		"rapid,catlinman",
-		false
+/*echo Gameserver::edit(
+    "5869945d75068",
+    Gameserver::prepare(
+        "rust",
+        "rust.hivecom.net:28036",
+        "steam://connect/rust.hivecom.net:28036",
+        "",
+        "The Leaky Faucet",
+        "Freeplay Vanilla Rust server that is updated on a regular basis. Has slots for up to 60 players and is open to anyone willing to join.",
+        "rapid,catlinman",
+        false
     )
-);
-*/
+);*/
 
 /*
 const SQL_ID_INDEX              = 0;
@@ -47,11 +46,10 @@ const SQL_DATE_CREATE_INDEX     = 10;
 const SQL_DATE_EDIT_INDEX       = 11;
 	const SQL_IS_NEWS_INDEX         = 12;
 	const SQL_IS_STICKY_INDEX       = 13;
- */
 
-echo HivecomPage::edit(
+echo Page::edit(
 	"58699a8e44a51",
-    HivecomPage::prepare(
+    Page::prepare(
 		"New Site Update",
 		"Community Announcement",
 		"Catlinman",
@@ -97,3 +95,6 @@ Either way, I hope that you are happy with the changes I have made so far. I hop
 		true
     )
 );
+*/
+
+echo Page::assignAccess("58699a8e44a51", "site-launch");

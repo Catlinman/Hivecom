@@ -5,24 +5,24 @@ require_once(realpath(dirname(__FILE__) . "/../config.php"));
 
 // Set the site backend error log filename.
 defined("SITE_LOG")
-	or define("SITE_LOG", LOG_PATH . "/site-error.log");
+    or define("SITE_LOG", LOG_PATH . "/site-error.log");
 
-class HivecomUser {
+class User {
 
-	public static function dbconnect() {
-		// Connect to MySQL. Connection stored in $dbconnection.
-		require_once(AUTH_PATH . "/mysql.php");
+    public static function dbconnect() {
+        // Connect to MySQL. Connection stored in $dbconnection.
+        require_once(AUTH_PATH . "/mysql.php");
 
-		if (!isset($dbconnection)) {
-			error_log("MySQL connection failed.\n", 3, SITE_LOG);
+        if (!isset($dbconnection)) {
+            error_log("MySQL connection failed.\n", 3, SITE_LOG);
 
-		} else {
-			// Hivecom database should be selected.
-			mysqli_select_db($dbconnection, "hivecom") or error_log(mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
+        } else {
+            // Hivecom database should be selected.
+            mysqli_select_db($dbconnection, "hivecom") or error_log(mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
 
-			return $dbconnection;
-		}
-	}
+            return $dbconnection;
+        }
+    }
 
     public static function authenticate($handle, $pass) {}
 

@@ -32,7 +32,7 @@
 
 include_once(TEMPLATES_PATH . "/core/connections.php");
 
-if (!isset(HivecomTeamspeak::$query) && !isset(HivecomTeamspeak::$query)) {
+if (!isset(Teamspeak::$query) && !isset(Teamspeak::$query)) {
 	echo '<link rel="stylesheet" type="text/css" href="/css/style-red.css">';
 }
 

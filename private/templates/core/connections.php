@@ -3,5 +3,5 @@
 require_once(HELPERS_PATH . "/Teamspeak.php");
 require_once(HELPERS_PATH . "/Discord.php");
 
-HivecomTeamspeak::connect();
-HivecomDiscord::connect();
+Teamspeak::connect();
+Discord::connect();

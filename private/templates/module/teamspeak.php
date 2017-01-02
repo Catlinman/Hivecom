@@ -7,7 +7,7 @@
 
 <?php
 // Check if the server is online. If not, return the offline information and return.
-if (!isset(HivecomTeamspeak::$query)) {
+if (!isset(Teamspeak::$query)) {
     echo '
 		<div class="horizontal-line glow-red"></div>
 		<h5>Server connection failed</h5>

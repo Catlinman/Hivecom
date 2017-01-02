@@ -1,17 +1,9 @@
-<!-- Noscript warning in case JavaScript is disabled -->
-<noscript>
-	<p class="notice">
-		Javascript have been detected as disabled - some elements might not function as intended
-	</p>
-	<div class="horizontal-line"></div>
-</noscript>
-
 <!-- Teamspeak and Discord warning if no connection was made -->
 <?php
-if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
-	// Teamspeak warning.
-	if (!isset(HivecomTeamspeak::$query)) {
-		echo '
+if (isset(Teamspeak::$query) || isset(Teamspeak::$query)) {
+    // Teamspeak warning.
+    if (!isset(Teamspeak::$query)) {
+        echo '
 		<p class="notice">
 			The Hivecom Teamspeak server appears to be offline at the moment.
 			<br><br>
@@ -19,11 +11,11 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			<a href="https://twitter.com/' . TWITTER . '">Hivecom Twitter feed</a>.
 		</p>
 		';
-	}
+    }
 
-	// Discord warning.
-	if (!isset(HivecomDiscord::$query)) {
-		echo '
+    // Discord warning.
+    if (!isset(Discord::$query)) {
+        echo '
 		<p class="notice">
 			The Hivecom Discord server appears to be offline at the moment.
 			<br><br>
@@ -32,10 +24,10 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			<a href="https://twitter.com/discordapp">Discord Twitter account</a> for more information.
 		</p>
 		';
-	}
+    }
 } else {
-	// Both servers are offline.
-	echo '
+    // Both servers are offline.
+    echo '
 		<p class="notice">
 			The Hivecom Teamspeak & Discord server appear to be offline at the moment.
 			<br><br>

@@ -4,7 +4,7 @@ require_once(realpath(dirname(__FILE__) . "/../../config.php"));
 
 require_once(HELPERS_PATH . "/Donation.php");
 
-$latest = HivecomDonation::retrieveLatest();
+$latest = Donation::retrieveLatest();
 
 if ($latest) {
 	$start = date_format(date_create($latest["date_end"]), "l jS \of F Y");

@@ -22,7 +22,7 @@ defined("IMAGES_PATH")
 
 // Time in seconds between API and data queries.
 defined("QUERYINTERVAL")
-	or define("QUERYINTERVAL", 300);
+    or define("QUERYINTERVAL", 300);
 
 // Maximum number of news entries on the main page.
 defined("MAXNEWS")
@@ -30,15 +30,19 @@ defined("MAXNEWS")
 
 // Main Steam Group handle of the site.
 defined("STEAM")
-	or define("STEAM", "hivecomnetwork");
+    or define("STEAM", "hivecomnetwork");
 
 // Main Twitter handle of the site.
 defined("TWITTER")
-	or define("TWITTER", "hivecomnetwork");
+    or define("TWITTER", "hivecomnetwork");
 
 // Main Facebook handle of the site.
 defined("FACEBOOK")
-	or define("FACEBOOK", "hivecom");
+    or define("FACEBOOK", "hivecom");
+
+// Main Twitch handle of the site used for the viewer on the main page.
+defined("TWITCH")
+    or define("TWITCH", "hivecom");
 
 // Set the default timezone to keep uid gen consistent.
 date_default_timezone_set("Europe/Berlin");

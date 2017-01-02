@@ -149,7 +149,16 @@ ul {
 
 .striped {
     background: url(/img/stripe2.png);
-    background-size: 8px auto;
+    /*
+	    background: url(/img/background.png);
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+	*/
+}
+
+.darkstriped {
+    background: url(/img/stripe4.png);
 }
 
 
@@ -311,7 +320,8 @@ footer {
 #footercontainer img {
     width: 24px;
     margin: 8px 8px;
-    filter: opacity(35%) grayscale(100%) invert(100%);
+    filter: opacity(30%) grayscale(100%) invert(100%);
+    border-radius: 4px;
     -webkit-transition: all .25s ease-in-out;
     -moz-transition: all .25s ease-in-out;
     -o-transition: all .25s ease-in-out;
@@ -321,9 +331,6 @@ footer {
 #footercontainer img:hover {
     width: 32px;
     margin: 4px 4px;
-    -webkit-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
-    -moz-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
-    box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
 }
 
 
@@ -631,6 +638,8 @@ button:focus {
     text-align: center !important;
     margin: 8px;
     margin-top: 0px;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
 
@@ -789,13 +798,20 @@ button:focus {
     display: none;
 }
 
-.gameheader h4, .gameheader p {
+.gameheader h4 {
     display: inline-block;
+    padding-top: 16px;
 }
 
 .gameheader p {
     vertical-align: text-bottom;
-    padding: 0px 0px;
+    padding: 0px 16px;
+    display: inherit;
+}
+
+.gameheader .buttoncontainer {
+    margin: 8px 8px;
+    float: right;
 }
 
 .gameheader button {
@@ -814,6 +830,20 @@ button:focus {
 
 #disqus_thread {
     margin: 16px;
+}
+
+
+/* Twitch */
+
+#twitch {
+    display: none;
+}
+
+#twitch iframe {
+    width: 95%;
+    height: 480px;
+    margin-left: 20px;
+    border: 2px dashed #292f33;
 }
 
 @keyframes profilein {
@@ -916,6 +946,9 @@ button:focus {
     .cardimage:hover {
         width: 190px;
     }
+    #twitch iframe {
+        height: 415px;
+    }
 }
 
 @media all and (max-width: 640px) {
@@ -947,6 +980,10 @@ button:focus {
     }
     .nomobile {
         display: none;
+    }
+    #twitch iframe {
+        width: 97%;
+        height: 350px;
     }
 }
 
@@ -1012,6 +1049,11 @@ ing: 8px;
 
 }
 ng: 8px;
+
+}
+
+}
+8px;
 
 }
 

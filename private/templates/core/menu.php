@@ -13,7 +13,7 @@
 
 			echo sprintf(
                 '<a href="/user/profile?user=%s">%s</a>',
-				HivecomUtility::slug($_SESSION['user']),
+				Utility::slug($_SESSION['user']),
 				$_SESSION['user']
 			);
 
