@@ -16,7 +16,7 @@
         <div id="headline" class="noselect">
             <img src="/img/metaicon.png" width="512"/>
             <h2>
-                Member Login
+                Community User Login
             </h2>
 			<p>
 				- Gain access to user account control panels -
@@ -30,7 +30,6 @@
 			<div class="divider"></div>
             <div class="content shadowed">
 				<!-- Banners for warnings -->
-				<?php include_once(TEMPLATES_PATH . "/banner/warnings.php");?>
                 <?php include_once(TEMPLATES_PATH . "/form/login.php");?>
             </div>
         </div>

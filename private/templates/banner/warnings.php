@@ -18,7 +18,6 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			For more information take a look at the
 			<a href="https://twitter.com/' . TWITTER . '">Hivecom Twitter feed</a>.
 		</p>
-		<div class="horizontal-line"></div>
 		';
 	}
 
@@ -32,7 +31,6 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			<a href="https://twitter.com/' . TWITTER . '">Hivecom Twitter feed</a> and the
 			<a href="https://twitter.com/discordapp">Discord Twitter account</a> for more information.
 		</p>
-		<div class="horizontal-line"></div>
 		';
 	}
 } else {
@@ -45,7 +43,6 @@ if (isset(HivecomTeamspeak::$query) || isset(HivecomTeamspeak::$query)) {
 			<a href="https://twitter.com/' . TWITTER . '">Hivecom Twitter feed</a> and the
 			<a href="https://twitter.com/discordapp">Discord Twitter account</a> for more information.
 		</p>
-		<div class="horizontal-line"></div>
 	';
 }
 

@@ -28,7 +28,7 @@ p {
     font-size: 15px;
     font-weight: normal;
     margin: 0px;
-    line-height: 135%;
+    line-height: 150%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -50,42 +50,32 @@ a:hover {
 }
 
 h1 {
-    margin: 0px;
     font-size: 64px;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
-    margin: 0px;
     font-size: 42px;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 h3 {
-    margin: 0px;
     font-size: 32px;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 h4 {
-    margin: 0px;
     font-size: 24px;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 h5 {
-    margin: 0px;
     font-size: 18px;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 120%;
+    margin: 0px;
     font-weight: normal;
-    line-height: 100%;
+}
+
+p, h1, h2, h3, h4, h5, ul {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -145,6 +135,13 @@ ul {
     -ms-user-select: none;
     user-select: none;
     cursor: default;
+}
+
+
+/* Disables on mobile view */
+
+.nomobile {
+    display: inherit;
 }
 
 
@@ -301,6 +298,7 @@ footer {
 }
 
 #footercontainer {
+    color: #555555;
     background: #121212;
     border-top: 1px solid #385510;
     border-bottom: 1px solid #252525;
@@ -308,6 +306,24 @@ footer {
     font-size: 14px;
     line-height: 30px;
     padding: 8px;
+}
+
+#footercontainer img {
+    width: 24px;
+    margin: 8px 8px;
+    filter: opacity(35%) grayscale(100%) invert(100%);
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+#footercontainer img:hover {
+    width: 32px;
+    margin: 4px 4px;
+    -webkit-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
+    -moz-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
+    box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 1.0);
 }
 
 
@@ -355,6 +371,8 @@ label {
 }
 
 button {
+    cursor: pointer;
+    cursor: hand;
     font-family: "Aldrich", sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -362,8 +380,8 @@ button {
     -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
     padding: 10px;
-    margin: 16px auto;
-    display: block;
+    margin: 4px 4px;
+    display: inline-block;
     border: 1px solid #393f2f;
     border-radius: 4px;
     background: #0a0a0a;
@@ -389,6 +407,15 @@ button:focus {
     -webkit-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
     -moz-box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
     box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
+}
+
+.buttoncontainer {
+    margin: 16px 16px;
+}
+
+.buttoncenter {
+    display: block !important;
+    margin: auto auto;
 }
 
 
@@ -567,7 +594,7 @@ button:focus {
 }
 
 .content p {
-    padding: 16px 16px;
+    padding: 16px 24px;
     text-align: justify;
 }
 
@@ -599,8 +626,18 @@ button:focus {
 /* Warning container for JS errors as well as server related information. */
 
 .notice {
+    border: 2px dashed #202427;
     font-size: 14px !important;
     text-align: center !important;
+    margin: 8px;
+    margin-top: 0px;
+}
+
+
+/* Read more link. */
+
+.readmore {
+    font-size: 18px;
 }
 
 
@@ -726,23 +763,23 @@ button:focus {
 /* Formatting for page generated content */
 
 .page h1 {
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .page h2 {
-    font-size: 22px;
+    font-size: 26px;
 }
 
 .page h3 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .page h4 {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .page h5 {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -750,6 +787,26 @@ button:focus {
 
 .introduction h1, .introduction h2, .introduction h3, .introduction h4, .introduction h5 {
     display: none;
+}
+
+.gameheader h4, .gameheader p {
+    display: inline-block;
+}
+
+.gameheader p {
+    vertical-align: text-bottom;
+    padding: 0px 0px;
+}
+
+.gameheader button {
+    float: right;
+}
+
+.gameheader img {
+    border-radius: 2px;
+    vertical-align: top;
+    margin-right: 8px;
+    width: 24px;
 }
 
 
@@ -856,6 +913,9 @@ button:focus {
     .cardimage {
         width: 180px;
     }
+    .cardimage:hover {
+        width: 190px;
+    }
 }
 
 @media all and (max-width: 640px) {
@@ -884,6 +944,9 @@ button:focus {
     }
     .centerinfo {
         font-size: 24px;
+    }
+    .nomobile {
+        display: none;
     }
 }
 
@@ -949,5 +1012,7 @@ ing: 8px;
 
 }
 ng: 8px;
+
+}
 
 }

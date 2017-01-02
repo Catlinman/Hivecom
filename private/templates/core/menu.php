@@ -12,17 +12,17 @@
 			require_once(HELPERS_PATH . "/Utility.php");
 
 			echo sprintf(
-                '<a href="/user/profile.php?user=%s">%s</a>',
+                '<a href="/user/profile?user=%s">%s</a>',
 				HivecomUtility::slug($_SESSION['user']),
 				$_SESSION['user']
 			);
 
 			// Display a logout option.
-			echo '<span>|</span><a href="/user/logout.php">LOGOUT</a>';
+			echo '<span>|</span><a href="/user/logout">LOGOUT</a>';
 
 		} else {
 			// If there is no logged in user - show the login option.
-			echo '<a href="/user/login.php">LOGIN</a>';
+			echo '<a href="/user/login">LOGIN</a>';
 		}
 
 		?>

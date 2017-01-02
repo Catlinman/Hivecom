@@ -32,7 +32,6 @@ if (!$page) {
 <head>
     <title>Hivecom - <?php echo $page[HivecomPage::SQL_TITLE_INDEX];?></title>
     <?php include_once(TEMPLATES_PATH . "/core/head.php");?>
-	<script type="text/javascript" src="/js/clipboard.js"></script>
 	<meta name="twitter:description" content="<?php echo $page[HivecomPage::SQL_TITLE_INDEX];?>">
 </head>
 
@@ -65,7 +64,7 @@ if (!$page) {
 					echo $page[HivecomPage::SQL_CONTENT_HTML_INDEX];
 
 					// Create the author and date information.
-					echo '<p class="notice centered">Published ';
+					echo '<p class="centered">Published ';
 
 					// Add the post author if it was not created directly as Hivecom.
 					if (HivecomUtility::slug($page[HivecomPage::SQL_AUTHOR_INDEX]) != "hivecom") {
@@ -85,7 +84,7 @@ if (!$page) {
 				<?php
 
 				// Show the page permalink.
-				echo sprintf('<button onclick="copyToClipboard(\'https://hivecom.net/page?uid=%s\')" type="button">Copy page permalink to clipboard</button>', $page[HivecomPage::SQL_UNIQUE_ID_INDEX]);
+				echo sprintf('<div class="buttoncontainer"><button class="buttoncenter" onclick="copyToClipboard(\'https://hivecom.net/page?uid=%s\')" type="button">Copy page permalink to clipboard</button></div>', $page[HivecomPage::SQL_UNIQUE_ID_INDEX]);
 
 				?>
 				<div id="disqus_thread"></div>

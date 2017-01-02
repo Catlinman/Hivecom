@@ -54,6 +54,7 @@
 					Interested? Check out the voice and game server section for more information! We hope to see you amidst us!
 					<br><br>
 					<i>The Hivecom Team</i>
+					<br><br>
                 </p>
             </div>
         </div>
@@ -128,8 +129,8 @@
 
 				<h4 class="centered">Teamspeak skin</h4>
 				<p>
-					Hivecom also has a <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">Teamspeak skin</a></i>
-					you might want to try out. It's generally customized to fit the theme of Hivecom but it also
+					Hivecom also has a dark <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">Teamspeak skin</a></i>
+					you might want to try out. It's generally customized to fit the main colour theme but it also
 					works well on other Teamspeak servers. You can download the skin <i><a href="/files/hivecomskin.zip" alt="Link to the Hivecom Teamspeak skin">here</a></i>.
 				</p>
 				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
@@ -141,9 +142,7 @@
 			<div class="contentheader shadowed">GAME SERVERS</div>
 			<div class="divider"></div>
 			<div class="content shadowed">
-				<p>
-					Write amazing information about the game servers Hivecom hosts here.
-				</p>
+				<?php include_once(TEMPLATES_PATH . "/module/gameservers.php");?>
 				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
 			</div>
 		</div>
@@ -163,6 +162,13 @@
 					and 24/7 uptime made them reconsider this small hosting plan. They later on that year went over to actually
 					acquiring a dedicated Teamspeak server from Fragnet but later on switched to what is now a server entirely
 					run and managed for Hivecom in itself.
+					<br><br>
+					Hivecom is not only present on this website and its servers. We have an official
+					<a href="https://steamcommunity.com/groups/<?php echo STEAM; ?>/">Steam Group</a> for anyone open and willing to join
+					where we mirror important announcements that we make on this page. See it as an extra source of information when
+					it is needed. On top of that you can also find the latest announcements and news on our
+					<a href="https://twitter.com/<?php echo TWITTER; ?>/">Twitter</a> and
+					<a href="https://facebook.com/<?php echo FACEBOOK; ?>/">Facebook</a> accounts if you are into that sort of thing!
 				</p>
                 <div class="horizontal-line"></div>
 
@@ -175,9 +181,14 @@
                 </p>
 				<div class="horizontal-line"></div>
 
-				<h4 class="centered">Site managers and server moderators</h4>
+				<h4 class="centered">Site managers and general moderators</h4>
 				<p>
-					Talk about moderators and staff here.
+					Even though the Hivecom administrators take over management of most things, we also have dedicated
+					folks running things on their own when it is needed. Our game servers for instance are hosted primarily
+					by members of the community and are usually privately managed with no direct control on Hivecom's part.
+					The voice servers as well as this website have some outstanding moderators as well as community organisers.
+					We'd like to thank everyone that is a part of the community in general, but also give some extra spotlight
+					to those that help out more than the average member and have earned their rank among all of us!
 				</p>
 				<?php include_once(TEMPLATES_PATH . "/module/staff.php");?>
 				<div class="horizontal-line"></div>

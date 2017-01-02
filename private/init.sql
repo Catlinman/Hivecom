@@ -13,22 +13,6 @@ CREATE TABLE `site` (
 `ts_peak` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Table for Hivecom gameserver information.
-CREATE TABLE `gameservers` (
-`gameserver_id` INT(11) NOT NULL AUTO_INCREMENT,
-`unique_id` CHAR(13) NOT NULL,
-`game` VARCHAR(255) NOT NULL,
-`address` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
-`address_easy` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
-`address_info` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
-`title` VARCHAR(24) NOT NULL,
-`summary` VARCHAR(255) NOT NULL,
-`admins` VARCHAR(255) NOT NULL,
-`hidden` BOOLEAN NOT NULL DEFAULT FALSE,
-PRIMARY KEY (`gameserver_id`),
-UNIQUE KEY uniqueid (`unique_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 -- Table for Hivecom page content and announcement binding.
 CREATE TABLE `pages` (
 `page_id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -49,6 +33,22 @@ PRIMARY KEY (`page_id`),
 UNIQUE KEY uniqueid (`unique_id`, `access_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- Table for Hivecom gameserver information.
+CREATE TABLE `gameservers` (
+`gameserver_id` INT(11) NOT NULL AUTO_INCREMENT,
+`unique_id` CHAR(13) NOT NULL,
+`game` VARCHAR(255) NOT NULL,
+`address` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+`address_easy` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+`address_info` VARCHAR(512) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+`title` VARCHAR(128) NOT NULL,
+`summary` VARCHAR(255) NOT NULL,
+`admins` VARCHAR(255) NOT NULL,
+`hidden` BOOLEAN NOT NULL DEFAULT FALSE,
+PRIMARY KEY (`gameserver_id`),
+UNIQUE KEY uniqueid (`unique_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- Table for Hivecom users. Stores all information and logging.
 CREATE TABLE `users` (
 `user_id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -61,6 +61,7 @@ CREATE TABLE `users` (
 
 -- Personal user information.
 `bio` VARCHAR(255),
+`birthday` DATETIME,
 `location` VARCHAR(255),
 `image` BOOLEAN NOT NULL DEFAULT FALSE,
 `badges` TEXT,
@@ -111,4 +112,13 @@ CREATE TABLE donations (
 `amount` INT(11) NOT NULL DEFAULT 0,
 `goal` INT(11) NOT NULL DEFAULT 50,
 PRIMARY KEY (`donation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Table for Hivecom user badges.
+CREATE TABLE badges (
+`badge_id` INT(11) NOT NULL AUTO_INCREMENT,
+`name` DATETIME NOT NULL,
+`description` DATETIME NOT NULL,
+PRIMARY KEY (`badge_id`),
+UNIQUE KEY username (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

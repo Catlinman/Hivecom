@@ -18,13 +18,13 @@ $stickypost = HivecomPage::retrieveSticky();
 
 // Display the title of the post and link the page with additional information.
 echo sprintf(
-	'<h5 class="centered">Community Announcement</h5><h3 class="centered"><a href="/page?uid=%s">%s</a></h3>',
+	'<h5 class="centered">- Community Announcement -</h5><h3 class="centered"><a href="/page?uid=%s">%s</a></h3>',
 	$stickypost[HivecomPage::SQL_UNIQUE_ID_INDEX],
 	$stickypost[HivecomPage::SQL_TITLE_INDEX]
 );
 
 // Create the author and date information.
-echo '<p class="notice centered">Published ';
+echo '<p class="centered">Published ';
 
 // Add the post author if it was not created directly as Hivecom.
 if (HivecomUtility::slug($stickypost[HivecomPage::SQL_AUTHOR_INDEX]) != "hivecom") {
@@ -45,7 +45,7 @@ echo sprintf('<div class="page introduction">%s</div>', stripcslashes($stickypos
 
 // Read more and comment link.
 echo sprintf(
-	'<p class="centered"><a href="/page?uid=%s">Click here to read more and comment</a></p>',
+	'<p class="centered readmore"><a href="/page?uid=%s">Click here to read more and comment</a></p>',
 	$stickypost[HivecomPage::SQL_UNIQUE_ID_INDEX]
 );
 

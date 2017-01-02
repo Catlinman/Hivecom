@@ -44,7 +44,7 @@ foreach ($news as $post) {
     );
 
 	// Create the author and date information.
-	echo '<p class="notice centered">Published ';
+	echo '<p class="centered">Published ';
 
 	// Add the post author if it was not created directly as Hivecom.
 	if (HivecomUtility::slug($post[HivecomPage::SQL_AUTHOR_INDEX]) != "hivecom") {
@@ -65,7 +65,7 @@ foreach ($news as $post) {
 
 	// Display a read more section after the post introduction if there is content.
 	echo sprintf(
-		'<p class="centered"><a href="/page?uid=%s">Click here to read more and comment</a></p>',
+		'<p class="centered readmore"><a href="/page?uid=%s">Click here to read more and comment</a></p>',
 		$post[HivecomPage::SQL_UNIQUE_ID_INDEX]
 	);
 

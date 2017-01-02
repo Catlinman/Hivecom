@@ -16,6 +16,10 @@ defined("LIBRARY_PATH")
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . "/templates"));
 
+defined("IMAGES_PATH")
+    or define("IMAGES_PATH", realpath(dirname(__FILE__) . "/../public/img"));
+
+
 // Time in seconds between API and data queries.
 defined("QUERYINTERVAL")
 	or define("QUERYINTERVAL", 300);
@@ -24,9 +28,17 @@ defined("QUERYINTERVAL")
 defined("MAXNEWS")
     or define("MAXNEWS", 3);
 
-// Main twitter handle of the site.
+// Main Steam Group handle of the site.
+defined("STEAM")
+	or define("STEAM", "hivecomnetwork");
+
+// Main Twitter handle of the site.
 defined("TWITTER")
 	or define("TWITTER", "hivecomnetwork");
+
+// Main Facebook handle of the site.
+defined("FACEBOOK")
+	or define("FACEBOOK", "hivecom");
 
 // Set the default timezone to keep uid gen consistent.
 date_default_timezone_set("Europe/Berlin");
