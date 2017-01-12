@@ -46,9 +46,9 @@ const SQL_DATE_CREATE_INDEX     = 10;
 const SQL_DATE_EDIT_INDEX       = 11;
 	const SQL_IS_NEWS_INDEX         = 12;
 	const SQL_IS_STICKY_INDEX       = 13;
+*/
 
-echo Page::edit(
-	"58699a8e44a51",
+echo Page::create(
     Page::prepare(
 		"New Site Update",
 		"Community Announcement",
@@ -95,6 +95,5 @@ Either way, I hope that you are happy with the changes I have made so far. I hop
 		true
     )
 );
-*/
 
-echo Page::assignAccess("58699a8e44a51", "site-launch");
+// echo Page::assignAccess("58699a8e44a51", "site-launch");

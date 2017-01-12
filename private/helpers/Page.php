@@ -1,7 +1,7 @@
 <?php
 
 // Make sure that the site configuration was loaded.
-require_once(realpath(dirname(__FILE__) . "/../config.php"));
+require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");
 
 // Set the site backend error log filename.
 defined("SITE_LOG")
@@ -75,7 +75,7 @@ class Page {
 	*/
 	public static function prepare($title, $subtitle, $author, $opening_md, $content_md, $is_news, $is_sticky) {
 		$title		= $title or "Page title";
-		$subtitle	= $subtitle or "This is a page subtitle";
+		$subtitle	= $subtitle or "Community Announcement";
 		$author		= $author or "Hivecom";
 		$opening_md	= $opening_md or "Simple page opening. Nothing too long. No formatting.";
 		$content_md	= $content_md or "Main content of the page. Can contain markdown.";
@@ -83,13 +83,13 @@ class Page {
 		$is_sticky	= (int) $is_sticky or (int) false;
 
 		return array(
-			Page::SQL_AUTHOR_INDEX		=> $author,
-			Page::SQL_TITLE_INDEX		=> $title,
-			Page::SQL_SUBTITLE_INDEX		=> $subtitle,
-			Page::SQL_OPENING_MD_INDEX	=> $opening_md,
-			Page::SQL_CONTENT_MD_INDEX	=> $content_md,
-			Page::SQL_IS_NEWS_INDEX		=> $is_news,
-			Page::SQL_IS_STICKY_INDEX	=> $is_sticky,
+			Page::SQL_AUTHOR_INDEX		=> htmlspecialchars($author),
+			Page::SQL_TITLE_INDEX		=> htmlspecialchars($title),
+			Page::SQL_SUBTITLE_INDEX	=> htmlspecialchars($subtitle),
+			Page::SQL_OPENING_MD_INDEX	=> htmlspecialchars($opening_md),
+			Page::SQL_CONTENT_MD_INDEX	=> htmlspecialchars($content_md),
+			Page::SQL_IS_NEWS_INDEX		=> htmlspecialchars($is_news),
+			Page::SQL_IS_STICKY_INDEX	=> htmlspecialchars($is_sticky),
 		);
 	}
 
@@ -189,6 +189,7 @@ class Page {
 			// Assign variables for easier handling. Also escape
 			try {
 				$title = mysqli_real_escape_string($dbconnection, $data[Page::SQL_TITLE_INDEX]);
+				$subtitle = mysqli_real_escape_string($dbconnection, $data[Page::SQL_SUBTITLE_INDEX]);
 				$opening_md = mysqli_real_escape_string($dbconnection, $data[Page::SQL_OPENING_MD_INDEX]);
 				$content_md = mysqli_real_escape_string($dbconnection, $data[Page::SQL_CONTENT_MD_INDEX]);
 				$is_news = mysqli_real_escape_string($dbconnection, $data[Page::SQL_IS_NEWS_INDEX]);
@@ -223,6 +224,7 @@ class Page {
 				$dbconnection,
 				"UPDATE pages SET
 					`title` = '$title',
+					`subtitle` = '$subtitle',
 					`opening_md` = '$opening_md',
 					`opening_html` = '$opening_html',
 					`content_md` = '$content_md',
@@ -373,7 +375,9 @@ class Page {
 			$result = mysqli_query($dbconnection, "SELECT * FROM `pages` WHERE `is_sticky` = 1 ORDER BY `date_create` DESC LIMIT 1;")
 				or error_log(date("Y-m-d H:i:s ") . "Page/retrieveSticky: " . mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
 
-			return mysqli_fetch_array($result);
+			if ($result) {
+				return mysqli_fetch_array($result);
+			}
 		}
 	}
 

@@ -46,8 +46,8 @@ foreach ($news as $post) {
     // Create the author and date information.
     echo '<p class="centered">Published ';
 
-    // Add the post author if it was not created directly as Hivecom.
-    if (Utility::slug($post[Page::SQL_AUTHOR_INDEX]) != "hivecom") {
+    // Add the post author.
+    if (Utility::slug($post[Page::SQL_AUTHOR_INDEX]) != "") {
         echo sprintf(
             ' by <a href="/user/profile?username=%s">%s</a> ',
             Utility::slug($post[Page::SQL_AUTHOR_INDEX]),

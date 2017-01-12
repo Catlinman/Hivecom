@@ -1,16 +1,26 @@
 
 -- Make sure that a database was created. We suggest assigning a new and
--- 	single user to it for further authentication and use throughout the project.
+-- single user to it for further authentication and use throughout the project.
 
 USE hivecom;
 
--- Table for Hivecom site variables.
-CREATE TABLE `site` (
-`ts_slots` INT(4) NOT NULL,
-`ts_users` TEXT NOT NULL,
-`ts_viewer` TEXT NOT NULL,
-`ts_restart` DATETIME,
-`ts_peak` INT NOT NULL
+-- Table for the cached Teamspeak query data.
+CREATE TABLE `tsquery` (
+`slots` INT(4) NOT NULL,
+`users` TEXT NOT NULL,
+`structure` TEXT NOT NULL,
+`peak` INT NOT NULL,
+`date_restart` DATETIME,
+`date_query` DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Table for the cached Discord query data.
+CREATE TABLE `dcquery` (
+`chat_users` TEXT NOT NULL,
+`voice_users` TEXT NOT NULL,
+`channels` TEXT NOT NULL,
+`peak` INT NOT NULL,
+`date_query` DATETIME
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Table for Hivecom page content and announcement binding.

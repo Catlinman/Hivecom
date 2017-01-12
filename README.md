@@ -16,3 +16,5 @@ For the parsing of Markdown within page posts the website utilizes [Parsedown](h
 ## License ##
 
 This repository is released under the MIT license. For more information please refer to [LICENSE](https://github.com/catlinman/hivecom.net/blob/master/LICENSE)
+
+The icons and logos in the public logo image directory belong to their respective owners.

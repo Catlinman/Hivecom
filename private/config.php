@@ -19,10 +19,9 @@ defined("TEMPLATES_PATH")
 defined("IMAGES_PATH")
     or define("IMAGES_PATH", realpath(dirname(__FILE__) . "/../public/img"));
 
-
 // Time in seconds between API and data queries.
 defined("QUERYINTERVAL")
-    or define("QUERYINTERVAL", 300);
+    or define("QUERYINTERVAL", 600);
 
 // Maximum number of news entries on the main page.
 defined("MAXNEWS")
@@ -54,4 +53,20 @@ ini_set("error_log", LOG_PATH . "/php-error.log");
 // Set which errors should be reported.
 error_reporting(E_ALL);
 
+// Start the session and make sure that the IP address matches up.
 session_start();
+
+if(!isset($_SESSION['ip'])) {
+	$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+	$_SESSION['date'] = new DateTime;
+
+} else {
+	if($_SESSION['ip'] != $_SERVER['REMOTE_ADDR']) {
+		session_regenerate_id(FALSE);
+    	$tmp = session_id();
+    	session_write_close();
+    	unset($_SESSION);
+    	session_id($tmp);
+    	session_start();
+	}
+}

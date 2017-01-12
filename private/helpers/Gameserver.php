@@ -1,7 +1,7 @@
 <?php
 
 // Make sure that the site configuration was loaded.
-require_once(realpath(dirname(__FILE__) . "/../config.php"));
+require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");
 
 // Set the site backend error log filename.
 defined("SITE_LOG")
@@ -88,7 +88,7 @@ class Gameserver {
 			Gameserver::SQL_ADDRESS_INFO_INDEX	=> $address_info,
 			Gameserver::SQL_TITLE_INDEX			=> $title,
 			Gameserver::SQL_SUMMARY_INDEX		=> $summary,
-			Gameserver::SQL_ADMINS_INDEX			=> $admins,
+			Gameserver::SQL_ADMINS_INDEX		=> $admins,
 		);
 	}
 
@@ -253,7 +253,7 @@ class Gameserver {
 	public static function retrieveAll() {
 		$dbconnection = Gameserver::dbconnect();
 
-		if (!mysqli_error($dbconnection)) {
+		if ($dbconnection) {
 			$result = mysqli_query($dbconnection, "SELECT * FROM `gameservers`;")
 				or error_log(date("Y-m-d H:i:s ") . "Gameserver/retrieveAll: " . mysqli_error($dbconnection) . ".\n", 3, SITE_LOG);
 

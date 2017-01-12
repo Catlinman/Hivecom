@@ -1,7 +1,7 @@
 <?php
 
 // Make sure that the site configuration was loaded.
-require_once(realpath(dirname(__FILE__) . "/../config.php"));
+require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");
 
 // Import the Teamspeak3 PHP library.
 require_once(LIBRARY_PATH . "/TeamSpeak3/TeamSpeak3.php");
@@ -30,10 +30,48 @@ require_once(AUTH_PATH . "/tsquery.php");
 * Page
 *
 * Wrapper class for the Teamspeak3 PHP framework in relation to use on the Hivecom website.
+* Uses the database to cache actively used information.
 */
 class Teamspeak {
 
-    public static $query ;// Latest query connection.
+    // MySQL row indice constants. Used for the data array handling.
+    const SQL_SLOTS_INDEX			= 0;
+	const SQL_USERS_INDEX			= 1;
+	const SQL_CHANNELS_INDEX		= 2;
+	const SQL_PEAK_INDEX			= 3;
+	const SQL_DATE_RESTART_INDEX	= 4;
+	const SQL_DATE_QUERY_INDEX		= 5;
+
+    private static $query; // Active query connection.
+	private static $cache; // Cached data from previous connection.
+
+	/**
+	* dbconnect
+	*
+	* Makes a connection to the MySQL database using the private authentication script.
+	*
+	* @return mysqli_query - Successful query connection object.
+	*/
+	public static function dbconnect() {
+		// Return the already existing connection if it is set.
+		if (isset($dbconnection)) {
+			return $dbconnection;
+		}
+
+		// Connect to MySQL. Connection stored in $dbconnection.
+		require(AUTH_PATH . "/mysql.php");
+
+		if (mysqli_connect_errno()) {
+			error_log(date("Y-m-d H:i:s ") . "Page/dbconnect:" . mysqli_connect_error() . "\n", 3, SITE_LOG);
+
+		} else {
+			// Hivecom database should be selected.
+			mysqli_select_db($dbconnection, "hivecom")
+				or error_log(date("Y-m-d H:i:s ") . mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
+
+			return $dbconnection;
+		}
+	}
 
     public static function connect() {
         // Return the query directly to make code easier to maintain.
@@ -56,8 +94,28 @@ class Teamspeak {
 
         } catch (Exception $e) {
             error_log($e, 3, TS3_QUERY_LOG);
+
+			return;
         }
+
+		Teamspeak::setCache();
     }
+
+	// Returns the cached query connection data.
+	public static function getCache() {
+		// Make a database connection if the cache is empty.
+		Teamspeak::$cache = ["asdf"];
+
+		// Make a query connection if the cache is out of date.
+		return Teamspeak::$cache;
+	}
+
+	public static function getCacheDate() {
+	}
+
+	// Updates the cached query connection data if needed.
+	public static function setCache() {
+	}
 
     public static function retrieve($id) {
         if (!Teamspeak::$query) {
@@ -102,10 +160,8 @@ class Teamspeak {
     }
 
     public static function makeViewer() {
-        if (!Teamspeak::$query) {
-            Teamspeak::connect();
+        if (!Teamspeak::$cache) {
+            Teamspeak::getCache();
         }
-
-        Teamspeak::$query->getViewer(new TeamSpeak3_Viewer_Html("img/icons/", "img/flags/", "data:image"));
     }
 }

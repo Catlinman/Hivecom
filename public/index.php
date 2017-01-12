@@ -43,7 +43,7 @@
             <div class="content shadowed">
                 <!-- Banners for warnings and important announcements -->
                 <?php include_once(TEMPLATES_PATH . "/banner/noscript.php");?>
-                <?php include_once(TEMPLATES_PATH . "/banner/warnings.php");?>
+                <?php // FIXME: Uncomment when Teamspeak & Discord works // include_once(TEMPLATES_PATH . "/banner/warnings.php");?>
                 <?php include_once(TEMPLATES_PATH . "/banner/twitch.php");?>
                 <?php include_once(TEMPLATES_PATH . "/banner/sticky.php");?>
                 <p>
@@ -89,11 +89,16 @@
             <div class="divider"></div>
             <div class="content shadowed">
                 <p>
-                    Short summary about the hosting information for both main voice servers.
+                    Our hosting solutions are mainly based in Europe meaning that connections coming from outside Europe
+                    might have a bit of latency. We host our primary Teamspeak voice server using a private server located
+                    in Frankfurt, Germany. The Discord server's primary location is the Netherlands. If there is enough
+                    demand we might expand with further servers but for the time being the community has worked well with
+                    what we have at our disposal.
                     <br><br>
                     There are a few options for connecting to our voice servers. We suggest using one of the connection
                     buttons at the top of the page and then having you save the server address as a bookmark. You can however
                     also connect directly using the connection information listed below.
+                </p>
                 <div class="split">
                     <div class="splitcontent splittwo">
                         <?php include(TEMPLATES_PATH . "/module/teamspeak.php");?>
@@ -183,7 +188,7 @@
                 </p>
                 <div class="horizontal-line"></div>
 
-                <h4 class="centered">Site managers and general moderators</h4>
+                <h4 class="centered">Managers and moderators</h4>
                 <p>
                     Even though the Hivecom administrators take over management of most things, we also have dedicated
                     folks running things on their own when it is needed. Our game servers for instance are hosted primarily

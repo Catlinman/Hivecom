@@ -340,12 +340,29 @@ form {
     font-family: "Aldrich", sans-serif;
     font-size: 14px;
     margin: auto auto;
+    padding-top: 16px;
     position: relative;
     font-size: 14px;
     text-decoration: none;
-    color: #77c345;
     text-align: center;
-    padding: 10px 10px 0px 10px;
+}
+
+.form-inline label, .form-inline input {
+    display: inline-block;
+    text-align: left;
+}
+
+.form-inline label {
+    width: 150px;
+    vertical-align: middle;
+}
+
+.form-inline .spacer {
+    margin-left: 32px;
+}
+
+.form-inline .wedge {
+    margin-left: 210px;
 }
 
 input {
@@ -364,7 +381,6 @@ input {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-appearance: none;
 }
 
 input:focus {
@@ -372,9 +388,17 @@ input:focus {
     border: 1px solid #507719;
 }
 
+input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
 label {
-    color: #d0d0d0;
-    font-size: 18px;
+    font-size: 15px;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 button {
@@ -416,6 +440,10 @@ button:focus {
     box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
 }
 
+button:hover {
+    border: 1px solid #507719;
+}
+
 .buttoncontainer {
     margin: 16px 16px;
 }
@@ -423,6 +451,24 @@ button:focus {
 .buttoncenter {
     display: block !important;
     margin: auto auto;
+}
+
+textarea {
+    margin-left: 24px;
+    margin-right: 24px;
+    height: 140px;
+    width: 93%;
+    resize: vertical;
+    background-color: #0c0c0c;
+    border-radius: 4px;
+    border: 1px solid #252525;
+    color: #d0d0d0;
+    padding: 8px;
+}
+
+textarea:focus {
+    outline: 0px;
+    border: 1px solid #507719;
 }
 
 
@@ -574,6 +620,7 @@ button:focus {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     text-transform: uppercase;
+    overflow: hidden;
 }
 
 .contentspacer {
@@ -684,6 +731,7 @@ button:focus {
     -webkit-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 1);
     box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 1);
+    filter: grayscale(50%);
 }
 
 .cardimage:hover {
@@ -691,6 +739,7 @@ button:focus {
     -webkit-box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
     -moz-box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
     box-shadow: 0px 0px 8px 0px rgba(150, 255, 85, 0.5);
+    filter: grayscale(0%) saturate(200%);
 }
 
 
@@ -789,6 +838,11 @@ button:focus {
 
 .page h5 {
     font-size: 18px;
+}
+
+.preview {
+    border: 2px dashed #202427;
+    margin: 16px;
 }
 
 
@@ -937,6 +991,9 @@ button:focus {
     label {
         font-size: 20px;
     }
+    .contentheader {
+        font-size: 28px;
+    }
     .cardcontainer {
         width: 200px;
     }
@@ -984,6 +1041,9 @@ button:focus {
     #twitch iframe {
         width: 97%;
         height: 350px;
+    }
+    .page h1, .page h2, .page h3, .page h4, .page h5 {
+        text-align: center;
     }
 }
 
@@ -1045,16 +1105,173 @@ button:focus {
     padding: 8px;
 }
 
-ing: 8px;
+ght: 350px;
 
 }
-ng: 8px;
-
+.page h1, .page h2, .page h3, .page h4, .page h5 {
+    text-align: center;
 }
 
 }
-8px;
 
+/* Scrollbar styling. */
+::-webkit-scrollbar {
+    width: 8px;
+    border-left: 1px #393f2f;
+    background: #0c0c0c;
+}
+::-webkit-scrollbar-thumb {
+    background: #223612;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #77ca25;
+}
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+/* HACK: Forgot what this was for. */
+.darkbody {
+    background: #0a0a0a;
+}
+
+/* HACK: Okay at this point I give up. No idea where this was used. */
+.columnlist {
+    list-style: none;
+}
+.listhead li {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    text-decoration: underline;
+}
+.columnlist li {
+    display: block;
+    width: 22%;
+    margin-right: 3%;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.listclear {
+    clear: both;
+    padding: 8px;
+}
+ding: 8px;
+
+}
+ght: 350px;
+
+}
+.page h1, .page h2, .page h3, .page h4, .page h5 {
+    text-align: center;
+}
+
+}
+
+/* Scrollbar styling. */
+::-webkit-scrollbar {
+    width: 8px;
+    border-left: 1px #393f2f;
+    background: #0c0c0c;
+}
+::-webkit-scrollbar-thumb {
+    background: #223612;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #77ca25;
+}
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+/* HACK: Forgot what this was for. */
+.darkbody {
+    background: #0a0a0a;
+}
+
+/* HACK: Okay at this point I give up. No idea where this was used. */
+.columnlist {
+    list-style: none;
+}
+.listhead li {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    text-decoration: underline;
+}
+.columnlist li {
+    display: block;
+    width: 22%;
+    margin-right: 3%;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.listclear {
+    clear: both;
+    padding: 8px;
+}
+ding: 8px;
+
+}
+ght: 350px;
+
+}
+.page h1, .page h2, .page h3, .page h4, .page h5 {
+    text-align: center;
+}
+
+}
+
+/* Scrollbar styling. */
+::-webkit-scrollbar {
+    width: 8px;
+    border-left: 1px #393f2f;
+    background: #0c0c0c;
+}
+::-webkit-scrollbar-thumb {
+    background: #223612;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #77ca25;
+}
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+/* HACK: Forgot what this was for. */
+.darkbody {
+    background: #0a0a0a;
+}
+
+/* HACK: Okay at this point I give up. No idea where this was used. */
+.columnlist {
+    list-style: none;
+}
+.listhead li {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    text-decoration: underline;
+}
+.columnlist li {
+    display: block;
+    width: 22%;
+    margin-right: 3%;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.listclear {
+    clear: both;
+    padding: 8px;
 }
 
 }

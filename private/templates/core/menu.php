@@ -6,14 +6,14 @@
 		</div>
 		<div style="float:right;">
 		<?php
-
+		/*
 		// Show the current logged in user.
-		if (isset($_SESSION['user'])) {
+		if (isset($_SESSION['user_name'])) {
 			require_once(HELPERS_PATH . "/Utility.php");
 
 			echo sprintf(
-                '<a href="/user/profile?user=%s">%s</a>',
-				Utility::slug($_SESSION['user']),
+                '<a href="/user/profile?username=%s">%s</a>',
+				Utility::slug($_SESSION['user_name']),
 				$_SESSION['user']
 			);
 
@@ -24,7 +24,7 @@
 			// If there is no logged in user - show the login option.
 			echo '<a href="/user/login">LOGIN</a>';
 		}
-
+		*/
 		?>
 		</div>
 	</div>

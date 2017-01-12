@@ -26,7 +26,7 @@ if (function_exists('get_magic_quotes_gpc')) {
 }
 
 foreach ($myPost as $key => $value) {
-    if ($get_magic_quotes_exists == true && get_magic_quotes_gpc() == 1) {
+    if (clear == true && get_magic_quotes_gpc() == 1) {
         $value = urlencode(stripslashes($value));
 
     } else {

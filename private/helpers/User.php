@@ -1,7 +1,7 @@
 <?php
 
 // Make sure that the site configuration was loaded.
-require_once(realpath(dirname(__FILE__) . "/../config.php"));
+require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");
 
 // Set the site backend error log filename.
 defined("SITE_LOG")
@@ -24,19 +24,21 @@ class User {
         }
     }
 
-    public static function authenticate($handle, $pass) {}
+    public static function authenticate($unique_id, $pass) {}
 
-    public static function create($handle, $pass) {}
+    public static function create($unique_id, $pass) {}
 
-    public static function remove($handle) {}
+    public static function remove($unique_id) {}
 
-    public static function retrieve($handle) {}
+    public static function retrieve($unique_id) {}
 
-    public static function donate($handle, $amount) {}
+    public static function retrieveHandle($unique_id){}
 
-    public static function edit($handle1, $handle2, $data) {}
+    public static function donate($unique_id, $amount) {}
 
-    public static function identity($handle, $data) {}
+    public static function edit($unique_id, $data) {}
 
-    public static function propagate($handle) {}
+    public static function identity($unique_id, $key, $data) {}
+
+    public static function propagate($unique_id) {}
 }

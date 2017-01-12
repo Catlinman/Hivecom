@@ -10,7 +10,7 @@ $gameservers = Gameserver::retrieveAll();
 
 // Add a placeholder text if there are no news posts or an error occured.
 if (!$gameservers) {
-    echo '<h5 class="centered">There are currently no registered Hivecom gameservers</h5><br>';
+    echo '<h5 class="centered">There are currently no registered Hivecom game servers</h5><br>';
     return;
 }
 

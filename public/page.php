@@ -1,6 +1,10 @@
 <?php
 
 // Page viewer. Retrieves a page via UID or ACCESSID and displays data and information.
+//
+// GET VARIABLES:
+//		uid -- Unique identifier of page to view.
+//		id	-- Access identifier of page to view.
 
 require_once(realpath(dirname(__FILE__) . "/../private/config.php"));
 
@@ -16,21 +20,20 @@ if (isset($_GET["uid"])) {
 
 } else {
     header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
-    include_once(realpath(dirname(__FILE__)) . "/errors/404.php");
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/404.php");
     die();
 }
 
-
 if (!$page) {
     header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
-    include_once(realpath(dirname(__FILE__)) . "/errors/404.php");
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/404.php");
     die();
 }
 
 ?>
 
 <head>
-    <title>Hivecom - <?php echo $page[Page::SQL_TITLE_INDEX];?></title>
+    <title><?php echo sprintf("Hivecom - %s", $page[Page::SQL_TITLE_INDEX]); ?></title>
     <?php include_once(TEMPLATES_PATH . "/core/head.php");?>
     <meta name="twitter:description" content="<?php echo $page[Page::SQL_TITLE_INDEX];?>">
 </head>
@@ -71,8 +74,8 @@ if (!$page) {
                     // Create the author and date information.
                     echo '<p class="centered">Published ';
 
-                    // Add the post author if it was not created directly as Hivecom.
-                    if (Utility::slug($page[Page::SQL_AUTHOR_INDEX]) != "hivecom") {
+                    // Add the post author.
+                    if (Utility::slug($page[Page::SQL_AUTHOR_INDEX]) != "") {
                         echo sprintf(
                             ' by <a href="/user/profile?username=%s">%s</a> ',
                             $page[Page::SQL_UNIQUE_ID_INDEX],
@@ -83,15 +86,26 @@ if (!$page) {
                     // Close the notice paragraph after adding the creation date.
                     echo sprintf('%s</p>', date_format(date_create($page[Page::SQL_DATE_CREATE_INDEX]), "l jS \of F Y H:i"));
 
+					/* if ($page[Page::SQL_DATE_CREATE_INDEX] != $page[Page::SQL_DATE_EDIT_INDEX]) {
+						echo sprintf('<p class="centered">Last edited %s</p>', date_format(date_create($page[Page::SQL_DATE_EDIT_INDEX]), "l jS \of F Y H:i"));
+					} */
+
                     ?>
+
                 </div>
                 <div class="horizontal-line"></div>
-                <?php
 
-                // Show the page permalink.
-                echo sprintf('<div class="buttoncontainer"><button class="buttoncenter" onclick="copyToClipboard(\'https://hivecom.net/page?uid=%s\')" type="button">Copy page permalink to clipboard</button></div>', $page[Page::SQL_UNIQUE_ID_INDEX]);
+                <div class="buttoncontainer centered">
+					<?php if (isset($_SESSION['user_level'])) : if($_SESSION['user_level'] > 3) : ?>
+					<button type="button" style="width:280px" onClick="document.location.href='/user/manage/page/edit?uid=<?php echo $page[Page::SQL_UNIQUE_ID_INDEX]; ?>'">
+						Open page editor
+					</button>
+					<?php endif; endif ?>
 
-                ?>
+					<button type="button" style="width:280px" onclick="copyToClipboard('https://hivecom.net/page?uid=<?php echo $page[Page::SQL_UNIQUE_ID_INDEX]; ?>')">
+						Copy page permalink to clipboard
+					</button>
+				</div>
 
                 <?php if ($page[Page::SQL_IS_NEWS_INDEX]) : ?>
                     <div id="disqus_thread"></div>

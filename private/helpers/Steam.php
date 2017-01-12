@@ -1,7 +1,7 @@
 <?php
 
 // Make sure that the site configuration was loaded.
-require_once(realpath(dirname(__FILE__) . "/../config.php"));
+require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");
 
 // Set the error log filename.
 defined("STEAM_LOG")

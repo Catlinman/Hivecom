@@ -7,7 +7,9 @@
 
 <?php
 // Check if the server is online. If not, return the offline information and return.
-if (!isset(Teamspeak::$query)) {
+$data = Teamspeak::getCache();
+
+if (!$data) {
     echo '
 		<div class="horizontal-line glow-red"></div>
 		<h5>Server connection failed</h5>
@@ -18,13 +20,16 @@ if (!isset(Teamspeak::$query)) {
 ?>
 
 <div class="horizontal-line glow"></div>
+<h5>Under construction</h5>
+<!--
 <br>
 <ul>
-	<li>Server address: <a href="/ts">ts.hivecom.net</a></li>
-	<li>Connected users:</li>
-	<li>Peak users:</li>
-	<li>Max slots:</li>
-	<li>Last restart:</li>
+    <li>Server address: <a href="/ts">ts.hivecom.net</a></li>
+    <li>Connected users:</li>
+    <li>Peak users:</li>
+    <li>Max slots:</li>
+    <li>Last restart:</li>
 </ul>
 <br>
 <div class="horizontal-line"></div>
+-->

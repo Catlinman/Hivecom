@@ -32,8 +32,8 @@
 
 include_once(TEMPLATES_PATH . "/core/connections.php");
 
-if (!isset(Teamspeak::$query) && !isset(Teamspeak::$query)) {
-	echo '<link rel="stylesheet" type="text/css" href="/css/style-red.css">';
+if (!Teamspeak::getCache() && !Discord::getCache()) {
+    echo '<link rel="stylesheet" type="text/css" href="/css/style-red.css">';
 }
 
 ?>
