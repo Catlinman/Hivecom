@@ -6,7 +6,7 @@
 //		uid -- Unique identifier of page to view.
 //		id	-- Access identifier of page to view.
 
-require_once(realpath(dirname(__FILE__) . "/../private/config.php"));
+require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");
 
 require_once(HELPERS_PATH . "/Utility.php");
 require_once(HELPERS_PATH . "/Page.php");
@@ -96,10 +96,9 @@ if (!$page) {
                 <div class="horizontal-line"></div>
 
                 <div class="buttoncontainer centered">
+
 					<?php if (isset($_SESSION['user_level'])) : if($_SESSION['user_level'] > 3) : ?>
-					<button type="button" style="width:280px" onClick="document.location.href='/user/manage/page/edit?uid=<?php echo $page[Page::SQL_UNIQUE_ID_INDEX]; ?>'">
-						Open page editor
-					</button>
+					<a class="button" style="width:280px" href="/user/manage/page/edit?uid=<?php echo $page[Page::SQL_UNIQUE_ID_INDEX]; ?>">Open page editor</a>
 					<?php endif; endif ?>
 
 					<button type="button" style="width:280px" onclick="copyToClipboard('https://hivecom.net/page?uid=<?php echo $page[Page::SQL_UNIQUE_ID_INDEX]; ?>')">

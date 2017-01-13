@@ -1,5 +1,5 @@
 <!-- Twitch Viewer -->
-<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 <div id="twitch">
 	<h4 class="centered">Hivecom Twitch Stream</h4>
 	<br>

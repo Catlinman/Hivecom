@@ -1,5 +1,5 @@
+<?php require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");?>
 
-<?php require_once(realpath(dirname(__FILE__) . "/../private/config.php"));?>
 <!DOCTYPE html>
 <html>
 

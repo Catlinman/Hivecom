@@ -250,7 +250,7 @@ class Page {
 
 		// Make the main query.
 		if ($dbconnection) {
-			$result = mysqli_query($dbconnection, "DELETE FROM `pages` WHERE `unique_id` = $unique_id;")
+			$result = mysqli_query($dbconnection, "DELETE FROM `pages` WHERE `unique_id` = '$unique_id';")
 				or error_log(date("Y-m-d H:i:s ") . "Page/remove: " . mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
 
 			return $result;

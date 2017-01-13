@@ -42,7 +42,7 @@ if (isset($_SESSION['user_level'])) {
 
 // Retrieve the page from the unique id. Only uid editing is allowed.
 if (isset($_GET["uid"])) {
-    $page = Page::retrieve(htmlspecialchars($_GET["uid"]));
+    $page = Page::retrieve($_GET["uid"]);
 }
 
 // If the page does not exist we return the 404 page.
@@ -156,8 +156,10 @@ if (isset($_POST["update"])) {
 
 					<!-- Action buttons -->
 					<div class="centered">
-						<button type="submit" name="update" style="width: 240px">Update page</button>
-						<button type="submit" name="preview" style="width: 240px"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
+						<a class="button" style="width: 200px" href="/page?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Discard changes</a>
+						<button type="submit" name="update" style="width: 200px">Update page</button>
+						<button type="submit" name="preview" style="width: 200px"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
+						<a class="button" style="width: 200px" href="/user/manage/page/delete?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Delete page</a>
 					</div>
 					<br>
 
@@ -167,8 +169,8 @@ if (isset($_POST["update"])) {
 					<!-- Preview section -->
 					<h3 class="centered">Preview</h3>
 					<div class="page preview">
-						<?php echo Utility::Parsedown(htmlspecialchars($_POST["opening"])); ?>
-						<?php echo Utility::Parsedown(htmlspecialchars($_POST["content"])); ?>
+						<?php echo Utility::Parsedown($_POST["opening"]); ?>
+						<?php echo Utility::Parsedown($_POST["content"]); ?>
 					</div>
 
 					<?php endif ?>

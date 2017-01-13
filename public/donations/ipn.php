@@ -1,6 +1,6 @@
 <?php
 
-require_once(realpath(dirname(__FILE__) . "/../private/config.php"));
+require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");
 
 ini_set("error_log", LOG_PATH. "/ipn-error.log");
 

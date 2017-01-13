@@ -39,6 +39,12 @@ class Utility {
     * @return string - New sluggified string output.
     */
     public static function slug($s) {
-        return strtolower(str_replace(' ', '-', preg_replace('/[^\p{L}\p{N}\s]/u', '', $s)));
+		if (function_exists('iconv')) {
+			$s = @iconv('UTF-8', 'ASCII//TRANSLIT', $s);
+		}
+		$s = preg_replace("/[^a-zA-Z0-9 -]/", "", $s);
+		$s = strtolower($s);
+		$s = str_replace(" ", "-", $s);
+		return $s;
     }
 }

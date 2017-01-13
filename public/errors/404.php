@@ -1,3 +1,5 @@
+<?php require_once($_SERVER["DOCUMENT_ROOT"] . "/../private/config.php");?>
+
 <!DOCTYPE html>
 <html>
 
@@ -21,7 +23,7 @@
                 <a href="/index.php">- Click here to return to the main page -</a>
             </p>
         </div>
-		
+
 		<div class="contentdiv striped">
 			<h3 class="shadowed"></h3>
 			<div class="contentspacer shadowed"></div>

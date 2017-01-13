@@ -401,7 +401,8 @@ label {
     -moz-osx-font-smoothing: grayscale;
 }
 
-button {
+button, .button {
+    color: #d0d0d0;
     cursor: pointer;
     cursor: hand;
     font-family: "Aldrich", sans-serif;
@@ -416,7 +417,6 @@ button {
     border: 1px solid #393f2f;
     border-radius: 4px;
     background: #0a0a0a;
-    color: #d0d0d0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -427,7 +427,7 @@ button {
     transition: all 1s ease-out;
 }
 
-button:focus {
+button:focus, .button:focus {
     outline: 0px;
     color: #77c345;
     border: 1px solid #507719;
@@ -440,7 +440,8 @@ button:focus {
     box-shadow: 0px 0px 32px 0px rgba(150, 255, 85, 0.1);
 }
 
-button:hover {
+button:hover, .button:hover {
+    color: #d0d0d0;
     border: 1px solid #507719;
 }
 
@@ -843,6 +844,8 @@ textarea:focus {
 .preview {
     border: 2px dashed #202427;
     margin: 16px;
+    padding-bottom: 16px;
+    text-align: left !important;
 }
 
 
@@ -1272,6 +1275,10 @@ ght: 350px;
 .listclear {
     clear: both;
     padding: 8px;
+}
+
+}
+
 }
 
 }

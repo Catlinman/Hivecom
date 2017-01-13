@@ -53,10 +53,12 @@ if (isset($_POST["create"])) {
 
 	// Assign the access identifier.
 	if(isset($_POST["access"])) {
-		Page::assignAccess(
-			$uid,
-			Utility::slug($_POST["access"])
-		);
+		if($_POST["access"] !== ''){
+			Page::assignAccess(
+				$uid,
+				Utility::slug($_POST["access"])
+			);
+		}
 	}
 
 	// Redirect to the page viewer.
@@ -133,10 +135,10 @@ if (isset($_POST["create"])) {
 
 					<!-- Content fields -->
 					<p>Introduction</p>
-					<textarea name="opening"><?php echo $_POST["opening"] ?? "Short summary of the general information. Should be short. Will be prepended before the main content on the page posts. Headers are hidden."?></textarea>
+					<textarea name="opening" placeholder="Short summary of the general information. Should be short. Will be prepended before the main content on the page posts. Headers are hidden."><?php echo $_POST["opening"] ?? ""?></textarea>
 
 					<p>Content</p>
-					<textarea name="content"><?php echo $_POST["content"] ?? "Main page content. This information is shown on the main page and is hidden in shortened listings of this page." ?></textarea>
+					<textarea name="content" placeholder="Main page content. This information is shown on the main page and is hidden in shortened listings of this page."><?php echo $_POST["content"] ?? "" ?></textarea>
 					<br><br>
 
 					<!-- Action buttons -->
