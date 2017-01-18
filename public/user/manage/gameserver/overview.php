@@ -126,6 +126,7 @@ $range = count($gameservers);
 
 				<?php endif; ?>
 
+				<br>
             </div>
         </div>
 		<?php include_once(TEMPLATES_PATH. "/core/footer.php");?>

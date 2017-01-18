@@ -138,7 +138,7 @@ if (isset($_POST["create"])) {
 
 					<!-- Content fields -->
 					<p>Summary</p>
-					<textarea name="opening" placeholder="Short summary of server settings and general information. This text does not allow custom formatting."><?php echo $_POST["opening"] ?? ""?></textarea>
+					<textarea name="summary" placeholder="Short summary of server settings and general information. This text does not allow custom formatting."><?php echo $_POST["opening"] ?? ""?></textarea>
 					<br><br>
 
 					<div class="horizontal-line"></div>

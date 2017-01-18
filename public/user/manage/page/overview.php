@@ -119,6 +119,8 @@ $range = count($pages);
 				<a class="button" style="width:280px" href="/user/manage/page/create">Create a new page</a>
 
 				<?php endif; ?>
+
+				<br>
             </div>
         </div>
 		<?php include_once(TEMPLATES_PATH. "/core/footer.php");?>
