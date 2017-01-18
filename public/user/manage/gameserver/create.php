@@ -207,7 +207,7 @@ if (isset($_POST["create"])) {
 								$j = 0;
 
 								foreach ($admin_array as $name) {
-									echo sprintf('<a href="user/profile?username=%s">%s</a>', ucfirst($name), $name);
+									echo sprintf('<a href="user/profile?username=%s">%s</a>', Utility::slug($name), ucfirst($name));
 
 									if ($j < $admin_count - 1) {
 										echo ' / ';

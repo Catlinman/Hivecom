@@ -116,7 +116,7 @@ if (isset($_POST["update"])) {
 						<!-- News checkbox -->
 						<label>Hidden</label>
 						<input type="hidden" name="hidden" value="0" />
-						<input type="checkbox" value="true" name="hidden" <?php if(isset($_POST["hidden"])) { if($_POST["hidden"]) echo "checked"; } else { if($gameserver[Gameserver::SQL_IS_HIDDEN_INDEX]) echo "checked"; } ?> />
+						<input type="checkbox" value="true" name="hidden" <?php if(isset($_POST["hidden"])) { if($_POST["hidden"]) echo "checked"; } else { if($gameserver[Gameserver::SQL_HIDDEN_INDEX]) echo "checked"; } ?> />
 
 						<!-- Next row - Subtitle input -->
 						<label>Server Address</label>
@@ -224,7 +224,7 @@ if (isset($_POST["update"])) {
 								$j = 0;
 
 								foreach ($admin_array as $name) {
-									echo sprintf('<a href="user/profile?username=%s">%s</a>', ucfirst($name), $name);
+									echo sprintf('<a href="user/profile?username=%s">%s</a>', Utility::slug($name), ucfirst($name));
 
 									if ($j < $admin_count - 1) {
 										echo ' / ';

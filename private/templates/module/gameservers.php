@@ -6,7 +6,7 @@ require_once(HELPERS_PATH . "/Utility.php");
 require_once(HELPERS_PATH . "/Gameserver.php");
 
 // Retrieve the latest news posts with our global limit.
-$gameservers = Gameserver::retrieveAll();
+$gameservers = Gameserver::retrieveOnline(MAXSHOW);
 
 // Add a placeholder text if there are no news posts or an error occured.
 if (!$gameservers) {
@@ -21,7 +21,7 @@ $len = count($gameservers);
 // Iterate over each fetched post.
 foreach ($gameservers as $server) {
     // Skip this server if it is hidden.
-    if ($server[Gameserver::SQL_IS_HIDDEN_INDEX]) {
+    if ($server[Gameserver::SQL_HIDDEN_INDEX]) {
         continue;
     }
 
@@ -69,7 +69,7 @@ foreach ($gameservers as $server) {
         $j = 0;
 
         foreach ($admin_array as $name) {
-            echo sprintf('<a href="user/profile?username=%s">%s</a>', ucfirst($name), $name);
+            echo sprintf('<a href="user/profile?username=%s">%s</a>', Utility::slug($name), ucfirst($name));
 
             if ($j < $admin_count - 1) {
                 echo ' / ';

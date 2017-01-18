@@ -34,7 +34,7 @@ if (isset($_SESSION['user_level'])) {
 $offset = $_GET['offset'] ?? 0;
 $search = $_GET['search'] ?? "";
 
-// Retrieve all gameservers from the database. TODO: Change to ranged retrieve.
+// Retrieve all games ervers from the database. TODO: Change to ranged retrieve.
 $gameservers = Gameserver::retrieveAll();
 $count = Gameserver::retrieveCount();
 $range = count($gameservers);

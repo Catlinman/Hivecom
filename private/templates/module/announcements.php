@@ -6,7 +6,7 @@ require_once(HELPERS_PATH . "/Utility.php");
 require_once(HELPERS_PATH . "/Page.php");
 
 // Retrieve the latest news posts with our global limit.
-$news = Page::retrieveNews(MAXNEWS);
+$news = Page::retrieveNews(MAXSHOW);
 
 // Add a placeholder text if there are no news posts or an error occured.
 if (!$news) {

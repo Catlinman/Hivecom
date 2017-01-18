@@ -26,7 +26,7 @@ class Gameserver {
 	const SQL_TITLE_INDEX			= 6;
 	const SQL_SUMMARY_INDEX			= 7;
 	const SQL_ADMINS_INDEX			= 8;
-	const SQL_IS_HIDDEN_INDEX			= 9;
+	const SQL_HIDDEN_INDEX			= 9;
 
 	/**
 	* dbconnect
@@ -78,18 +78,19 @@ class Gameserver {
 		$address_info   = empty($address_info)	? "" : $address_info;
 		$title          = empty($title)			? "Server Title" : $title;
 		$summary        = empty($summary)		? "Server information summary" : $summary;
-		$admins         = empty($admins) 		? "" : $admins;
+		$admins         = empty($admins) 		? "" : preg_replace('/\s+/', $admins);
 
 		$hidden         = (int) $hidden or (int) false;
 
 		return array(
-			Gameserver::SQL_GAME_INDEX			=> $game,
-			Gameserver::SQL_ADDRESS_INDEX		=> $address,
-			Gameserver::SQL_ADDRESS_EASY_INDEX	=> $address_easy,
-			Gameserver::SQL_ADDRESS_INFO_INDEX	=> $address_info,
-			Gameserver::SQL_TITLE_INDEX			=> $title,
-			Gameserver::SQL_SUMMARY_INDEX		=> $summary,
-			Gameserver::SQL_ADMINS_INDEX		=> $admins,
+			Gameserver::SQL_GAME_INDEX			=> htmlspecialchars($game),
+			Gameserver::SQL_ADDRESS_INDEX		=> htmlspecialchars($address),
+			Gameserver::SQL_ADDRESS_EASY_INDEX	=> htmlspecialchars($address_easy),
+			Gameserver::SQL_ADDRESS_INFO_INDEX	=> htmlspecialchars($address_info),
+			Gameserver::SQL_TITLE_INDEX			=> htmlspecialchars($title),
+			Gameserver::SQL_SUMMARY_INDEX		=> htmlspecialchars($summary),
+			Gameserver::SQL_ADMINS_INDEX		=> htmlspecialchars($admins),
+			Gameserver::SQL_HIDDEN_INDEX		=> htmlspecialchars($hidden)
 		);
 	}
 
@@ -119,6 +120,7 @@ class Gameserver {
 				$title			= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_TITLE_INDEX]));
 				$summary		= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_SUMMARY_INDEX]));
 				$admins			= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_ADMINS_INDEX]));
+				$hidden			= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_HIDDEN_INDEX]));
 
 			} catch (Exception $e) {
 				error_log($e, 3, SITE_LOG);
@@ -129,7 +131,7 @@ class Gameserver {
 			// Perform the main query.
 			$result = mysqli_query(
 				$dbconnection,
-				"INSERT INTO `gameservers` (`unique_id`, `game`, `address`, `address_easy`, `address_info`, `title`, `summary`, `admins`)
+				"INSERT INTO `gameservers` (`unique_id`, `game`, `address`, `address_easy`, `address_info`, `title`, `summary`, `admins`, `hidden`)
 				VALUES (
 					'$unique_id',
 					'$game',
@@ -138,7 +140,8 @@ class Gameserver {
 					'$address_info',
 					'$title',
 					'$summary',
-					'$admins'
+					'$admins',
+					'$hidden'
 				);
 			"
 			) or error_log(date("Y-m-d H:i:s ") . "Gameserver/create: " . mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
@@ -171,6 +174,7 @@ class Gameserver {
 				$title			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_TITLE_INDEX]);
 				$summary		= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_SUMMARY_INDEX]);
 				$admins			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADMINS_INDEX]);
+				$hidden			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_HIDDEN_INDEX]);
 
 			} catch (Exception $e) {
 				error_log($e, 3, SITE_LOG);
@@ -194,7 +198,8 @@ class Gameserver {
 					`address_info` = '$address_info',
 					`title` = '$title',
 					`summary` = '$summary',
-					`admins` = '$admins'
+					`admins` = '$admins',
+					`hidden` = '$hidden'
 				WHERE `unique_id` = '$unique_id'
 				;"
 			) or error_log(date("Y-m-d H:i:s ") . "Gameserver/edit: " . mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
@@ -259,6 +264,27 @@ class Gameserver {
 		if ($dbconnection) {
 			$result = mysqli_query($dbconnection, "SELECT * FROM `gameservers`;")
 				or error_log(date("Y-m-d H:i:s ") . "Gameserver/retrieveAll: " . mysqli_error($dbconnection) . ".\n", 3, SITE_LOG);
+
+			if ($result) {
+				return mysqli_fetch_all($result);
+			}
+		}
+	}
+
+	/**
+	* retrieveNews
+	*
+	* Retrieve a specified amount of news posts.
+	*
+	* @param $count int - Amount of news posts to return.
+	* @return array - Three dimensional array containing the news pages' data.
+	*/
+	public static function retrieveOnline($count) {
+		$dbconnection = Gameserver::dbconnect();
+
+		if ($dbconnection) {
+			$result = mysqli_query($dbconnection, "SELECT * FROM `gameservers` WHERE `hidden` = 0 ORDER BY `gameserver_id` DESC LIMIT $count;")
+				or error_log(date("Y-m-d H:i:s ") . "Gameserver/retrieveOnline: " . mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
 
 			if ($result) {
 				return mysqli_fetch_all($result);

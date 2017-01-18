@@ -24,8 +24,8 @@ defined("QUERYINTERVAL")
     or define("QUERYINTERVAL", 600);
 
 // Maximum number of news entries on the main page.
-defined("MAXNEWS")
-    or define("MAXNEWS", 3);
+defined("MAXSHOW")
+    or define("MAXSHOW", 3);
 
 // Maximum number of search and overview results to display at a time.
 defined("MAXRESULT")
