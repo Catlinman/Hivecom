@@ -78,7 +78,7 @@ class Gameserver {
 		$address_info   = empty($address_info)	? "" : $address_info;
 		$title          = empty($title)			? "Server Title" : $title;
 		$summary        = empty($summary)		? "Server information summary" : $summary;
-		$admins         = empty($admins) 		? "" : preg_replace('/\s+/', $admins);
+		$admins         = empty($admins) 		? "" : preg_replace('/\s+/', '', $admins);
 
 		$hidden         = (int) $hidden or (int) false;
 

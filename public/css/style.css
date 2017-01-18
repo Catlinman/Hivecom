@@ -1138,179 +1138,18 @@ textarea:focus {
     padding: 8px;
 }
 
-ght: 350px;
-
-}
-.page h1, .page h2, .page h3, .page h4, .page h5 {
-    text-align: center;
+::-webkit-input-placeholder {
+    color: #555;
 }
 
+::-moz-placeholder {
+    color: #555;
 }
 
-/* Scrollbar styling. */
-::-webkit-scrollbar {
-    width: 8px;
-    border-left: 1px #393f2f;
-    background: #0c0c0c;
-}
-::-webkit-scrollbar-thumb {
-    background: #223612;
-    -webkit-border-radius: 1ex;
-    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #77ca25;
-}
-::-webkit-scrollbar-corner {
-    background: #000;
+:-ms-input-placeholder {
+    color: #555;
 }
 
-/* HACK: Forgot what this was for. */
-.darkbody {
-    background: #0a0a0a;
-}
-
-/* HACK: Okay at this point I give up. No idea where this was used. */
-.columnlist {
-    list-style: none;
-}
-.listhead li {
-    padding-top: 16px;
-    padding-bottom: 8px;
-    text-decoration: underline;
-}
-.columnlist li {
-    display: block;
-    width: 22%;
-    margin-right: 3%;
-    float: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.listclear {
-    clear: both;
-    padding: 8px;
-}
-ding: 8px;
-
-}
-ght: 350px;
-
-}
-.page h1, .page h2, .page h3, .page h4, .page h5 {
-    text-align: center;
-}
-
-}
-
-/* Scrollbar styling. */
-::-webkit-scrollbar {
-    width: 8px;
-    border-left: 1px #393f2f;
-    background: #0c0c0c;
-}
-::-webkit-scrollbar-thumb {
-    background: #223612;
-    -webkit-border-radius: 1ex;
-    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #77ca25;
-}
-::-webkit-scrollbar-corner {
-    background: #000;
-}
-
-/* HACK: Forgot what this was for. */
-.darkbody {
-    background: #0a0a0a;
-}
-
-/* HACK: Okay at this point I give up. No idea where this was used. */
-.columnlist {
-    list-style: none;
-}
-.listhead li {
-    padding-top: 16px;
-    padding-bottom: 8px;
-    text-decoration: underline;
-}
-.columnlist li {
-    display: block;
-    width: 22%;
-    margin-right: 3%;
-    float: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.listclear {
-    clear: both;
-    padding: 8px;
-}
-ding: 8px;
-
-}
-ght: 350px;
-
-}
-.page h1, .page h2, .page h3, .page h4, .page h5 {
-    text-align: center;
-}
-
-}
-
-/* Scrollbar styling. */
-::-webkit-scrollbar {
-    width: 8px;
-    border-left: 1px #393f2f;
-    background: #0c0c0c;
-}
-::-webkit-scrollbar-thumb {
-    background: #223612;
-    -webkit-border-radius: 1ex;
-    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #77ca25;
-}
-::-webkit-scrollbar-corner {
-    background: #000;
-}
-
-/* HACK: Forgot what this was for. */
-.darkbody {
-    background: #0a0a0a;
-}
-
-/* HACK: Okay at this point I give up. No idea where this was used. */
-.columnlist {
-    list-style: none;
-}
-.listhead li {
-    padding-top: 16px;
-    padding-bottom: 8px;
-    text-decoration: underline;
-}
-.columnlist li {
-    display: block;
-    width: 22%;
-    margin-right: 3%;
-    float: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.listclear {
-    clear: both;
-    padding: 8px;
-}
-
-}
-
-}
-
-}
-
+:-moz-placeholder {
+    color: #555;
 }
