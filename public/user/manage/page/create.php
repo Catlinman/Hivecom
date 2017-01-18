@@ -1,6 +1,6 @@
 <?php
 
-// Page creater. Shows dialogs for creating a new page on the website.
+// Page creator. Shows dialogs for creating a new page on the website.
 //
 // POST VARIABLES:
 // 		create 		-- If set the page will be created with the new information and redirect to the viewer.
@@ -62,7 +62,7 @@ if (isset($_POST["create"])) {
 	}
 
 	// Redirect to the page viewer.
-	header('Location: '."/page?uid=" . $uid);
+	header("Location: /page?uid=$uid");
 }
 
 ?>
@@ -71,7 +71,7 @@ if (isset($_POST["create"])) {
 <html>
 
 <head>
-    <title>Hivecom - Page creation</title>
+    <title>Hivecom - Page creator</title>
     <?php include_once(TEMPLATES_PATH . "/core/head.php");?>
 </head>
 
@@ -84,10 +84,10 @@ if (isset($_POST["create"])) {
         <div id="headline" class="noselect">
             <img src="/img/metaicon.png" width="512"/>
             <h2>
-                New Page Creation
+                Page Creation
             </h2>
 			<p>
-				- Content editor -
+				- Site manager content creator -
 			<p>
         </div>
 
@@ -133,6 +133,9 @@ if (isset($_POST["create"])) {
 						<span class="wedge"></span>
 					</div>
 
+					<br>
+					<div class="horizontal-line"></div>
+
 					<!-- Content fields -->
 					<p>Introduction</p>
 					<textarea name="opening" placeholder="Short summary of the general information. Should be short. Will be prepended before the main content on the page posts. Headers are hidden."><?php echo $_POST["opening"] ?? ""?></textarea>
@@ -141,8 +144,12 @@ if (isset($_POST["create"])) {
 					<textarea name="content" placeholder="Main page content. This information is shown on the main page and is hidden in shortened listings of this page."><?php echo $_POST["content"] ?? "" ?></textarea>
 					<br><br>
 
+					<div class="horizontal-line"></div>
+					<br>
+
 					<!-- Action buttons -->
 					<div class="centered">
+						<a class="button" style="width: 240px" href="/user/manage/page/overview">Return to overview</a>
 						<button type="submit" name="create" style="width: 240px">Create page</button>
 						<button type="submit" name="preview" style="width: 240px"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
 					</div>
@@ -160,8 +167,9 @@ if (isset($_POST["create"])) {
 
 					<?php endif ?>
 
-					<?php include(TEMPLATES_PATH . "/core/totop.php");?>
 				</form>
+
+				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
             </div>
         </div>
 		<?php include_once(TEMPLATES_PATH. "/core/footer.php");?>

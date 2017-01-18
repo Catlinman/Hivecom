@@ -24,12 +24,9 @@
             </p>
         </div>
 
-		<div class="contentdiv striped">
-			<h3 class="shadowed"></h3>
+		<div class="contentdiv">
 			<div class="contentspacer shadowed"></div>
-			<div class="divider"></div>
-			<div class="content shadowed">
-			</div>
+			<div class="divider empty"></div>
 		</div>
 		<?php include_once(TEMPLATES_PATH. "/core/footer.php");?>
     </div>

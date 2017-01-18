@@ -1,3 +1,11 @@
+<?php
+
+// SESSION VARIABLES:
+// 		user_name	-- Currently logged in user. Used for information on the current page.
+// 		user_id		-- Unique identifier of the currently logged in user. Stored in the new page data.
+
+?>
+
 <!-- Main page header bar -->
 <header id="top">
 	<div id="mainbar">

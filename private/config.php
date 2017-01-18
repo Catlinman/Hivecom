@@ -27,6 +27,10 @@ defined("QUERYINTERVAL")
 defined("MAXNEWS")
     or define("MAXNEWS", 3);
 
+// Maximum number of search and overview results to display at a time.
+defined("MAXRESULT")
+	or define("MAXRESULT", 10);
+
 // Main Steam Group handle of the site.
 defined("STEAM")
     or define("STEAM", "hivecomnetwork");

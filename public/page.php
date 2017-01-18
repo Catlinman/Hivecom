@@ -96,7 +96,6 @@ if (!$page) {
                 <div class="horizontal-line"></div>
 
                 <div class="buttoncontainer centered">
-
 					<?php if (isset($_SESSION['user_level'])) : if($_SESSION['user_level'] > 3) : ?>
 					<a class="button" style="width:280px" href="/user/manage/page/edit?uid=<?php echo $page[Page::SQL_UNIQUE_ID_INDEX]; ?>">Open page editor</a>
 					<?php endif; endif ?>

@@ -16,7 +16,7 @@
         <br>
         <a href="https://catlinman.com/" alt="Catlinman website">&copy Catlinman 2013 - <?php echo date("Y"); ?></a>
     </div>
-    <br><br>
+    <br>
 </footer>
 <!-- Insert the smooth scroll script -->
 <script>

@@ -26,7 +26,7 @@ class Gameserver {
 	const SQL_TITLE_INDEX			= 6;
 	const SQL_SUMMARY_INDEX			= 7;
 	const SQL_ADMINS_INDEX			= 8;
-	const SQL_HIDDEN_INDEX			= 9;
+	const SQL_IS_HIDDEN_INDEX			= 9;
 
 	/**
 	* dbconnect
@@ -72,13 +72,14 @@ class Gameserver {
 	* @return array - Associative array which can be used for further processing function.
 	*/
 	public static function prepare($game, $address, $address_easy, $address_info, $title, $summary, $admins, $hidden) {
-		$game           = $game or "Game Title";
-		$address        = $address or "address:port";
-		$address_easy   = $address_easy or "steam://connect/address:port";
-		$address_info   = $address_info or "https://serverinformation.tld/page";
-		$title          = $title or "Server Title";
-		$summary        = $summary or "Server information summary";
-		$admins         = $admins or "";
+		$game           = empty($game) 			? "Game Title" : $game;
+		$address        = empty($address) 		? "" : $address;
+		$address_easy   = empty($address_easy) 	? "" : $address_easy;
+		$address_info   = empty($address_info)	? "" : $address_info;
+		$title          = empty($title)			? "Server Title" : $title;
+		$summary        = empty($summary)		? "Server information summary" : $summary;
+		$admins         = empty($admins) 		? "" : $admins;
+
 		$hidden         = (int) $hidden or (int) false;
 
 		return array(
@@ -163,6 +164,7 @@ class Gameserver {
 
 			try {
 				// Edit all values except the game entry.
+				$game			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_GAME_INDEX]);
 				$address		= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_INDEX]);
 				$address_easy	= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_EASY_INDEX]);
 				$address_info	= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_INFO_INDEX]);
@@ -186,6 +188,7 @@ class Gameserver {
 			$result = mysqli_query(
 				$dbconnection,
 				"UPDATE `gameservers` SET
+					`game` = '$game',
 					`address` = '$address',
 					`address_easy` = '$address_easy',
 					`address_info` = '$address_info',
@@ -211,7 +214,7 @@ class Gameserver {
 
 		// Make the main query.
 		if ($dbconnection) {
-			$result = mysqli_query($dbconnection, "DELETE FROM `gameservers` WHERE `unique_id` = $unique_id;")
+			$result = mysqli_query($dbconnection, "DELETE FROM `gameservers` WHERE `unique_id` = '$unique_id';")
 				or error_log(date("Y-m-d H:i:s ") . "Gameserver/remove: " . mysqli_error($dbconnection) . "\n", 3, SITE_LOG);
 
 			return $result;
@@ -264,20 +267,20 @@ class Gameserver {
 	}
 
 	/**
-	* count
+	* retrieveCount
 	*
 	* Counts the number of game server entries in the database
 	*
 	* @return int - Total number of game servers in the database.
 	*/
-	public static function count() {
+	public static function retrieveCount() {
 		$dbconnection = Gameserver::dbconnect();
 
 		if ($dbconnection) {
 			$result = mysqli_query($dbconnection, "SELECT COUNT(`gameserver_id`) FROM `gameservers`;")
 				or error_log(date("Y-m-d H:i:s ") . "Gameserver/count: " . mysqli_error($dbconnection) . ".\n", 3, SITE_LOG);
 
-			return mysqli_fetch_all($result)[0];
+			return mysqli_fetch_all($result)[0][0];
 		}
 	}
 }

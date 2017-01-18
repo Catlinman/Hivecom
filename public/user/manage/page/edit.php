@@ -74,7 +74,7 @@ if (isset($_POST["update"])) {
 	);
 
 	// Redirect to the page viewer.
-	header('Location: '."/page?id=" . Utility::slug($_POST["access"]));
+	header('Location: /page?uid=' . ($_GET["uid"]));
 }
 
 ?>
@@ -83,7 +83,7 @@ if (isset($_POST["update"])) {
 <html>
 
 <head>
-    <title><?php echo sprintf("Hivecom - %s - Page edit", $page[Page::SQL_TITLE_INDEX]); ?></title>
+    <title><?php echo sprintf("Hivecom - %s - Page editor", $page[Page::SQL_TITLE_INDEX]); ?></title>
     <?php include_once(TEMPLATES_PATH . "/core/head.php");?>
 </head>
 
@@ -99,7 +99,7 @@ if (isset($_POST["update"])) {
                 <?php echo $page[Page::SQL_TITLE_INDEX]; ?>
             </h2>
 			<p>
-				- Content editor -
+				- Site manager content editor -
 			<p>
         </div>
 
@@ -148,15 +148,15 @@ if (isset($_POST["update"])) {
 
 					<!-- Content fields -->
 					<p>Introduction</p>
-					<textarea name="opening"><?php echo $_POST["opening"] ?? $page[Page::SQL_OPENING_MD_INDEX]; ?></textarea>
+					<textarea name="opening" placeholder="Short summary of the general information. Should be short. Will be prepended before the main content on the page posts. Headers are hidden."><?php echo $_POST["opening"] ?? $page[Page::SQL_OPENING_MD_INDEX]; ?></textarea>
 
 					<p>Content</p>
-					<textarea name="content"><?php echo $_POST["content"] ?? $page[Page::SQL_CONTENT_MD_INDEX]; ?></textarea>
+					<textarea name="content" placeholder="Main page content. This information is shown on the main page and is hidden in shortened listings of this page."><?php echo $_POST["content"] ?? $page[Page::SQL_CONTENT_MD_INDEX]; ?></textarea>
 					<br><br>
 
 					<!-- Action buttons -->
 					<div class="centered">
-						<a class="button" style="width: 200px" href="/page?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Discard changes</a>
+						<a class="button" style="width: 200px" href="/user/manage/page/overview">Discard changes</a>
 						<button type="submit" name="update" style="width: 200px">Update page</button>
 						<button type="submit" name="preview" style="width: 200px"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
 						<a class="button" style="width: 200px" href="/user/manage/page/delete?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Delete page</a>
@@ -175,8 +175,9 @@ if (isset($_POST["update"])) {
 
 					<?php endif ?>
 
-					<?php include(TEMPLATES_PATH . "/core/totop.php");?>
 				</form>
+
+				<?php include(TEMPLATES_PATH . "/core/totop.php");?>
             </div>
         </div>
 		<?php include_once(TEMPLATES_PATH. "/core/footer.php");?>

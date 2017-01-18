@@ -74,11 +74,12 @@ class Page {
 	* @return array - Associative array which can be used for the create function.
 	*/
 	public static function prepare($title, $subtitle, $author, $opening_md, $content_md, $is_news, $is_sticky) {
-		$title		= $title or "Page title";
-		$subtitle	= $subtitle or "Community Announcement";
-		$author		= $author or "Hivecom";
-		$opening_md	= $opening_md or "Simple page opening. Nothing too long. No formatting.";
-		$content_md	= $content_md or "Main content of the page. Can contain markdown.";
+		$title		= empty($title) 		? "Page title" : $title;
+		$subtitle	= empty($subtitle) 		? "Community Announcement" : $subtitle;
+		$author		= empty($author) 		? "Hivecom" : $author;
+		$opening_md	= empty($opening_md)	? "Page opening." : $opening_md;
+		$content_md	= empty($content_md)	? "Page content." : $content_md;
+
 		$is_news	= (int) $is_news or (int) false;
 		$is_sticky	= (int) $is_sticky or (int) false;
 
@@ -426,20 +427,20 @@ class Page {
 	}
 
 	/**
-	* count
+	* retrieveCount
 	*
 	* Counts the number of page entries in the database
 	*
 	* @return int - Total number of pages in the database.
 	*/
-	public static function count() {
+	public static function retrieveCount() {
 		$dbconnection = Page::dbconnect();
 
 		if ($dbconnection) {
 			$result = mysqli_query($dbconnection, "SELECT COUNT(`page_id`) FROM `pages`;")
 				or error_log(date("Y-m-d H:i:s ") . "Page/count: " . mysqli_error($dbconnection) . ".\n", 3, SITE_LOG);
 
-			return mysqli_fetch_all($result)[0];
+			return mysqli_fetch_all($result)[0][0];
 		}
 	}
 

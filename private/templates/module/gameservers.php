@@ -21,30 +21,30 @@ $len = count($gameservers);
 // Iterate over each fetched post.
 foreach ($gameservers as $server) {
     // Skip this server if it is hidden.
-    if ($server[Gameserver::SQL_HIDDEN_INDEX]) {
+    if ($server[Gameserver::SQL_IS_HIDDEN_INDEX]) {
         continue;
     }
 
-    $game = ucwords($server[Gameserver::SQL_GAME_INDEX]);
-    $address = $server[Gameserver::SQL_ADDRESS_INDEX];
-    $address_easy = $server[Gameserver::SQL_ADDRESS_EASY_INDEX];
-    $address_info = $server[Gameserver::SQL_ADDRESS_INFO_INDEX];
-    $title = $server[Gameserver::SQL_TITLE_INDEX];
-    $summary = $server[Gameserver::SQL_SUMMARY_INDEX];
-    $admins = $server[Gameserver::SQL_ADMINS_INDEX];
+    $game 			= ucwords($server[Gameserver::SQL_GAME_INDEX]);
+    $address 		= $server[Gameserver::SQL_ADDRESS_INDEX];
+    $address_easy 	= $server[Gameserver::SQL_ADDRESS_EASY_INDEX];
+    $address_info 	= $server[Gameserver::SQL_ADDRESS_INFO_INDEX];
+    $title 			= $server[Gameserver::SQL_TITLE_INDEX];
+    $summary 		= $server[Gameserver::SQL_SUMMARY_INDEX];
+    $admins 		= $server[Gameserver::SQL_ADMINS_INDEX];
 
     // Start creating the game header.
-    echo '<div class="gameheader"><h4>';
+    echo '<div class="infoheader"><h4>';
 
     // Add the game image if it exists in the game image directory.
     if (file_exists(IMAGES_PATH . "/logos/". Utility::slug($game) . '.png')) {
         echo sprintf('<img src="/img/logos/%s.png" width="24"/>', Utility::slug($game));
     }
 
-    // Create the game header.
+    // Create the game header and close the already opened header tag.
     echo sprintf('%s</h4>', $game);
 
-    // Create the clipboard copy button.
+    // Start the button div tag and create the clipboard copy button.
     echo sprintf('<div class="buttoncontainer nomobile"><button onclick="copyToClipboard(\'%s\')" type="button">Copy address to clipboard</button>', $address);
 
     // Add an easy connect button if there is a connection for it.
@@ -52,13 +52,12 @@ foreach ($gameservers as $server) {
         echo sprintf('<button onclick="window.location=\'%s\'" type="button">Quick connect</button>', $address_easy);
     }
 
-    // Add the server address.
+    // Add the server address and close the button div tag.
     echo sprintf('</div><p>%s</p>', $address);
 
-    // Close the main header with the actual server title and a summary.
+    // Close the main header tag with the actual server title and a summary.
     echo sprintf('</div><h5>- %s -</h5>', $title);
     echo sprintf('<p>%s', $summary);
-
 
     // Display the server admins with links to their profiles.
     echo '<br><br>Server admins: ';
@@ -70,7 +69,7 @@ foreach ($gameservers as $server) {
         $j = 0;
 
         foreach ($admin_array as $name) {
-            echo sprintf('<a href="user/profile?username=%s">%s</a>', $name, ucfirst($name));
+            echo sprintf('<a href="user/profile?username=%s">%s</a>', ucfirst($name), $name);
 
             if ($j < $admin_count - 1) {
                 echo ' / ';

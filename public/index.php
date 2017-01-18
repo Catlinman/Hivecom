@@ -27,11 +27,11 @@
         <!-- Page navigation bar with buttons -->
         <div id="navcontainer" class="shadowed">
             <nav id="navmenu">
-                <a href="/ts.php" class="navlarge" alt="Connect to the Hivecom Teamspeak server">CONNECT TO TEAMSPEAK</a>
-                <a href="/dc.php" class="navlarge" alt="Connect to the Hivecom Discord server">CONNECT TO DISCORD</a>
+                <a href="/ts" class="navlarge" alt="Connect to the Hivecom Teamspeak server">CONNECT TO TEAMSPEAK</a>
+                <a href="/dc" class="navlarge" alt="Connect to the Hivecom Discord server">CONNECT TO DISCORD</a>
                 <a data-scroll href="#news" class="navsmall" alt="Hivecom news and announcements">NEWS</a>
-                <a data-scroll href="#voice" class="navsmall" alt="Voice servers run by Hivecom">VOICE SERVERS</a>
-                <a data-scroll href="#game" class="navsmall" alt="Game servers run by Hivecom">GAME SERVERS</a>
+                <a data-scroll href="#voiceservers" class="navsmall" alt="Voice servers run by Hivecom">VOICE SERVERS</a>
+                <a data-scroll href="#gameservers" class="navsmall" alt="Game servers run by Hivecom">GAME SERVERS</a>
                 <a data-scroll href="#community" class="navsmall" alt="The people behind Hivecom">COMMUNITY</a>
             </nav>
         </div>
@@ -84,7 +84,7 @@
         </div>
 
         <!-- Voice server information and current connection data (TS+DC) -->
-        <div class="contentdiv gradient" id="voice">
+        <div class="contentdiv gradient" id="voiceservers">
             <div class="contentheader shadowed">VOICE SERVERS</div>
             <div class="divider"></div>
             <div class="content shadowed">
@@ -145,7 +145,7 @@
         </div>
 
         <!-- Game server list and content links -->
-        <div class="contentdiv gradient" id="game">
+        <div class="contentdiv gradient" id="gameservers">
             <div class="contentheader shadowed">GAME SERVERS</div>
             <div class="divider"></div>
             <div class="content shadowed">

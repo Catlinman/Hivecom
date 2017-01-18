@@ -402,6 +402,7 @@ label {
 }
 
 button, .button {
+    text-align: center;
     color: #d0d0d0;
     cursor: pointer;
     cursor: hand;
@@ -425,6 +426,13 @@ button, .button {
     -moz-transition: all 1s ease-out;
     -o-transition: all 1s ease-out;
     transition: all 1s ease-out;
+}
+
+.button.disabled, button.disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    color: #353535 !important;
+    border: 1px solid #353535 !important;
 }
 
 button:focus, .button:focus {
@@ -572,6 +580,17 @@ textarea:focus {
     height: 8px;
     background: #090909;
     color: white;
+}
+
+
+/* Spacer for empty pages to give the footer more room. */
+
+.empty {
+    min-height: calc(1vh * 100 - 560px);
+}
+
+.fill {
+    min-height: calc(1vh * 100 - 570px);
 }
 
 
@@ -855,31 +874,42 @@ textarea:focus {
     display: none;
 }
 
-.gameheader h4 {
+
+/* Header for content overview panels. */
+
+.infoheader h1, .infoheader h2, .infoheader h3, .infoheader h4, .infoheader h5 {
     display: inline-block;
     padding-top: 16px;
 }
 
-.gameheader p {
+.infoheader p {
+    color: #818181;
     vertical-align: text-bottom;
     padding: 0px 16px;
     display: inherit;
+    font-size: 12px;
 }
 
-.gameheader .buttoncontainer {
-    margin: 8px 8px;
+.infoheader .buttoncontainer {
+    margin: 8px 16px;
     float: right;
 }
 
-.gameheader button {
+.infoheader button {
     float: right;
 }
 
-.gameheader img {
+.infoheader img {
     border-radius: 2px;
     vertical-align: top;
     margin-right: 8px;
     width: 24px;
+}
+
+.infoheader h5 img {
+    vertical-align: middle;
+    margin-right: 4px;
+    width: 18px;
 }
 
 
@@ -1275,6 +1305,8 @@ ght: 350px;
 .listclear {
     clear: both;
     padding: 8px;
+}
+
 }
 
 }
