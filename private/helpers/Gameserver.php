@@ -113,14 +113,14 @@ class Gameserver {
 				$unique_id = uniqid();
 
 				// Assign variables for easier use in the query.
-				$game			= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_GAME_INDEX]));
-				$address		= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_ADDRESS_INDEX]));
-				$address_easy	= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_ADDRESS_EASY_INDEX]));
-				$address_info	= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_ADDRESS_INFO_INDEX]));
-				$title			= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_TITLE_INDEX]));
-				$summary		= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_SUMMARY_INDEX]));
-				$admins			= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_ADMINS_INDEX]));
-				$hidden			= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Gameserver::SQL_HIDDEN_INDEX]));
+				$game			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_GAME_INDEX]);
+				$address		= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_INDEX]);
+				$address_easy	= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_EASY_INDEX]);
+				$address_info	= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_INFO_INDEX]);
+				$title			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_TITLE_INDEX]);
+				$summary		= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_SUMMARY_INDEX]);
+				$admins			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADMINS_INDEX]);
+				$hidden			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_HIDDEN_INDEX]);
 
 			} catch (Exception $e) {
 				error_log($e, 3, SITE_LOG);

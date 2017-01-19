@@ -123,13 +123,13 @@ class Page {
 				}
 
 				// Assign variables for easier use in the query.
-				$author		= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Page::SQL_AUTHOR_INDEX]));
-				$title		= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Page::SQL_TITLE_INDEX]));
-				$subtitle	= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Page::SQL_SUBTITLE_INDEX]));
-				$opening_md	= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Page::SQL_OPENING_MD_INDEX]));
-				$content_md	= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Page::SQL_CONTENT_MD_INDEX]));
-				$is_news	= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Page::SQL_IS_NEWS_INDEX]));
-				$is_sticky	= mysqli_real_escape_string($dbconnection, htmlspecialchars($data[Page::SQL_IS_STICKY_INDEX]));
+				$author		= mysqli_real_escape_string($dbconnection, $data[Page::SQL_AUTHOR_INDEX]);
+				$title		= mysqli_real_escape_string($dbconnection, $data[Page::SQL_TITLE_INDEX]);
+				$subtitle	= mysqli_real_escape_string($dbconnection, $data[Page::SQL_SUBTITLE_INDEX]);
+				$opening_md	= mysqli_real_escape_string($dbconnection, $data[Page::SQL_OPENING_MD_INDEX]);
+				$content_md	= mysqli_real_escape_string($dbconnection, $data[Page::SQL_CONTENT_MD_INDEX]);
+				$is_news	= mysqli_real_escape_string($dbconnection, $data[Page::SQL_IS_NEWS_INDEX]);
+				$is_sticky	= mysqli_real_escape_string($dbconnection, $data[Page::SQL_IS_STICKY_INDEX]);
 
 				// Parse the Markdown formatting and assign it for database insertion.
 				$opening_html = mysqli_real_escape_string(

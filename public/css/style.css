@@ -1133,17 +1133,17 @@ textarea:focus {
 }
 
 ::-webkit-input-placeholder {
-    color: #555;
+    color: #353535;
 }
 
 ::-moz-placeholder {
-    color: #555;
+    color: #353535;
 }
 
 :-ms-input-placeholder {
-    color: #555;
+    color: #353535;
 }
 
 :-moz-placeholder {
-    color: #555;
+    color: #353535;
 }
