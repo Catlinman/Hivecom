@@ -3,3 +3,5 @@ private/log
 private/library
 private/authentication
 public/img/users
+public/css/font-awesome.min.css
+public/fonts

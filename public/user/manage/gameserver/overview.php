@@ -47,6 +47,7 @@ $range = count($gameservers);
 <head>
     <title>Hivecom - Game Servers Overview</title>
     <?php include_once(TEMPLATES_PATH . "/core/head.php");?>
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -80,13 +81,16 @@ $range = count($gameservers);
 					$uid = $gameserver[Gameserver::SQL_UNIQUE_ID_INDEX];
 					$game = $gameserver[Gameserver::SQL_GAME_INDEX];
 					$title = $gameserver[Gameserver::SQL_TITLE_INDEX];
+					$hidden = $gameserver[Gameserver::SQL_HIDDEN_INDEX];
 
 					echo '<div class="infoheader"><h5>';
 
 					// Add the game image if it exists in the game image directory.
-					if (file_exists(IMAGES_PATH . "/logos/". Utility::slug($game) . '.png')) {
-						echo sprintf('<img src="/img/logos/%s.png" width="24"/>', Utility::slug($game));
-					}
+					if(!$hidden){
+						if (file_exists(IMAGES_PATH . "/logos/". Utility::slug($game) . '.png')) {
+							echo sprintf('<img src="/img/logos/%s.png" width="24"/>', Utility::slug($game));
+						}
+					} else echo '<i class="fa fa-eye-slash"></i> ';
 
 					echo "
 							$title</h5>
@@ -121,8 +125,9 @@ $range = count($gameservers);
 
 				<div class="horizontal-line"></div>
 				<div class="buttoncontainer centered">
-				<!-- Show a back button if we have previous gameservers to show. -->
-				<a class="button" style="width:280px" href="/user/manage/gameserver/create">Create a new game server</a>
+					<!-- Show a back button if we have previous gameservers to show. -->
+					<a class="button" style="width:280px" href="/user/manage/gameserver/create">Create a new game server</a>
+				</div>
 
 				<?php endif; ?>
 

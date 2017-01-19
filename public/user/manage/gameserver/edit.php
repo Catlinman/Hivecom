@@ -162,10 +162,10 @@ if (isset($_POST["update"])) {
 
 					<!-- Action buttons -->
 					<div class="centered">
-						<a class="button" style="width: 200px" href="/user/manage/gameserver/overview">Discard changes</a>
-						<button type="submit" name="update" style="width: 200px">Update game server</button>
-						<button type="submit" name="preview" style="width: 200px"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
-						<a class="button" style="width: 200px" href="/user/manage/gameserver/delete?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Delete game server</a>
+						<a class="button medium" href="/user/manage/gameserver/overview">Discard changes</a>
+						<button class="medium" type="submit" name="update">Update game server</button>
+						<button class="medium" type="submit" name="preview"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
+						<a class="button medium" href="/user/manage/gameserver/delete?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Delete game server</a>
 					</div>
 					<br>
 

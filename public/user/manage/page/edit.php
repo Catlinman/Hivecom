@@ -156,10 +156,10 @@ if (isset($_POST["update"])) {
 
 					<!-- Action buttons -->
 					<div class="centered">
-						<a class="button" style="width: 200px" href="/user/manage/page/overview">Discard changes</a>
-						<button type="submit" name="update" style="width: 200px">Update page</button>
-						<button type="submit" name="preview" style="width: 200px"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
-						<a class="button" style="width: 200px" href="/user/manage/page/delete?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Delete page</a>
+						<a class="button medium" href="/user/manage/page/overview">Discard changes</a>
+						<button class="medium" type="submit" name="update">Update page</button>
+						<button class="medium"  type="submit" name="preview"><?php echo (isset($_POST["preview"]) ? "Update" : "Show"); ?> preview</button>
+						<a class="button medium" href="/user/manage/page/delete?uid=<?php echo htmlspecialchars($_GET["uid"]); ?>">Delete page</a>
 					</div>
 					<br>
 

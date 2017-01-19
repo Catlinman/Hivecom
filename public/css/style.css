@@ -453,6 +453,10 @@ button:hover, .button:hover {
     border: 1px solid #507719;
 }
 
+button.medium, .button.medium {
+    width: 175px;
+}
+
 .buttoncontainer {
     margin: 16px 16px;
 }
@@ -1016,14 +1020,6 @@ textarea:focus {
         max-width: 1000px;
         margin-top: 2px;
     }
-    input {
-        width: 435px;
-        height: 35px;
-        font-size: 18px;
-    }
-    label {
-        font-size: 20px;
-    }
     .contentheader {
         font-size: 28px;
     }
@@ -1038,6 +1034,9 @@ textarea:focus {
     }
     #twitch iframe {
         height: 415px;
+    }
+    button.medium, .button.medium {
+        width: 280px;
     }
 }
 
@@ -1057,14 +1056,6 @@ textarea:focus {
         max-width: 1000px;
         margin-top: 8px;
     }
-    input {
-        width: 565px;
-        height: 60px;
-        font-size: 24px;
-    }
-    label {
-        font-size: 26px;
-    }
     .centerinfo {
         font-size: 24px;
     }
@@ -1077,6 +1068,9 @@ textarea:focus {
     }
     .page h1, .page h2, .page h3, .page h4, .page h5 {
         text-align: center;
+    }
+    .infoheader .buttoncontainer {
+        margin: 8px 32px;
     }
 }
 

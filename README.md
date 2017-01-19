@@ -13,6 +13,8 @@ The website uses the [Teamspeak 3 PHP framework](http://addons.teamspeak.com/dir
 
 For the parsing of Markdown within page posts the website utilizes [Parsedown](https://github.com/erusev/parsedown). Make sure it is included in the site library path.
 
+The website also uses [Font Awesome](http://fontawesome.io/) for some pages. Make sure that the library stylesheet is available under *public/css*.
+
 ## License ##
 
 This repository is released under the MIT license. For more information please refer to [LICENSE](https://github.com/catlinman/hivecom.net/blob/master/LICENSE)

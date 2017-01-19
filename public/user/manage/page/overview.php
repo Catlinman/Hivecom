@@ -47,6 +47,7 @@ $range = count($pages);
 <head>
     <title>Hivecom - Pages Overview</title>
     <?php include_once(TEMPLATES_PATH . "/core/head.php");?>
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -78,16 +79,23 @@ $range = count($pages);
 				// Iterate over each page and display a new information header with buttons.
 				foreach ($pages as $page) {
 					$uid = $page[Page::SQL_UNIQUE_ID_INDEX];
+					$access = $page[Page::SQL_ACCESS_ID_INDEX];
 					$title = $page[Page::SQL_TITLE_INDEX];
+					$is_news = $page[Page::SQL_IS_NEWS_INDEX];
+					$is_sticky = $page[Page::SQL_IS_STICKY_INDEX];
 
-					echo "<div class=\"infoheader\">
-							<h5>$title</h5>
+					echo "<div class=\"infoheader\"><a href=\"/page?id=$access\"><h5>";
+
+					if(!$is_news && !$is_sticky) echo '<i class="fa fa-eye-slash"></i> ';
+
+					if($is_sticky) echo '<i class="fa fa-sticky-note"></i> ';
+
+					echo "$title</h5></a>
 							<div class=\"buttoncontainer\">
-							<a class=\"button\" style=\"width:140px\" href=\"/page?uid=$uid\">View Page</a>
 							<a class=\"button\" style=\"width:140px\" href=\"/user/manage/page/edit?uid=$uid\">Edit Page</a>
 							<a class=\"button\" style=\"width:140px\" href=\"/user/manage/page/delete?uid=$uid\">Delete Page</a>
 							</div>
-							<p>UID: $uid</p>
+							<p>ID: $access / UID: $uid</p>
 							</div><br>
 						";
 				}
@@ -114,9 +122,9 @@ $range = count($pages);
 
 				<div class="horizontal-line"></div>
 				<div class="buttoncontainer centered">
-
-				<!-- Show a button to create a new gameserver. -->
-				<a class="button" style="width:280px" href="/user/manage/page/create">Create a new page</a>
+					<!-- Show a button to create a new gameserver. -->
+					<a class="button" style="width:280px" href="/user/manage/page/create">Create a new page</a>
+				</div>
 
 				<?php endif; ?>
 
