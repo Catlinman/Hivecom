@@ -148,9 +148,9 @@ ul {
 /* Sets stripes as the background image. */
 
 .striped {
-    background: url(/img/stripe2.png);
+    background: url(/static/img/stripe2.png);
     /*
-	    background: url(/img/background.png);
+	    background: url(/static/img/background.png);
     	background-position: center;
     	background-repeat: no-repeat;
     	background-size: cover;
@@ -158,7 +158,7 @@ ul {
 }
 
 .darkstriped {
-    background: url(/img/stripe4.png);
+    background: url(/static/img/stripe4.png);
 }
 
 
@@ -259,7 +259,7 @@ header {
     width: 100%;
     min-height: 310px;
     height: 310px;
-    background: url(/img/stripe.png);
+    background: url(/static/img/stripe.png);
     background-size: 4px auto;
     color: white;
     overflow: hidden;

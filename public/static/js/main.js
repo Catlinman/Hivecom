@@ -1,3 +1,4 @@
+// Reveal hidden Javascript dependent elements.
 $(window).load(function() {
     setTimeout(function() {
         $('.jsenabled').css("display", "initial");

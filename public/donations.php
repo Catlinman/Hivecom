@@ -5,17 +5,17 @@
 
 <head>
 	<title>Hivecom - Donation Center</title>
-	<?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/head.php");?>
+	<?php include_once($_SERVER['DOCUMENT_ROOT'] . "/resources/head.php");?>
 	<script type="text/javascript" src="/scripts/formvalidation.js"></script>
 </head>
 
 <body class="darkbody">
 	<div id="wrapper">
 		<?php
-			include_once($_SERVER['DOCUMENT_ROOT']. "/resources/header.php");
+			include_once($_SERVER['DOCUMENT_ROOT'] . "/resources/header.php");
 		?>
 		<div id="titlediv">
-			<img src="/img/metaicon.png" width="512"/>
+			<img src="/static/img/logo.png" width="512"/>
 			<h2>
 				Donation Center
 			</h2>
@@ -36,10 +36,10 @@
 				</noscript>
 				<div class="jsenabled">
 					<?php
-						require_once($_SERVER['DOCUMENT_ROOT']. "/scripts/private/sqlauth.php");
+						require_once($_SERVER['DOCUMENT_ROOT'] . "/scripts/private/sqlauth.php");
 
 						if($db_success) {
-							include_once($_SERVER['DOCUMENT_ROOT']. "/resources/donationform.php");
+							include_once($_SERVER['DOCUMENT_ROOT'] . "/resources/donationform.php");
 						}
 					?>
 				</div>
@@ -71,9 +71,9 @@
 					<?php
 						if($db_success) {
 							while($row = mysql_fetch_row($result)){
-								echo '<li title="'. $row[1]. '">'. $row[1]. '</li><li>'. date_format(date_create($row[4]), 'd.m.Y'). '</li><li>'. $row[3]. '€</li>';
+								echo '<li title="'. $row[1] . '">'. $row[1] . '</li><li>'. date_format(date_create($row[4]), 'd.m.Y'). '</li><li>'. $row[3] . '€</li>';
 								if($row[5] != NULL){
-									echo '<li><a href="https://twitter.com/'. $row[5]. '">@'. $row[5]. '</a></li>';
+									echo '<li><a href="https://twitter.com/'. $row[5] . '">@'. $row[5] . '</a></li>';
 								} else {
 									echo '<li><br></li>';
 								}
@@ -90,7 +90,7 @@
 				?>
 			</div>
 		</div>
-		<?php include_once($_SERVER['DOCUMENT_ROOT']. "/resources/footer.php");?>
+		<?php include_once($_SERVER['DOCUMENT_ROOT'] . "/resources/footer.php");?>
 	</div>
 </body>
 

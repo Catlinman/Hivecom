@@ -26,13 +26,13 @@ require_once(HELPERS_PATH . "/Gameserver.php");
 // Make sure that the logged in user has access rights.
 if (isset($_SESSION['user_level'])) {
 	if($_SESSION['user_level'] < 3) {
-		header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+		header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 		include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 		die();
 	}
 
 } else {
-	header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+	header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 	die();
 }
@@ -73,7 +73,7 @@ if (isset($_POST["create"])) {
 
 		<!-- Main gameserver headline -->
         <div id="headline" class="noselect">
-            <img src="/img/metaicon.png" width="512"/>
+            <img src="/static/img/logo.png" width="512"/>
             <h2>
                 Game Server Creation
             </h2>
@@ -174,8 +174,8 @@ if (isset($_POST["create"])) {
 						echo '<div class="infoheader"><h4>';
 
 						// Add the game image if it exists in the game image directory.
-						if (file_exists(IMAGES_PATH . "/logos/". Utility::slug($game) . '.png')) {
-							echo sprintf('<img src="/img/logos/%s.png" width="24"/>', Utility::slug($game));
+						if (file_exists(STATIC_PATH . "/logos/". Utility::slug($game) . '.png')) {
+							echo sprintf('<img src="/static/img/logos/%s.png" width="24"/>', Utility::slug($game));
 						}
 
 						// Create the game header and close the already opened header tag.

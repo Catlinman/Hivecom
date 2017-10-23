@@ -15,7 +15,7 @@
 
 		<!-- Main headline with page information and title -->
         <div id="headline" class="noselect">
-            <img src="/img/metaicon.png" width="512"/>
+            <img src="/static/img/logo.png" width="512"/>
             <h2>
                 Access Denied
             </h2>

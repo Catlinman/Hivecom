@@ -19,13 +19,13 @@ require_once(HELPERS_PATH . "/Page.php");
 // Make sure that the logged in user has access rights.
 if (isset($_SESSION['user_level'])) {
 	if($_SESSION['user_level'] < 3) {
-		header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+		header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 		include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 		die();
 	}
 
 } else {
-	header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+	header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 	die();
 }
@@ -47,7 +47,7 @@ $range = count($pages);
 <head>
     <title>Hivecom - Pages Overview</title>
     <?php include_once(TEMPLATES_PATH . "/core/head.php");?>
-	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -57,7 +57,7 @@ $range = count($pages);
 
 		<!-- Main page headline -->
         <div id="headline" class="noselect">
-            <img src="/img/metaicon.png" width="512"/>
+            <img src="/static/img/logo.png" width="512"/>
             <h2>
                 Pages Overview
             </h2>

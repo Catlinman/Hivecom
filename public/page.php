@@ -19,13 +19,13 @@ if (isset($_GET["uid"])) {
     $page = Page::retrieveViaAccess(htmlspecialchars($_GET["id"]));
 
 } else {
-    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+    header($_SERVER["SERVER_PROTOCOL"] ." 404 Not Found", true, 404);
     include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/404.php");
     die();
 }
 
 if (!$page) {
-    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+    header($_SERVER["SERVER_PROTOCOL"] ." 404 Not Found", true, 404);
     include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/404.php");
     die();
 }
@@ -45,7 +45,7 @@ if (!$page) {
 
         <!-- Main headline with page information and title -->
         <div id="headline" class="noselect">
-            <img src="/img/metaicon.png" width="512"/>
+            <img src="/static/img/logo.png" width="512"/>
             <h2>
                 <?php echo $page[Page::SQL_TITLE_INDEX];?>
             </h2>

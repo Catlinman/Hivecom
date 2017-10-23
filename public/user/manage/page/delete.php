@@ -21,13 +21,13 @@ require_once(HELPERS_PATH . "/Page.php");
 // Make sure that the logged in user has access rights.
 if (isset($_SESSION['user_level'])) {
 	if($_SESSION['user_level'] < 3) {
-		header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+		header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 		include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 		die();
 	}
 
 } else {
-	header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+	header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 	die();
 }
@@ -39,7 +39,7 @@ if (isset($_GET["uid"])) {
 
 // If the page does not exist we return the 404 page.
 if (!isset($page)) {
-	header($_SERVER["SERVER_PROTOCOL"]." 404 Not found", true, 404);
+	header($_SERVER["SERVER_PROTOCOL"] ." 404 Not found", true, 404);
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/404.php");
 	die();
 }
@@ -69,7 +69,7 @@ if (isset($_POST["delete"])) {
 
 		<!-- Main page headline -->
         <div id="headline" class="noselect">
-            <img src="/img/metaicon.png" width="512"/>
+            <img src="/static/img/logo.png" width="512"/>
             <h2>
                 Page Deletion
             </h2>

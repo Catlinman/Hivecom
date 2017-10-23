@@ -11,13 +11,16 @@ defined("AUTH_PATH")
     or define("AUTH_PATH", realpath(dirname(__FILE__) . "/authentication"));
 
 defined("LIBRARY_PATH")
-    or define("LIBRARY_PATH", realpath(dirname(__FILE__) . "/library"));
+    or define("LIBRARY_PATH", realpath(dirname(__FILE__) . "/../library"));
 
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . "/templates"));
 
-defined("IMAGES_PATH")
-    or define("IMAGES_PATH", realpath(dirname(__FILE__) . "/../public/img"));
+defined("STATIC_PATH")
+    or define("STATIC_PATH", realpath(dirname(__FILE__) . "/../public/static"));
+
+defined("DATA_PATH")
+    or define("DATA_PATH", realpath(dirname(__FILE__) . "/../public/data"));
 
 // Time in seconds between API and data queries.
 defined("QUERYINTERVAL")

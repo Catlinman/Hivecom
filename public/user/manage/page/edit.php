@@ -29,13 +29,13 @@ require_once(HELPERS_PATH . "/Page.php");
 // Make sure that the logged in user has access rights.
 if (isset($_SESSION['user_level'])) {
 	if($_SESSION['user_level'] < 3) {
-		header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+		header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 		include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 		die();
 	}
 
 } else {
-	header($_SERVER["SERVER_PROTOCOL"]." 403 Access Denied", true, 403);
+	header($_SERVER["SERVER_PROTOCOL"] ." 403 Access Denied", true, 403);
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/403.php");
 	die();
 }
@@ -47,7 +47,7 @@ if (isset($_GET["uid"])) {
 
 // If the page does not exist we return the 404 page.
 if (!isset($page)) {
-	header($_SERVER["SERVER_PROTOCOL"]." 404 Not found", true, 404);
+	header($_SERVER["SERVER_PROTOCOL"] ." 404 Not found", true, 404);
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/errors/404.php");
 	die();
 }
@@ -74,7 +74,7 @@ if (isset($_POST["update"])) {
 	);
 
 	// Redirect to the page viewer.
-	header('Location: /page?uid=' . ($_GET["uid"]));
+	header('Location: /user/manage/page/overview');
 }
 
 ?>
@@ -94,7 +94,7 @@ if (isset($_POST["update"])) {
 
 		<!-- Main page headline -->
         <div id="headline" class="noselect">
-            <img src="/img/metaicon.png" width="512"/>
+            <img src="/static/img/logo.png" width="512"/>
             <h2>
                 <?php echo $page[Page::SQL_TITLE_INDEX]; ?>
             </h2>
@@ -148,7 +148,7 @@ if (isset($_POST["update"])) {
 
 					<!-- Content fields -->
 					<p>Introduction</p>
-					<textarea name="opening" placeholder="Short summary of the general information. Should be short. Will be prepended before the main content on the page posts. Headers are hidden."><?php echo $_POST["opening"] ?? $page[Page::SQL_OPENING_MD_INDEX]; ?></textarea>
+					<textarea name="opening" placeholder="Short summary of the general information. Should be short. Will be prepended before the main content on the page posts. Headers are hidden in announcements."><?php echo $_POST["opening"] ?? $page[Page::SQL_OPENING_MD_INDEX]; ?></textarea>
 
 					<p>Content</p>
 					<textarea name="content" placeholder="Main page content. This information is shown on the main page and is hidden in shortened listings of this page."><?php echo $_POST["content"] ?? $page[Page::SQL_CONTENT_MD_INDEX]; ?></textarea>

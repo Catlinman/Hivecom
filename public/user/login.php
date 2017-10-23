@@ -14,7 +14,7 @@
 
 		<!-- Main page headline -->
         <div id="headline" class="noselect">
-            <img src="/img/metaicon.png" width="512"/>
+            <img src="/static/img/logo.png" width="512"/>
             <h2>
                 Community User Login
             </h2>

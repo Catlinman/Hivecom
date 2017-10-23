@@ -77,7 +77,7 @@ class Gameserver {
 		$address_easy   = empty($address_easy) 	? "" : $address_easy;
 		$address_info   = empty($address_info)	? "" : $address_info;
 		$title          = empty($title)			? "Server Title" : $title;
-		$summary        = empty($summary)		? "Server information summary" : $summary;
+		$summary        = empty($summary)		? "" : $summary;
 		$admins         = empty($admins) 		? "" : preg_replace('/\s+/', '', $admins);
 
 		$hidden         = (int) $hidden or (int) false;
@@ -169,7 +169,7 @@ class Gameserver {
 				// Edit all values except the game entry.
 				$game			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_GAME_INDEX]);
 				$address		= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_INDEX]);
-				$address_easy	= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_EASY_INDEX]);
+				$address_easy   = mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_EASY_INDEX]);
 				$address_info	= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_ADDRESS_INFO_INDEX]);
 				$title			= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_TITLE_INDEX]);
 				$summary		= mysqli_real_escape_string($dbconnection, $data[Gameserver::SQL_SUMMARY_INDEX]);
@@ -306,7 +306,9 @@ class Gameserver {
 			$result = mysqli_query($dbconnection, "SELECT COUNT(`gameserver_id`) FROM `gameservers`;")
 				or error_log(date("Y-m-d H:i:s ") . "Gameserver/count: " . mysqli_error($dbconnection) . ".\n", 3, SITE_LOG);
 
-			return mysqli_fetch_all($result)[0][0];
+            if ($result) {
+                return mysqli_fetch_all($result)[0][0];
+            }
 		}
 	}
 }

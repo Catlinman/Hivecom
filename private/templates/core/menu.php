@@ -10,11 +10,11 @@
 <header id="top">
 	<div id="mainbar">
 		<div style="float:left;">
-			<a href="/index.php">HIVECOM</a>
+			<a href="/">HIVECOM</a>
 		</div>
 		<div style="float:right;">
 		<?php
-		/*
+
 		// Show the current logged in user.
 		if (isset($_SESSION['user_name'])) {
 			require_once(HELPERS_PATH . "/Utility.php");
@@ -32,7 +32,7 @@
 			// If there is no logged in user - show the login option.
 			echo '<a href="/user/login">LOGIN</a>';
 		}
-		*/
+
 		?>
 		</div>
 	</div>

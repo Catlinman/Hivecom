@@ -75,7 +75,7 @@ if (strcmp($res, "VERIFIED") == 0) {
             $payment_amount = 1;
         }
 
-        require_once($_SERVER['DOCUMENT_ROOT']. "/scripts/private/sqlauth.php");
+        require_once($_SERVER['DOCUMENT_ROOT'] . "/scripts/private/sqlauth.php");
 
         if (!empty($_POST['custom'])) {
             if (strlen($_POST['custom']) < 50) {
@@ -87,11 +87,11 @@ if (strcmp($res, "VERIFIED") == 0) {
 
                         $querystring =
                             "INSERT INTO {$table} (name, email, amount, date, twitter) VALUES (\"".
-                            $datastring[0]. '","'.
+                            $datastring[0] . '","'.
                             $email. '",'.
                             $payment_amount. ',"'.
                             date('Y-m-d'). '","'.
-                            $datastring[1]. '");';
+                            $datastring[1] . '");';
 
                         $query = mysql_query((string)$querystring);
                     }

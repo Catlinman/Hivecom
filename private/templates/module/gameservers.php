@@ -37,8 +37,8 @@ foreach ($gameservers as $server) {
     echo '<div class="infoheader"><h4>';
 
     // Add the game image if it exists in the game image directory.
-    if (file_exists(IMAGES_PATH . "/logos/". Utility::slug($game) . '.png')) {
-        echo sprintf('<img src="/img/logos/%s.png" width="24"/>', Utility::slug($game));
+    if (file_exists(STATIC_PATH . "/logos/". Utility::slug($game) . '.png')) {
+        echo sprintf('<img src="/static/img/logos/%s.png" width="24"/>', Utility::slug($game));
     }
 
     // Create the game header and close the already opened header tag.

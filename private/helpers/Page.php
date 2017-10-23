@@ -77,8 +77,8 @@ class Page {
 		$title		= empty($title) 		? "Page title" : $title;
 		$subtitle	= empty($subtitle) 		? "Community Announcement" : $subtitle;
 		$author		= empty($author) 		? "Hivecom" : $author;
-		$opening_md	= empty($opening_md)	? "Page opening." : $opening_md;
-		$content_md	= empty($content_md)	? "Page content." : $content_md;
+		$opening_md	= empty($opening_md)	? "" : $opening_md;
+		$content_md	= empty($content_md)	? "" : $content_md;
 
 		$is_news	= (int) $is_news or (int) false;
 		$is_sticky	= (int) $is_sticky or (int) false;
